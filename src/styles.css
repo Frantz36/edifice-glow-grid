@@ -177,8 +177,6 @@
 
 @utility gold-hairline {
   position: relative;
-}
-@utility gold-hairline {
   &::after {
     content: "";
     position: absolute;
