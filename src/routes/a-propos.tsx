@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, Shield, Leaf, HandHeart, Sparkles, ScaleIcon } from "lucide-react";
+import { Award, Shield, Leaf, HandHeart, Sparkles, Scale } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
 import { CEO_IMAGE } from "@/components/site/data";
 
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/a-propos")({
 
 const VALUES = [
   { icon: Award, name: "Excellence", desc: "Une exigence de qualité à chaque étape de nos interventions." },
-  { icon: ScaleIcon, name: "Intégrité", desc: "Transparence et éthique dans toutes nos relations." },
+  { icon: Scale, name: "Intégrité", desc: "Transparence et éthique dans toutes nos relations." },
   { icon: HandHeart, name: "Responsabilité", desc: "Engagement social et respect des communautés." },
   { icon: Shield, name: "Sécurité", desc: "Protection stricte des personnes et des biens." },
   { icon: Leaf, name: "Durabilité", desc: "Solutions pensées pour les générations futures." },
