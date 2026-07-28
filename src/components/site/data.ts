@@ -23,8 +23,8 @@ export const SERVICES: Service[] = [
   {
     slug: "construction",
     title: "Construction",
-    short: "Bâtiments administratifs, résidentiels, scolaires et de santé.",
-    desc: "Conception et exécution d'ouvrages durables, du gros œuvre aux finitions haut de gamme.",
+    short: "Bâtiments administratifs, résidentiels, scolaires, santé, industriels & logistiques.",
+    desc: "Réalisation d'ouvrages aux plus hauts standards de qualité, sécurité et performance.",
     icon: Building2,
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
@@ -32,53 +32,53 @@ export const SERVICES: Service[] = [
   {
     slug: "rehabilitation",
     title: "Réhabilitation & Rénovation",
-    short: "Valorisation et remise à neuf du patrimoine existant.",
-    desc: "Nous redonnons vie aux édifices existants avec une exigence de qualité et de pérennité.",
+    short: "Redonner vie aux ouvrages existants et optimiser leur valeur patrimoniale.",
+    desc: "Améliorer la fonctionnalité et l'esthétique tout en réduisant les coûts liés au vieillissement.",
     icon: Hammer,
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "maintenance",
-    title: "Entretien & Maintenance Technique",
-    short: "Maintenance préventive et curative d'infrastructures.",
-    desc: "Interventions techniques planifiées pour prolonger la durée de vie de vos actifs.",
+    title: "Entretien & Maintenance des Infrastructures",
+    short: "Pérennisation et continuité opérationnelle du bâtiment.",
+    desc: "Garantir le bon fonctionnement continu et allonger la durée de vie des actifs.",
     icon: Wrench,
     image:
-      "https://images.unsplash.com/photo-1581092918484-8313ea4e1c7d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "nettoyage",
     title: "Nettoyage Professionnel & Hygiène",
-    short: "Propreté institutionnelle et sanitaire.",
-    desc: "Prestations récurrentes et ponctuelles pour bureaux, résidences et bâtiments publics.",
+    short: "Prestations conformes aux normes d'hygiène les plus exigeantes.",
+    desc: "Environnements administratifs, industriels, commerciaux et résidentiels.",
     icon: SprayCan,
     image:
       "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "3d",
-    title: "Désinfection, Désinsectisation & Dératisation",
-    short: "Prestations 3D certifiées et sécurisées.",
-    desc: "Protocoles rigoureux pour un environnement sain, sécurisé et conforme aux normes.",
+    title: "Désinfection, Désinsectisation & Dératisation (3D)",
+    short: "Solutions professionnelles de lutte contre les nuisibles.",
+    desc: "Respect des réglementations, de la sécurité des occupants et des exigences environnementales.",
     icon: Bug,
     image:
       "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "paysager",
-    title: "Aménagement Paysager & Espaces Verts",
-    short: "Création et entretien d'espaces extérieurs.",
-    desc: "Un écrin végétal pour vos infrastructures — conception, plantation et suivi durable.",
+    title: "Aménagement Paysager & Entretien des Espaces Verts",
+    short: "Création et entretien de la signature végétale extérieure.",
+    desc: "Valorisation de l'image de marque de l'organisation à travers ses abords extérieurs.",
     icon: Trees,
     image:
       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "finition",
-    title: "Finition, Embellissement & Intérieurs",
-    short: "Marbre, laiton, granit, bois — matériaux nobles.",
-    desc: "Travaux de finition haut de gamme intégrant les plus beaux matériaux d'intérieur.",
+    title: "Travaux de Finition & Embellissement",
+    short: "Valorisation durable et amélioration du confort des bâtiments.",
+    desc: "Peinture, revêtements, faux plafonds, menuiserie, plomberie, électricité et décoration sur-mesure.",
     icon: Paintbrush,
     image:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
@@ -86,8 +86,8 @@ export const SERVICES: Service[] = [
   {
     slug: "patrimoine",
     title: "Gestion Durable du Patrimoine Immobilier",
-    short: "Stratégie et pilotage d'actifs bâtis.",
-    desc: "Conservation, valorisation et pilotage sur mesure de votre patrimoine immobilier.",
+    short: "Conseil stratégique et accompagnement à la valeur.",
+    desc: "Diagnostic complet, planification d'entretien et optimisation des coûts d'exploitation.",
     icon: Landmark,
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
@@ -151,5 +151,14 @@ export const POSTS = [
 export const CEO_IMAGE =
   "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80";
 
-export const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80";
+export const HERO_IMAGE = "/pics/office-2hnour.png";
+
+export const PARTNERS = [
+  { name: "Hôtel Hilton", image: "/partners/hilton.png" },
+  { name: "CAMI TOYOTA", image: "/partners/cami.png" },
+  { name: "Hôtel Mont-Febe", image: "/partners/hotel-mont-febe.jpeg" },
+  { name: "MINREX", image: "/partners/minrex.jpg" },
+  { name: "SIC", image: "/partners/sic.jpg" },
+  { name: "SNH", image: "/partners/snh.jpg" },
+  { name: "CNPS", image: "/partners/cnps.jpeg" },
+];

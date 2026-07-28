@@ -81,15 +81,15 @@
   --secondary-foreground: oklch(0.16 0.005 260);
   --muted: oklch(0.965 0.005 90);
   --muted-foreground: oklch(0.48 0.01 260);
-  --accent: oklch(0.78 0.13 85);
+  --accent: oklch(0.86 0.16 95);
   --accent-foreground: oklch(0.13 0.005 260);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.92 0.008 90);
   --input: oklch(0.92 0.008 90);
-  --ring: oklch(0.78 0.13 85);
-  --gold: oklch(0.78 0.13 85);
-  --gold-soft: oklch(0.88 0.08 90);
+  --ring: oklch(0.86 0.16 95);
+  --gold: oklch(0.86 0.16 95);
+  --gold-soft: oklch(0.92 0.09 98);
   --obsidian: oklch(0.14 0.005 260);
   --slate-ink: oklch(0.28 0.006 260);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -161,7 +161,7 @@
 }
 
 @utility text-gradient-gold {
-  background: linear-gradient(135deg, oklch(0.86 0.11 90), oklch(0.7 0.14 80));
+  background: linear-gradient(135deg, oklch(0.93 0.15 98), oklch(0.82 0.17 92));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -170,8 +170,8 @@
 @utility bg-obsidian-marble {
   background-color: var(--obsidian);
   background-image:
-    radial-gradient(1200px 400px at 10% -20%, oklch(0.78 0.13 85 / 0.15), transparent 60%),
-    radial-gradient(800px 400px at 90% 120%, oklch(0.78 0.13 85 / 0.1), transparent 60%),
+    radial-gradient(1200px 400px at 10% -20%, oklch(0.86 0.16 95 / 0.15), transparent 60%),
+    radial-gradient(800px 400px at 90% 120%, oklch(0.86 0.16 95 / 0.1), transparent 60%),
     linear-gradient(180deg, oklch(0.16 0.005 260), oklch(0.11 0.005 260));
 }
 
@@ -185,3 +185,35 @@
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes hero-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 20s ease-in-out infinite;
+}
+

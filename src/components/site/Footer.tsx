@@ -24,16 +24,18 @@ export function Footer() {
           </h4>
           <ul className="space-y-2 text-sm">
             {[
-              ["/", "Accueil"],
-              ["/services", "Services"],
-              ["/references", "Références"],
-              ["/a-propos", "À Propos"],
-              ["/blog", "Blog & Actualités"],
-              ["/contact", "Contact"],
-            ].map(([to, label]) => (
-              <li key={to}>
-                <Link to={to} className="hover:text-gold">
-                  {label}
+              { to: "/", label: "Accueil" },
+              { to: "/services", label: "Services" },
+              { to: "/references", label: "Références" },
+              { to: "/a-propos", label: "À Propos" },
+              { to: "/blog", label: "Blog & Actualités" },
+              { to: "/engagement-solidaire", label: "Engagement Solidaire" },
+              { to: "/contact", hash: "contact-form", label: "Contactez-nous" },
+              { to: "/contact", hash: "partenaire", label: "Devenir Partenaire" },
+            ].map((link) => (
+              <li key={link.label}>
+                <Link to={link.to} hash={link.hash} className="hover:text-gold">
+                  {link.label}
                 </Link>
               </li>
             ))}
