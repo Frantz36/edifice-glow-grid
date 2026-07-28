@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -435,78 +435,194 @@ function ServiceCardBlock({
   isEven: boolean;
 }) {
   const Icon = service.icon;
+  const [expanded, setExpanded] = useState(false);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el) return;
+
+    el.style.transition = "height 450ms cubic-bezier(0.16,1,0.3,1), opacity 300ms ease";
+
+    if (expanded) {
+      el.style.display = "block";
+      const height = el.scrollHeight;
+      el.style.height = "0px";
+      el.style.opacity = "0";
+      requestAnimationFrame(() => {
+        el.style.height = height + "px";
+        el.style.opacity = "1";
+      });
+      const onEnd = (e: TransitionEvent) => {
+        if (e.propertyName === "height") {
+          el.style.height = "auto";
+          el.removeEventListener("transitionend", onEnd as any);
+        }
+      };
+      el.addEventListener("transitionend", onEnd as any);
+    } else {
+      const currentHeight = el.scrollHeight;
+      el.style.height = currentHeight + "px";
+      el.style.opacity = "1";
+      requestAnimationFrame(() => {
+        el.style.height = "0px";
+        el.style.opacity = "0";
+      });
+    }
+  }, [expanded]);
+
+  // ─── Dynamic classes based on expanded state ──────────────────────────────
+  const cardBg      = expanded ? "bg-obsidian border-obsidian" : "bg-white border-border hover:border-gold/50 hover:shadow-xl";
+  const kickerColor = expanded ? "text-amber-400" : "text-gold";
+  const titleColor  = expanded ? "text-white" : "text-slate-ink";
+  const descColor   = expanded ? "text-white/70" : "text-muted-foreground";
+  const featureHeadColor = expanded ? "text-white/50" : "text-slate-ink";
+  const featureColor = expanded ? "text-white/80" : "text-slate-ink";
+  const tagBg       = expanded ? "bg-white/10 border-white/20 text-white/70" : "bg-slate-100 border-slate-200 text-slate-700";
+  const toggleColor = expanded ? "text-amber-400 hover:text-amber-300" : "text-amber-600 hover:text-amber-700";
 
   return (
     <article
       id={service.id}
-      className="scroll-mt-36 group rounded-3xl border border-border bg-white p-6 md:p-10 shadow-sm transition-all hover:border-gold/50 hover:shadow-xl"
+      className={`scroll-mt-36 group rounded-3xl border shadow-sm transition-all duration-500 overflow-hidden ${cardBg} ${
+        expanded ? "service-card--expanded" : ""
+      }`}
     >
-      <div className={`grid gap-10 lg:grid-cols-2 lg:items-center ${isEven ? "lg:grid-flow-dense" : ""}`}>
-        {/* TEXTE */}
-        <div className={isEven ? "lg:col-start-2" : ""}>
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold">
-            {service.kicker}
-          </p>
+      {/* ── TOP SECTION (always visible) ─────────────────────────────────── */}
+      <div className="p-6 md:p-10">
+        <div className={`grid gap-10 lg:grid-cols-2 lg:items-center ${isEven ? "lg:grid-flow-dense" : ""}`}>
+          {/* TEXTE */}
+          <div className={isEven ? "lg:col-start-2" : ""}>
+            <p className={`text-xs font-bold uppercase tracking-[0.25em] ${kickerColor}`}>{service.kicker}</p>
 
-          <h3 className="mt-3 font-display text-2xl font-bold text-slate-ink md:text-3xl lg:text-4xl leading-tight">
-            {service.title}
-          </h3>
+            <h3 className={`mt-3 font-display text-2xl font-bold md:text-3xl lg:text-4xl leading-tight transition-colors duration-500 ${titleColor}`}>
+              {service.title}
+            </h3>
 
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-            {service.description}
-          </p>
+            <p className={`mt-4 text-base leading-relaxed transition-colors duration-500 ${descColor}`}>{service.description}</p>
 
-          {/* PERIMETRE ET DOMAINES */}
-          <div className="mt-6">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-ink mb-3">
-              Périmètre d'intervention & Domaines d'application :
-            </h4>
-            <ul className="grid gap-2.5 sm:grid-cols-2">
-              {service.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-slate-ink">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <span>{feature}</span>
-                </li>
+            {/* PERIMETRE ET DOMAINES */}
+            <div className="mt-6">
+              <h4 className={`text-xs font-semibold uppercase tracking-wider mb-3 transition-colors duration-500 ${featureHeadColor}`}>
+                Périmètre d'intervention & Domaines d'application :
+              </h4>
+              <ul className="grid gap-2.5 sm:grid-cols-2">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className={`flex items-start gap-2.5 text-xs md:text-sm transition-colors duration-500 ${featureColor}`}>
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* TAGS & BADGES */}
+            <div className="mt-6 flex flex-wrap gap-2">
+              {service.tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className={`rounded-lg px-3 py-1 text-xs font-medium border transition-colors duration-500 ${tagBg}`}
+                >
+                  {tag}
+                </span>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          {/* TAGS & BADGES */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {service.tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="rounded-lg bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 border border-slate-200"
+            {/* ACTIONS */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                to="/contact"
+                hash="contact-form"
+                className="inline-flex items-center gap-2 rounded-full bg-obsidian px-5 py-2.5 text-xs font-semibold text-gold transition-all hover:bg-gold hover:text-obsidian"
               >
-                {tag}
-              </span>
-            ))}
+                Demander un devis <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+
+              <button
+                onClick={() => setExpanded((v) => !v)}
+                aria-expanded={expanded}
+                className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${toggleColor}`}
+              >
+                <span>{expanded ? "Réduire l'expertise" : "Découvrir l'expertise complète"}</span>
+                <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${expanded ? "rotate-90" : ""}`} />
+              </button>
+            </div>
           </div>
 
-          {/* LIEN VERS DEVIS & EXPERTISE */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              to="/contact"
-              hash="contact-form"
-              className="inline-flex items-center gap-2 rounded-full bg-obsidian px-5 py-2.5 text-xs font-semibold text-gold transition-all hover:bg-gold hover:text-obsidian"
-            >
-              Demander un devis <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-            <span className="text-xs font-medium text-muted-foreground group-hover:text-gold transition-colors cursor-pointer">
-              Découvrir l'expertise complète →
-            </span>
+          {/* IMAGE */}
+          <div className={`relative overflow-hidden rounded-2xl aspect-[4/3] ${isEven ? "lg:col-start-1" : ""}`}>
+            <img
+              src={service.image}
+              alt={service.title}
+              className={`h-full w-full object-cover transition-transform duration-700 ${
+                expanded ? "scale-100" : "group-hover:scale-105"
+              }`}
+            />
+            <div className="absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl bg-obsidian/90 text-gold backdrop-blur-md shadow-lg border border-gold/20">
+              <Icon className="h-6 w-6" />
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* IMAGE */}
-        <div className={`relative overflow-hidden rounded-2xl aspect-[4/3] ${isEven ? "lg:col-start-1" : ""}`}>
-          <img
-            src={service.image}
-            alt={service.title}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl bg-obsidian/90 text-gold backdrop-blur-md shadow-lg border border-gold/20">
-            <Icon className="h-6 w-6" />
+      {/* ── NEON SEPARATOR ───────────────────────────────────────────────── */}
+      {/* Inset, 1px, constant amber-gold with a soft glow */}
+      <div
+        className="overflow-hidden transition-all duration-500 px-6 md:px-10"
+        style={{ height: expanded ? "1px" : "0px" }}
+      >
+        <div
+          className="h-px w-full"
+          style={{
+            background: "#FFD700",
+            boxShadow: "0 0 6px 1px rgba(255,215,0,0.45)",
+          }}
+        />
+      </div>
+
+      {/* ── EXPANDED DETAIL PANEL (inside the same card) ─────────────────── */}
+      <div
+        ref={panelRef}
+        className="w-full bg-obsidian text-white overflow-hidden"
+        style={{ height: 0, opacity: 0 }}
+        aria-hidden={!expanded}
+      >
+        <div className="mx-auto max-w-6xl p-6 md:p-8">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
+              <h3 className="text-sm font-bold tracking-wider uppercase text-amber-400">
+                Détails de l'Ingénierie & Rigueur Opérationnelle
+              </h3>
+            </div>
+            <span className="text-[10px] font-mono px-2.5 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full">
+              {(() => {
+                const num = (service.kicker || "").trim().split(" ")[0] || "00";
+                const short = (service.id || "").slice(0, 2).toUpperCase();
+                return `SPEC-${num.replace("/", "")}-${short}`;
+              })()}
+            </span>
+          </div>
+
+          {/* Grid 2x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🛠️ Méthodologie & Processus</div>
+              <p className="text-xs text-gray-300 leading-relaxed">Modélisation et étude d'ensoleillement des sols, sélection rigoureuse de végétaux adaptés au microclimat local, préparation enrichie des sols et pose de réseaux d'irrigation goutte-à-goutte automatisés.</p>
+            </div>
+            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">📐 Normes & Conformité RSE</div>
+              <p className="text-xs text-gray-300 leading-relaxed">Gestion écoresponsable de la ressource en eau, politique zéro produit phytosanitaire toxique sur les espaces fréquentés et respect des périodes de taille pour préserver la biodiversité.</p>
+            </div>
+            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🏛️ Projets Cibles & Application</div>
+              <p className="text-xs text-gray-300 leading-relaxed">Espaces extérieurs et parcs de sièges sociaux, résidences officielles et d'État, campus universitaires, complexes hôteliers et aménagements paysagers urbains.</p>
+            </div>
+            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
+              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🚜 Parc Matériel Spécialisé</div>
+              <p className="text-xs text-gray-300 leading-relaxed">Flotte de tondeuses autoportées professionnelles, taille-haies télescopiques à faible émission sonore, nacelles d'élagage sécurisées et programmateurs d'arrosage connectés.</p>
+            </div>
           </div>
         </div>
       </div>

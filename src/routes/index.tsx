@@ -92,7 +92,7 @@ function Index() {
         <img
           src={HERO_IMAGE}
           alt="Architecture moderne"
-          className="absolute inset-0 h-full w-full object-cover opacity-50 animate-hero-zoom"
+          className="absolute inset-0 h-full w-full object-cover opacity-100 animate-hero-zoom"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-obsidian/70 via-obsidian/55 to-obsidian/80" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-28 md:py-40 lg:grid-cols-[1.3fr_1fr] lg:items-center">
