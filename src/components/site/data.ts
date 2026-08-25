@@ -134,7 +134,7 @@ export const POSTS = [
     date: "28 Février 2025",
     category: "Maintenance",
     image:
-      "https://images.unsplash.com/photo-1581092918484-8313ea4e1c7d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "espaces-verts-institutionnels",
@@ -151,7 +151,8 @@ export const POSTS = [
 export const CEO_IMAGE =
   "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80";
 
-export const HERO_IMAGE = "/pics/office-2hnour.png";
+export const HERO_IMAGE = "/pics/office-2hnour.jpeg";
+export const LOGO_IMAGE = "/pics/logo 2HNOUR.png";
 
 export const PARTNERS = [
   { name: "Hôtel Hilton", image: "/partners/hilton.png" },

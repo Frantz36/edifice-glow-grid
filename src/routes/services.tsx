@@ -239,11 +239,10 @@ function ServicesPage() {
                 <button
                   key={s.id}
                   onClick={() => scrollToSection(s.id)}
-                  className={`rounded-full px-4 py-2 text-xs font-medium transition-all ${
-                    isActive
-                      ? "bg-obsidian text-gold font-semibold shadow-sm"
-                      : "bg-slate-100 text-slate-700 hover:bg-gold/20 hover:text-obsidian"
-                  }`}
+                  className={`rounded-full px-4 py-2 text-xs transition-all ${isActive
+                    ? "bg-gold border border-gold text-obsidian font-bold shadow-md"
+                    : "bg-slate-100 border border-transparent text-slate-700 hover:bg-gold/20 hover:text-obsidian"
+                    }`}
                 >
                   {s.anchorLabel}
                 </button>
@@ -256,13 +255,13 @@ function ServicesPage() {
       {/* MAIN SERVICES LIST - ALTERNATING CARDS */}
       <div className="bg-background py-20">
         <div className="mx-auto max-w-7xl space-y-24 px-6">
-          
+
           {/* PÔLE 1 HEADER */}
           <div className="border-b border-border pb-4">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Pôle 1 — BTP & Restructuration
             </span>
-            <h2 className="mt-1 font-display text-3xl font-bold text-slate-ink md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-4xl">
               Construction & Rénovation de Bâtiments
             </h2>
           </div>
@@ -274,10 +273,10 @@ function ServicesPage() {
 
           {/* PÔLE 2 HEADER */}
           <div className="border-b border-border pb-4 pt-10">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Pôle 2 — Facility Management & Salubrité
             </span>
-            <h2 className="mt-1 font-display text-3xl font-bold text-slate-ink md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-4xl">
               Maintenance, Hygiène, Prestations 3D & Espaces Verts
             </h2>
           </div>
@@ -294,10 +293,10 @@ function ServicesPage() {
 
           {/* PÔLE 3 HEADER */}
           <div className="border-b border-border pb-4 pt-10">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Pôle 3 — Aménagement & Embellissement
             </span>
-            <h2 className="mt-1 font-display text-3xl font-bold text-slate-ink md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-4xl">
               Finition & Aménagement Intérieur de Prestige
             </h2>
           </div>
@@ -307,10 +306,10 @@ function ServicesPage() {
 
           {/* PÔLE 4 HEADER */}
           <div className="border-b border-border pb-4 pt-10">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Pôle 4 — Conseil & Stratégie
             </span>
-            <h2 className="mt-1 font-display text-3xl font-bold text-slate-ink md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-4xl">
               Gestion & Valorisation du Patrimoine Immobilier
             </h2>
           </div>
@@ -326,10 +325,10 @@ function ServicesPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
                 B2B & Grands Comptes
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-5xl">
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-white md:text-5xl">
                 Synergies BTP, Co-traitance & Partenariats Stratégiques
               </h2>
               <p className="mt-4 text-base text-white/80 leading-relaxed">
@@ -405,7 +404,7 @@ function ServicesPage() {
           <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto">
             Nos ingénieurs et experts techniques étudient vos cahiers des charges et vous accompagnent de la conception à la réalisation.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex items-center justify-center">
             <Link
               to="/contact"
               hash="contact-form"
@@ -413,12 +412,6 @@ function ServicesPage() {
             >
               Demander une étude / Un Devis <ArrowRight className="h-4 w-4" />
             </Link>
-            <a
-              href="/contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-border bg-white px-8 py-4 text-sm font-semibold text-slate-ink transition-all hover:border-gold hover:text-gold"
-            >
-              <Download className="h-4 w-4 text-gold" /> Télécharger notre Plaquette Corporate
-            </a>
           </div>
         </div>
       </section>
@@ -472,28 +465,40 @@ function ServiceCardBlock({
   }, [expanded]);
 
   // ─── Dynamic classes based on expanded state ──────────────────────────────
-  const cardBg      = expanded ? "bg-obsidian border-obsidian" : "bg-white border-border hover:border-gold/50 hover:shadow-xl";
-  const kickerColor = expanded ? "text-amber-400" : "text-gold";
-  const titleColor  = expanded ? "text-white" : "text-slate-ink";
-  const descColor   = expanded ? "text-white/70" : "text-muted-foreground";
-  const featureHeadColor = expanded ? "text-white/50" : "text-slate-ink";
-  const featureColor = expanded ? "text-white/80" : "text-slate-ink";
-  const tagBg       = expanded ? "bg-white/10 border-white/20 text-white/70" : "bg-slate-100 border-slate-200 text-slate-700";
-  const toggleColor = expanded ? "text-amber-400 hover:text-amber-300" : "text-amber-600 hover:text-amber-700";
+  const cardBg = expanded
+    ? "bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] border-gold/40 shadow-2xl text-obsidian relative"
+    : "bg-white border-border hover:border-gold/50 hover:shadow-xl";
+  const kickerBadge = expanded
+    ? "inline-block rounded-full border border-obsidian/30 bg-obsidian px-3.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-sm"
+    : "inline-block rounded-full border border-gold/30 bg-gold px-3.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-sm";
+  const iconBubble = expanded
+    ? "bg-obsidian text-gold border border-obsidian/40 shadow-md"
+    : "bg-gold text-obsidian border border-gold/40 shadow-md";
+  const titleColor = expanded ? "text-obsidian font-extrabold" : "text-slate-ink";
+  const descColor = expanded ? "text-obsidian/90 font-medium" : "text-muted-foreground";
+  const featureHeadColor = expanded ? "text-obsidian font-bold" : "text-slate-ink";
+  const featureColor = expanded ? "text-obsidian/90 font-medium" : "text-slate-ink";
+  const tagBg = expanded
+    ? "bg-obsidian text-gold border-obsidian/40 font-semibold shadow-sm"
+    : "bg-gold/25 border-gold/40 text-obsidian font-semibold";
+  const toggleColor = expanded ? "text-obsidian font-bold hover:text-obsidian/80" : "text-amber-600 hover:text-amber-700";
 
   return (
     <article
       id={service.id}
-      className={`scroll-mt-36 group rounded-3xl border shadow-sm transition-all duration-500 overflow-hidden ${cardBg} ${
-        expanded ? "service-card--expanded" : ""
-      }`}
+      className={`scroll-mt-36 group rounded-3xl border shadow-sm transition-all duration-500 overflow-hidden ${cardBg} ${expanded ? "service-card--expanded" : ""
+        }`}
     >
+      {/* Reflet ambré chaud sur toute la carte lorsqu'elle est étendue */}
+      {expanded && (
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/40 to-transparent z-0" />
+      )}
       {/* ── TOP SECTION (always visible) ─────────────────────────────────── */}
-      <div className="p-6 md:p-10">
+      <div className="relative z-10 p-6 md:p-10">
         <div className={`grid gap-10 lg:grid-cols-2 lg:items-center ${isEven ? "lg:grid-flow-dense" : ""}`}>
           {/* TEXTE */}
           <div className={isEven ? "lg:col-start-2" : ""}>
-            <p className={`text-xs font-bold uppercase tracking-[0.25em] ${kickerColor}`}>{service.kicker}</p>
+            <span className={kickerBadge}>{service.kicker}</span>
 
             <h3 className={`mt-3 font-display text-2xl font-bold md:text-3xl lg:text-4xl leading-tight transition-colors duration-500 ${titleColor}`}>
               {service.title}
@@ -509,7 +514,7 @@ function ServiceCardBlock({
               <ul className="grid gap-2.5 sm:grid-cols-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className={`flex items-start gap-2.5 text-xs md:text-sm transition-colors duration-500 ${featureColor}`}>
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 transition-colors duration-500 ${expanded ? "text-obsidian" : "text-gold"}`} />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -554,11 +559,10 @@ function ServiceCardBlock({
             <img
               src={service.image}
               alt={service.title}
-              className={`h-full w-full object-cover transition-transform duration-700 ${
-                expanded ? "scale-100" : "group-hover:scale-105"
-              }`}
+              className={`h-full w-full object-cover transition-transform duration-700 ${expanded ? "scale-100" : "group-hover:scale-105"
+                }`}
             />
-            <div className="absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl bg-obsidian/90 text-gold backdrop-blur-md shadow-lg border border-gold/20">
+            <div className={`absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl backdrop-blur-md transition-all duration-500 ${iconBubble}`}>
               <Icon className="h-6 w-6" />
             </div>
           </div>
@@ -566,37 +570,30 @@ function ServiceCardBlock({
       </div>
 
       {/* ── NEON SEPARATOR ───────────────────────────────────────────────── */}
-      {/* Inset, 1px, constant amber-gold with a soft glow */}
       <div
         className="overflow-hidden transition-all duration-500 px-6 md:px-10"
         style={{ height: expanded ? "1px" : "0px" }}
       >
-        <div
-          className="h-px w-full"
-          style={{
-            background: "#FFD700",
-            boxShadow: "0 0 6px 1px rgba(255,215,0,0.45)",
-          }}
-        />
+        <div className="h-px w-full bg-obsidian/20" />
       </div>
 
       {/* ── EXPANDED DETAIL PANEL (inside the same card) ─────────────────── */}
       <div
         ref={panelRef}
-        className="w-full bg-obsidian text-white overflow-hidden"
+        className="w-full text-obsidian overflow-hidden"
         style={{ height: 0, opacity: 0 }}
         aria-hidden={!expanded}
       >
         <div className="mx-auto max-w-6xl p-6 md:p-8">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+          <div className="flex items-center justify-between mb-6 pb-4 border-b border-obsidian/20">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-              <h3 className="text-sm font-bold tracking-wider uppercase text-amber-400">
+              <span className="w-2.5 h-2.5 rounded-full bg-obsidian animate-pulse" />
+              <h3 className="text-sm font-extrabold tracking-wider uppercase text-obsidian">
                 Détails de l'Ingénierie & Rigueur Opérationnelle
               </h3>
             </div>
-            <span className="text-[10px] font-mono px-2.5 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full">
+            <span className="text-[10px] font-mono px-2.5 py-1 bg-obsidian/10 text-obsidian border border-obsidian/20 rounded-full font-bold">
               {(() => {
                 const num = (service.kicker || "").trim().split(" ")[0] || "00";
                 const short = (service.id || "").slice(0, 2).toUpperCase();
@@ -605,23 +602,23 @@ function ServiceCardBlock({
             </span>
           </div>
 
-          {/* Grid 2x2 */}
+          {/* Grid 2x2 avec fond totalement noir opaque (100% solid black) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🛠️ Méthodologie & Processus</div>
-              <p className="text-xs text-gray-300 leading-relaxed">Modélisation et étude d'ensoleillement des sols, sélection rigoureuse de végétaux adaptés au microclimat local, préparation enrichie des sols et pose de réseaux d'irrigation goutte-à-goutte automatisés.</p>
+            <div className="p-5 bg-black border border-black rounded-2xl shadow-lg text-white transition-all">
+              <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase mb-2">🛠️ Méthodologie & Processus</div>
+              <p className="text-xs text-white/90 font-normal leading-relaxed">Modélisation et étude d'ensoleillement des sols, sélection rigoureuse de végétaux adaptés au microclimat local, préparation enrichie des sols et pose de réseaux d'irrigation goutte-à-goutte automatisés.</p>
             </div>
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">📐 Normes & Conformité RSE</div>
-              <p className="text-xs text-gray-300 leading-relaxed">Gestion écoresponsable de la ressource en eau, politique zéro produit phytosanitaire toxique sur les espaces fréquentés et respect des périodes de taille pour préserver la biodiversité.</p>
+            <div className="p-5 bg-black border border-black rounded-2xl shadow-lg text-white transition-all">
+              <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase mb-2">📐 Normes & Conformité RSE</div>
+              <p className="text-xs text-white/90 font-normal leading-relaxed">Gestion écoresponsable de la ressource en eau, politique zéro produit phytosanitaire toxique sur les espaces fréquentés et respect des périodes de taille pour préserver la biodiversité.</p>
             </div>
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🏛️ Projets Cibles & Application</div>
-              <p className="text-xs text-gray-300 leading-relaxed">Espaces extérieurs et parcs de sièges sociaux, résidences officielles et d'État, campus universitaires, complexes hôteliers et aménagements paysagers urbains.</p>
+            <div className="p-5 bg-black border border-black rounded-2xl shadow-lg text-white transition-all">
+              <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase mb-2">🏛️ Projets Cibles & Application</div>
+              <p className="text-xs text-white/90 font-normal leading-relaxed">Espaces extérieurs et parcs de sièges sociaux, résidences officielles et d'État, campus universitaires, complexes hôteliers et aménagements paysagers urbains.</p>
             </div>
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-amber-500/40 transition-colors">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase mb-2">🚜 Parc Matériel Spécialisé</div>
-              <p className="text-xs text-gray-300 leading-relaxed">Flotte de tondeuses autoportées professionnelles, taille-haies télescopiques à faible émission sonore, nacelles d'élagage sécurisées et programmateurs d'arrosage connectés.</p>
+            <div className="p-5 bg-black border border-black rounded-2xl shadow-lg text-white transition-all">
+              <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase mb-2">🚜 Parc Matériel Spécialisé</div>
+              <p className="text-xs text-white/90 font-normal leading-relaxed">Flotte de tondeuses autoportées professionnelles, taille-haies télescopiques à faible émission sonore, nacelles d'élagage sécurisées et programmateurs d'arrosage connectés.</p>
             </div>
           </div>
         </div>

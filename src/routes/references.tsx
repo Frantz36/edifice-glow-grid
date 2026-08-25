@@ -67,15 +67,19 @@ function ReferencesPage() {
             {REFERENCES.map((r) => (
               <article
                 key={r.name}
-                className="rounded-2xl border border-border bg-white p-6"
+                className="group relative overflow-hidden rounded-2xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-6 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gold font-display text-lg font-bold text-obsidian">
-                  ★
+                {/* Reflet ambré chaud */}
+                <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/30 to-transparent z-0" />
+                <div className="relative z-10">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-obsidian font-display text-lg font-bold text-gold border border-obsidian/30 shadow-md">
+                    ★
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-extrabold leading-snug text-obsidian">
+                    {r.name}
+                  </h3>
+                  <p className="mt-3 text-sm font-medium text-obsidian/90 leading-relaxed">{r.mission}</p>
                 </div>
-                <h3 className="mt-6 font-display text-lg font-bold leading-snug">
-                  {r.name}
-                </h3>
-                <p className="mt-3 text-sm text-muted-foreground">{r.mission}</p>
               </article>
             ))}
           </div>
