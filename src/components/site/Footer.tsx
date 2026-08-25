@@ -1,15 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { LOGO_IMAGE } from "@/components/site/data";
 
 export function Footer() {
   return (
     <footer className="bg-obsidian-marble text-white/80">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="grid h-10 w-10 place-items-center rounded-md bg-gold text-obsidian font-display text-lg font-bold">
-              2H
-            </span>
+          <div className="flex items-center gap-3">
+            <img
+              src={LOGO_IMAGE}
+              alt="2HNOUR SARL"
+              className="h-10 w-auto object-contain"
+            />
             <span className="font-display text-lg font-bold text-white">
               2HNOUR <span className="text-gold">SARL</span>
             </span>

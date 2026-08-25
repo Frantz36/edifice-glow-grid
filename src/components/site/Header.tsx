@@ -10,6 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { LOGO_IMAGE } from "@/components/site/data";
 
 const links = [
   { to: "/", label: "Accueil" },
@@ -21,6 +22,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const companyDropdownRef = useRef<HTMLDivElement>(null);
   const contactDropdownRef = useRef<HTMLDivElement>(null);
@@ -31,6 +33,18 @@ export function Header() {
   const isCompanyActive =
     currentPath === "/a-propos" || currentPath === "/blog";
   const isContactActive = currentPath === "/contact";
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -52,26 +66,50 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-white/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-10 w-10 place-items-center rounded-md bg-obsidian-marble text-gold font-display text-lg font-bold">
-            2H
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight">
-            2HNOUR <span className="text-gold">SARL</span>
-          </span>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 pointer-events-none transition-all duration-500 ease-out ${
+        isScrolled ? "pt-3 pb-3" : "pt-8"
+      }`}
+    >
+      <div
+        className={`mx-auto flex items-center justify-between gap-6 px-6 pointer-events-auto transition-all duration-500 ease-out ${
+          isScrolled
+            ? "max-w-7xl rounded-full border border-gold/30 bg-white/95 py-2.5 shadow-2xl shadow-obsidian/15 backdrop-blur-2xl text-obsidian"
+            : "max-w-7xl py-2 bg-transparent text-white"
+        }`}
+      >
+        <Link to="/" className="flex items-center gap-3 shrink-0">
+          <img
+            src={LOGO_IMAGE}
+            alt="2HNOUR SARL"
+            className={`w-auto object-contain transition-all duration-500 ease-out ${
+              isScrolled ? "h-10" : "h-20 md:h-24 lg:h-28"
+            }`}
+          />
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-out flex items-center ${
+              isScrolled ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0"
+            }`}
+          >
+            <span className="font-display text-lg font-bold tracking-tight whitespace-nowrap text-obsidian">
+              2HNOUR <span className="text-gold">SARL</span>
+            </span>
+          </div>
         </Link>
 
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-3 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="rounded-full px-4 py-2 text-sm font-medium text-slate-ink transition-all [&:not(.bg-gold)]:hover:text-gold"
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all whitespace-nowrap ${
+                isScrolled
+                  ? "text-obsidian hover:text-gold [&:not(.bg-gold)]:text-obsidian"
+                  : "text-white hover:text-gold"
+              }`}
               activeProps={{
                 className:
-                  "rounded-full bg-gold px-4 py-2 font-semibold text-obsidian shadow-sm",
+                  "rounded-full bg-gold px-4 py-2 text-sm font-semibold text-obsidian shadow-sm whitespace-nowrap",
               }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -86,22 +124,28 @@ export function Header() {
                 setCompanyDropdownOpen((v) => !v);
                 setContactDropdownOpen(false);
               }}
-              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none whitespace-nowrap ${
                 isCompanyActive
                   ? "bg-gold font-semibold text-obsidian shadow-sm"
-                  : "text-slate-ink hover:text-gold"
+                  : isScrolled
+                  ? "text-obsidian hover:text-gold"
+                  : "text-white hover:text-gold"
               }`}
             >
               <span>L'Entreprise</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${
-                  companyDropdownOpen ? "rotate-180 text-gold" : ""
+                  companyDropdownOpen
+                    ? "rotate-180 text-gold"
+                    : isScrolled
+                    ? "text-obsidian"
+                    : "text-white"
                 }`}
               />
             </button>
 
             {companyDropdownOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-2xl border border-border bg-white p-2 shadow-xl ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-2xl border border-border bg-white p-2 shadow-xl ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2 duration-150 text-obsidian">
                 <Link
                   to="/a-propos"
                   onClick={() => setCompanyDropdownOpen(false)}
@@ -144,10 +188,14 @@ export function Header() {
           {/* ENGAGEMENT SOLIDAIRE */}
           <Link
             to="/engagement-solidaire"
-            className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-slate-ink transition-all [&:not(.bg-gold)]:hover:text-gold"
+            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all whitespace-nowrap ${
+              isScrolled
+                ? "text-obsidian hover:text-gold"
+                : "text-white hover:text-gold"
+            }`}
             activeProps={{
               className:
-                "inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 font-semibold text-obsidian shadow-sm",
+                "inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-obsidian shadow-sm whitespace-nowrap",
             }}
           >
             <Heart
@@ -167,22 +215,28 @@ export function Header() {
                 setContactDropdownOpen((v) => !v);
                 setCompanyDropdownOpen(false);
               }}
-              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all focus:outline-none whitespace-nowrap ${
                 isContactActive
                   ? "bg-gold font-semibold text-obsidian shadow-sm"
-                  : "text-slate-ink hover:text-gold"
+                  : isScrolled
+                  ? "text-obsidian hover:text-gold"
+                  : "text-white hover:text-gold"
               }`}
             >
               <span>Contact</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${
-                  contactDropdownOpen ? "rotate-180 text-gold" : ""
+                  contactDropdownOpen
+                    ? "rotate-180 text-gold"
+                    : isScrolled
+                    ? "text-obsidian"
+                    : "text-white"
                 }`}
               />
             </button>
 
             {contactDropdownOpen && (
-              <div className="absolute right-0 top-full mt-2 w-64 rounded-2xl border border-border bg-white p-2 shadow-xl ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute right-0 top-full mt-2 w-64 rounded-2xl border border-border bg-white p-2 shadow-xl ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2 duration-150 text-obsidian">
                 <Link
                   to="/contact"
                   hash="contact-form"
@@ -224,11 +278,11 @@ export function Header() {
           </div>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <Link
             to="/contact"
             hash="contact-form"
-            className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-obsidian shadow-[0_10px_30px_-10px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.7)] md:inline-flex"
+            className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-obsidian shadow-[0_10px_30px_-10px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.7)] whitespace-nowrap md:inline-flex"
           >
             Demander un Devis
           </Link>
