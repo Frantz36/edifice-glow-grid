@@ -91,7 +91,7 @@ function ReferencesPage() {
             {PROJECTS.map((p) => (
               <article
                 key={p.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-white"
+                className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all hover:shadow-md"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -99,15 +99,14 @@ function ReferencesPage() {
                     alt={p.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold">
-                      {p.client}
-                    </p>
-                    <h3 className="mt-1 font-display text-lg font-bold text-white">
-                      {p.title}
-                    </h3>
+                  <div className="absolute top-3 left-3 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian shadow-sm">
+                    {p.client}
                   </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-base font-bold text-obsidian group-hover:text-gold transition-colors">
+                    {p.title}
+                  </h3>
                 </div>
               </article>
             ))}

@@ -169,9 +169,7 @@
 
 @utility bg-obsidian-marble {
   background-color: var(--obsidian);
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
-    url("/pics/marbre-noir.jpg");
+  background-image: url("/pics/marbre-noir.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

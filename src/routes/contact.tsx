@@ -134,10 +134,10 @@ function ContactPage() {
       <section className="scroll-mt-20 bg-slate-50 py-24" id="partenaire">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Synergie & Croissance
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold text-slate-ink md:text-5xl">
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
               Devenir Partenaire 2HNOUR
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
@@ -146,142 +146,147 @@ function ContactPage() {
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2">
-            {/* AVANTAGES */}
-            <div className="rounded-3xl border border-border bg-white p-8 md:p-10 shadow-sm">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold font-bold">
-                ✓
+            {/* AVANTAGES (DORÉE) */}
+            <div className="group relative overflow-hidden rounded-3xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-8 md:p-10 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+              {/* Reflet ambré chaud */}
+              <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/30 to-transparent z-0" />
+              
+              <div className="relative z-10">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-obsidian text-gold border border-obsidian/30 shadow-md font-bold">
+                  ✓
+                </div>
+                <h3 className="mt-5 font-display text-xl font-extrabold text-obsidian leading-snug">
+                  Avantages du Partenariat
+                </h3>
+                <p className="mt-2 text-sm font-medium text-obsidian/90">
+                  Ce que nous apportons à nos partenaires et clients stratégiques :
+                </p>
+                <ul className="mt-6 space-y-4 text-sm font-medium text-obsidian">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
+                      1
+                    </span>
+                    <span><strong>Accès privilégié aux grands projets</strong> : Synergies sur les appels d'offres institutionnels et privés d'envergure.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
+                      2
+                    </span>
+                    <span><strong>Partage d'expertise & Innovation</strong> : Collaboration technique pour des standards d'exécution haut de gamme.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
+                      3
+                    </span>
+                    <span><strong>Sécurité administrative & financière</strong> : Garanties contractuelles rigoureuses et transparence budgétaire.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
+                      4
+                    </span>
+                    <span><strong>Visibilité accrue</strong> : Mise en valeur conjointe auprès de nos clients grands comptes et réseaux institutionnels.</span>
+                  </li>
+                </ul>
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-slate-ink">
-                Avantages du Partenariat
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Ce que nous apportons à nos partenaires et clients stratégiques :
-              </p>
-              <ul className="mt-6 space-y-4 text-sm text-slate-ink">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-obsidian">
-                    1
-                  </span>
-                  <span><strong>Accès privilégié aux grands projets</strong> : Synergies sur les appels d'offres institutionnels et privés d'envergure.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-obsidian">
-                    2
-                  </span>
-                  <span><strong>Partage d'expertise & Innovation</strong> : Collaboration technique pour des standards d'exécution haut de gamme.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-obsidian">
-                    3
-                  </span>
-                  <span><strong>Sécurité administrative & financière</strong> : Garanties contractuelles rigoureuses et transparence budgétaire.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-obsidian">
-                    4
-                  </span>
-                  <span><strong>Visibilité accrue</strong> : Mise en valeur conjointe auprès de nos clients grands comptes et réseaux institutionnels.</span>
-                </li>
-              </ul>
             </div>
 
-            {/* CONTRAINTES & EXIGENCES */}
-            <div className="rounded-3xl border border-border bg-white p-8 md:p-10 shadow-sm">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-obsidian text-gold font-bold">
+            {/* CONTRAINTES & EXIGENCES (MARBRÉE NOIRE) */}
+            <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-obsidian-marble p-8 md:p-10 text-white shadow-xl">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gold text-obsidian font-bold shadow-md">
                 !
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-slate-ink">
+              <h3 className="mt-5 font-display text-xl font-bold text-gold">
                 Engagements & Exigences
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-white/80">
                 Les normes strictes et critères de déontologie auxquels 2HNOUR est soumise :
               </p>
-              <ul className="mt-6 space-y-4 text-sm text-slate-ink">
+              <ul className="mt-6 space-y-4 text-sm text-white/90">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-white">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     1
                   </span>
-                  <span><strong>Conformité réglementaire strict</strong> : Respect rigoureux des normes BTP, environnementales et de sécurité au travail.</span>
+                  <span><strong className="text-white">Conformité réglementaire stricte</strong> : Respect rigoureux des normes BTP, environnementales et de sécurité au travail.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-white">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     2
                   </span>
-                  <span><strong>Charte Qualité & Délais</strong> : Obligation de résultat et respect impératif des échéanciers validés.</span>
+                  <span><strong className="text-white">Charte Qualité & Délais</strong> : Obligation de résultat et respect impératif des échéanciers validés.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-white">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     3
                   </span>
-                  <span><strong>Éthique & Transparence</strong> : Politique de tolérance zéro en matière de corruption et gouvernance irréprochable.</span>
+                  <span><strong className="text-white">Éthique & Transparence</strong> : Politique de tolérance zéro en matière de corruption et gouvernance irréprochable.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-white">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     4
                   </span>
-                  <span><strong>Confidentialité</strong> : Protection intégrale des données stratégiques et secrets industriels de nos projets communs.</span>
+                  <span><strong className="text-white">Confidentialité</strong> : Protection intégrale des données stratégiques et secrets industriels de nos projets communs.</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* FORMULAIRE DE DEMANDE DE PARTENARIAT */}
-          <div className="mt-12 rounded-3xl border border-gold/30 bg-obsidian-marble p-8 md:p-12 text-white shadow-xl">
+          {/* FORMULAIRE DE DEMANDE DE PARTENARIAT (BLANC CASSÉ) */}
+          <div className="mt-12 rounded-3xl border border-border bg-white p-8 md:p-12 shadow-sm">
             <div className="max-w-2xl">
-              <h3 className="font-display text-2xl font-bold md:text-3xl text-gold">
+              <h3 className="font-display text-2xl font-bold text-slate-ink md:text-3xl">
                 Soumettre une demande de partenariat
               </h3>
-              <p className="mt-2 text-sm text-white/70">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Remplissez ce formulaire pour initier un échange avec notre direction du développement stratégique.
               </p>
             </div>
 
             <form onSubmit={(e) => e.preventDefault()} className="mt-8 grid gap-5 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Nom de la structure / Entreprise
                 </label>
                 <input
                   type="text"
-                  className="h-11 w-full rounded-lg border border-white/20 bg-white/10 px-3 text-sm text-white focus:border-gold focus:outline-none"
+                  className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
                   placeholder="Ex: ACME Corp"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Nom & Prénom du Contact
                 </label>
                 <input
                   type="text"
-                  className="h-11 w-full rounded-lg border border-white/20 bg-white/10 px-3 text-sm text-white focus:border-gold focus:outline-none"
+                  className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
                   placeholder="Ex: Jean Dupont"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Email professionnel
                 </label>
                 <input
                   type="email"
-                  className="h-11 w-full rounded-lg border border-white/20 bg-white/10 px-3 text-sm text-white focus:border-gold focus:outline-none"
+                  className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
                   placeholder="jean@entreprise.com"
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Téléphone / WhatsApp
                 </label>
                 <input
                   type="tel"
-                  className="h-11 w-full rounded-lg border border-white/20 bg-white/10 px-3 text-sm text-white focus:border-gold focus:outline-none"
+                  className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
                   placeholder="+237 6XX XX XX XX"
                 />
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Type de partenariat envisagé
                 </label>
-                <select className="h-11 w-full rounded-lg border border-white/20 bg-obsidian px-3 text-sm text-white focus:border-gold focus:outline-none">
+                <select className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink focus:border-gold focus:bg-white focus:outline-none transition-colors">
                   <option>Co-traitance / Sub-contracting BTP</option>
                   <option>Fournisseur de matériaux & équipements</option>
                   <option>Partenariat institutionnel ou financier</option>
@@ -290,19 +295,19 @@ function ContactPage() {
                 </select>
               </div>
               <div className="sm:col-span-2">
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-gold">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
                   Présentation de la proposition
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white focus:border-gold focus:outline-none"
+                  className="w-full rounded-lg border border-border bg-slate-50/60 px-3 py-2 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
                   placeholder="Présentez brièvement vos compétences, vos objectifs et l'opportunité de partenariat..."
                 />
               </div>
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:bg-gold/90 hover:-translate-y-0.5 sm:w-auto"
                 >
                   Envoyer la proposition de partenariat
                 </button>

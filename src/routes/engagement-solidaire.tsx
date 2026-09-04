@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Heart,
   School,
@@ -17,6 +17,51 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
+
+// Composant pour l'animation de comptage progressif
+const CountUp = ({ value }: { value: string }) => {
+  const hasPrefix = value.startsWith("+");
+  const numericValue = parseInt(value.replace(/\D/g, ""), 10) || 0;
+  const suffix = value.replace(/^[+]?[0-9\s]+/, "");
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          let start = 0;
+          const duration = 1500;
+          const stepTime = 20;
+          const steps = duration / stepTime;
+          const increment = numericValue / steps;
+
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= numericValue) {
+              setCount(numericValue);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, stepTime);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [numericValue]);
+
+  return (
+    <span ref={ref}>
+      {hasPrefix ? "+" : ""}
+      {count.toLocaleString("fr-FR")}
+      {suffix}
+    </span>
+  );
+};
 
 export const Route = createFileRoute("/engagement-solidaire")({
   head: () => ({
@@ -40,6 +85,29 @@ export const Route = createFileRoute("/engagement-solidaire")({
   }),
   component: HumanitarianPage,
 });
+
+const STATS_SOLIDAIRES = [
+  {
+    number: "+18",
+    label: "Édifices & Écoles Rénovés",
+    icon: Building2,
+  },
+  {
+    number: "+1 500",
+    label: "Enfants Équipés en Kits",
+    icon: School,
+  },
+  {
+    number: "35+",
+    label: "Traitements 3D Gratuits",
+    icon: Droplets,
+  },
+  {
+    number: "100%",
+    label: "Transparence & Logistique Prise en Charge",
+    icon: ShieldCheck,
+  },
+];
 
 const PILIERS = [
   {
@@ -108,6 +176,26 @@ function HumanitarianPage() {
   const [activeTab, setActiveTab] = useState<"don" | "materiel" | "demande">("don");
   const [selectedProject, setSelectedProject] = useState<string>("Tous les projets solidaires");
 
+  const terrainRef = useRef<HTMLElement>(null);
+  const [terrainParallax, setTerrainParallax] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (terrainRef.current) {
+        const rect = terrainRef.current.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+        const offsetFromCenter = rect.top + rect.height / 2 - winHeight / 2;
+        const maxOffset = 50;
+        const speed = 0.15;
+        const clampedY = Math.max(-maxOffset, Math.min(maxOffset, offsetFromCenter * speed));
+        setTerrainParallax(clampedY);
+      }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <SiteLayout>
       {/* 1. HERO SECTION */}
@@ -119,33 +207,36 @@ function HumanitarianPage() {
       />
 
       {/* 2. CHIFFRES ET IMPACT EN AVANT-PROPOS */}
-      <section className="border-b border-border bg-slate-50 py-12">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative w-full overflow-hidden bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] py-10 md:py-12 text-obsidian shadow-xl">
+        {/* Reflet ambré chaud équilibré au centre */}
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/3 bg-gradient-to-r from-transparent via-[#ffe89c]/40 to-transparent" />
+
+        <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm">
-              <p className="font-display text-3xl font-bold text-gold md:text-4xl">+18</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                Édifices & Écoles Rénovés
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm">
-              <p className="font-display text-3xl font-bold text-gold md:text-4xl">+1 500</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                Enfants Équipés en Kits
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm">
-              <p className="font-display text-3xl font-bold text-gold md:text-4xl">35+</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                Traitements 3D Gratuits
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm">
-              <p className="font-display text-3xl font-bold text-gold md:text-4xl">100%</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                Transparence & Logistique Prise en Charge
-              </p>
-            </div>
+            {STATS_SOLIDAIRES.map((stat, idx) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group relative flex flex-col items-center justify-center rounded-2xl border border-gold/30 bg-obsidian p-6 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
+                >
+                  {/* Icône contextuelle dans un badge sombre avec accents or */}
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 text-gold transition-all duration-300 group-hover:border-transparent group-hover:bg-obsidian group-hover:text-gold group-hover:shadow-md">
+                    <Icon className="h-5 w-5 transition-all duration-300 group-hover:fill-gold group-hover:text-gold" />
+                  </div>
+
+                  {/* Chiffre animé */}
+                  <div className="font-display text-3xl font-bold text-gold transition-colors duration-300 group-hover:text-obsidian md:text-4xl">
+                    <CountUp value={stat.number} />
+                  </div>
+
+                  {/* Libellé en or clair / doré */}
+                  <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-gold/90 transition-colors duration-300 group-hover:text-obsidian/90">
+                    {stat.label}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -154,10 +245,10 @@ function HumanitarianPage() {
       <section className="bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Notre Responsabilité Sociétale
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold text-slate-ink md:text-5xl">
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
               Les 4 Piliers de l'Action Humanitaire 2HNOUR
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
@@ -171,22 +262,29 @@ function HumanitarianPage() {
               return (
                 <div
                   key={idx}
-                  className="group rounded-3xl border border-border bg-white p-8 transition-all hover:border-gold/50 hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-3xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-8 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gold/15 text-gold">
-                      <IconComponent className="h-6 w-6" />
+                  {/* Reflet ambré chaud */}
+                  <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/30 to-transparent z-0" />
+                  
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <div className="grid h-12 w-12 place-items-center rounded-2xl bg-obsidian text-gold border border-obsidian/30 shadow-md">
+                          <IconComponent className="h-6 w-6" />
+                        </div>
+                        <span className="rounded-full bg-obsidian/90 px-3.5 py-1 text-xs font-bold text-gold backdrop-blur-sm border border-gold/30 shadow-sm">
+                          {pilier.badge}
+                        </span>
+                      </div>
+                      <h3 className="mt-6 font-display text-xl font-extrabold text-obsidian leading-snug">
+                        {pilier.title}
+                      </h3>
+                      <p className="mt-3 text-sm font-medium text-obsidian/90 leading-relaxed">
+                        {pilier.desc}
+                      </p>
                     </div>
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
-                      {pilier.badge}
-                    </span>
                   </div>
-                  <h3 className="mt-6 font-display text-xl font-bold text-slate-ink">
-                    {pilier.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {pilier.desc}
-                  </p>
                 </div>
               );
             })}
@@ -195,18 +293,28 @@ function HumanitarianPage() {
       </section>
 
       {/* 4. APPELS AUX DONS & PROJETS SOLIDAIRES (MODULE CLÉ) */}
-      <section className="bg-slate-50 py-24" id="projets-solidaires">
-        <div className="mx-auto max-w-7xl px-6">
+      <section ref={terrainRef} className="relative overflow-hidden bg-background py-24 text-obsidian" id="projets-solidaires">
+        {/* PARALLAX BACKGROUND MARBRÉ */}
+        <div
+          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          style={{
+            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
+            backgroundSize: "100% auto",
+            transform: `translate3d(0, ${terrainParallax}px, 0)`,
+          }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
                 Actions sur le Terrain
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-bold text-slate-ink md:text-4xl">
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-4xl">
                 Projets Solidaires en Cours d'Accompagnement
               </h2>
             </div>
-            <p className="max-w-md text-sm text-muted-foreground">
+            <p className="max-w-md text-sm text-obsidian/85">
               Participez à nos côtés pour amplifier l'impact. 2HNOUR finance le pilotage, les équipes techniques et la logistique.
             </p>
           </div>
@@ -297,10 +405,10 @@ function HumanitarianPage() {
       <section className="bg-background py-24" id="agir">
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Agir Ensemble
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold text-slate-ink md:text-5xl">
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
               Comment Contribuer ou Demander de l'Aide ?
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
