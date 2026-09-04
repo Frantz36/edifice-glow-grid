@@ -2,11 +2,8 @@ import {
   Building2,
   Hammer,
   Wrench,
-  SprayCan,
-  Bug,
-  Trees,
-  Paintbrush,
-  Landmark,
+  Settings2,
+  Handshake,
   type LucideIcon,
 } from "lucide-react";
 
@@ -21,74 +18,47 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    slug: "construction",
-    title: "Construction",
-    short: "Bâtiments administratifs, résidentiels, scolaires, santé, industriels & logistiques.",
-    desc: "Réalisation d'ouvrages aux plus hauts standards de qualité, sécurité et performance.",
+    slug: "batir",
+    title: "Bâtir",
+    short: "Construction de bâtiments administratifs, résidentiels, scolaires, de santé, industriels & logistiques aux plus hauts standards.",
+    desc: "Réalisation d'ouvrages neufs avec rigueur, sécurité et performance — du gros-œuvre à la livraison clé-en-main.",
     icon: Building2,
     image:
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    slug: "rehabilitation",
-    title: "Réhabilitation & Rénovation",
-    short: "Redonner vie aux ouvrages existants et optimiser leur valeur patrimoniale.",
-    desc: "Améliorer la fonctionnalité et l'esthétique tout en réduisant les coûts liés au vieillissement.",
-    icon: Hammer,
+    slug: "equiper",
+    title: "Équiper",
+    short: "Travaux de finition, décoration sur-mesure, aménagements intérieurs & extérieurs pour des espaces fonctionnels et esthétiques.",
+    desc: "Nous transformons les espaces bruts en environnements de prestige : finitions soignées, équipements techniques et aménagements paysagers.",
+    icon: Settings2,
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    slug: "maintenance",
-    title: "Entretien & Maintenance des Infrastructures",
-    short: "Pérennisation et continuité opérationnelle du bâtiment.",
-    desc: "Garantir le bon fonctionnement continu et allonger la durée de vie des actifs.",
+    slug: "entretenir",
+    title: "Entretenir",
+    short: "Facility Management intégré : maintenance, nettoyage professionnel, 3D et entretien des espaces verts.",
+    desc: "Pérennisation et continuité opérationnelle de vos actifs grâce à un service complet de maintenance, d'hygiène et de salubrité.",
     icon: Wrench,
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    slug: "nettoyage",
-    title: "Nettoyage Professionnel & Hygiène",
-    short: "Prestations conformes aux normes d'hygiène les plus exigeantes.",
-    desc: "Environnements administratifs, industriels, commerciaux et résidentiels.",
-    icon: SprayCan,
+    slug: "renover",
+    title: "Rénover",
+    short: "Réhabilitation complète, réfection de façades, renforcement de structures et modernisation des installations existantes.",
+    desc: "Redonner vie aux ouvrages existants et optimiser leur valeur patrimoniale en améliorant leur fonctionnalité et leur durabilité.",
+    icon: Hammer,
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    slug: "3d",
-    title: "Désinfection, Désinsectisation & Dératisation (3D)",
-    short: "Solutions professionnelles de lutte contre les nuisibles.",
-    desc: "Respect des réglementations, de la sécurité des occupants et des exigences environnementales.",
-    icon: Bug,
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "paysager",
-    title: "Aménagement Paysager & Entretien des Espaces Verts",
-    short: "Création et entretien de la signature végétale extérieure.",
-    desc: "Valorisation de l'image de marque de l'organisation à travers ses abords extérieurs.",
-    icon: Trees,
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "finition",
-    title: "Travaux de Finition & Embellissement",
-    short: "Valorisation durable et amélioration du confort des bâtiments.",
-    desc: "Peinture, revêtements, faux plafonds, menuiserie, plomberie, électricité et décoration sur-mesure.",
-    icon: Paintbrush,
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    slug: "patrimoine",
-    title: "Gestion Durable du Patrimoine Immobilier",
-    short: "Conseil stratégique et accompagnement à la valeur.",
-    desc: "Diagnostic complet, planification d'entretien et optimisation des coûts d'exploitation.",
-    icon: Landmark,
+    slug: "sengager",
+    title: "S'engager",
+    short: "Conseil stratégique, gestion durable du patrimoine, RSE et partenariats B2B pour un développement responsable.",
+    desc: "Au-delà des chantiers, nous nous engageons à vos côtés : diagnostic, optimisation des actifs, éthique RSE et co-traitance.",
+    icon: Handshake,
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
   },

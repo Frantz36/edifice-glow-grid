@@ -121,22 +121,23 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-obsidian-marble">
+      <section className="relative overflow-hidden bg-obsidian">
         <img
           src={HERO_IMAGE}
           alt="Architecture moderne"
           className="absolute inset-0 h-full w-full object-cover opacity-100 animate-hero-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-obsidian/30 via-obsidian/15 to-obsidian/40" />
+        {/* Voile noir léger 20% */}
+        <div className="absolute inset-0 bg-black/20" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-32 pb-24 md:pt-44 md:pb-36 lg:grid-cols-[1.3fr_1fr] lg:items-center">
           <div>
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.25em] text-gold">
+            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.25em] text-gold backdrop-blur-sm">
               BTP · Maintenance · Patrimoine
             </p>
-            <h1 className="font-display text-3xl font-bold leading-[1.18] text-white sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem]">
+            <h1 className="font-display text-3xl font-bold leading-[1.18] text-white sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] drop-shadow-lg">
               Bâtir avec rigueur, équiper avec exigence, entretenir avec passion, <span className="text-gradient-gold">rénover avec excellence</span> et s'engager avec le cœur.
             </h1>
-            <p className="mt-8 max-w-xl text-lg text-white/80 leading-relaxed">
+            <p className="mt-8 max-w-xl text-lg text-white/95 leading-relaxed drop-shadow">
               Nous sommes l'une des pièces maîtresse de vos projets, l'alliance parfaite de l'expertise BTP, du matos de pointe et de l'engagement humain au service de vos investissements.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -196,11 +197,11 @@ function Index() {
                 alt="Mme Virginie Hanna FADIMATOU, Directrice Générale"
                 className="aspect-[4/5] w-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-obsidian to-transparent p-6">
+              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-obsidian/85 backdrop-blur-md p-4 border border-gold/30 shadow-xl">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian">
                   Directrice Générale
                 </div>
-                <p className="mt-2 font-display text-xl font-bold text-white">
+                <p className="mt-1 font-display text-lg font-bold text-white">
                   Mme Virginie Hanna FADIMATOU
                 </p>
               </div>
@@ -256,7 +257,7 @@ function Index() {
                 Nos Expertises
               </span>
               <h2 className="mt-4 font-display text-3xl font-extrabold text-obsidian md:text-5xl">
-                Huit piliers, un savoir-faire intégré.
+                Cinq piliers, un savoir-faire intégré.
               </h2>
             </div>
             <Link
@@ -267,7 +268,7 @@ function Index() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {SERVICES.map((s) => (
               <Link
                 key={s.slug}
@@ -316,7 +317,6 @@ function Index() {
                     alt={r.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 to-transparent" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-lg font-bold leading-snug">

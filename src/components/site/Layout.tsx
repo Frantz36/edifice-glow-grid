@@ -26,24 +26,27 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-obsidian-marble">
+    <section className="relative overflow-hidden bg-obsidian">
       <img
         src={image}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-35 animate-hero-zoom"
+        className="absolute inset-0 h-full w-full object-cover animate-hero-zoom"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-obsidian/85 via-obsidian/75 to-obsidian/95" />
+      {/* Voile noir léger 20% */}
+      <div className="absolute inset-0 bg-black/20" />
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
         {eyebrow && (
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-gold backdrop-blur-sm">
             {eyebrow}
           </p>
         )}
-        <h1 className="max-w-4xl font-display text-4xl font-bold leading-tight text-white md:text-6xl">
+        <h1 className="max-w-4xl font-display text-4xl font-bold leading-tight text-white md:text-6xl drop-shadow-lg">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">{subtitle}</p>
+          <p className="mt-6 max-w-2xl text-lg text-white/95 leading-relaxed drop-shadow">
+            {subtitle}
+          </p>
         )}
       </div>
     </section>
