@@ -154,7 +154,11 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -169,7 +173,19 @@
 
 @utility bg-obsidian-marble {
   background-color: var(--obsidian);
-  background-image: url("/pics/marbre-noir.jpg");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/pics/marbre-marron.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility bg-marble-light {
+  background-color: #f7f4ef;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+    url("/pics/marbre-clair-or.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -177,10 +193,13 @@
 
 @utility gold-hairline {
   position: relative;
+
   &::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
   }
@@ -190,6 +209,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -205,9 +225,11 @@
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -216,4 +238,3 @@
 .animate-hero-zoom {
   animation: hero-zoom 20s ease-in-out infinite;
 }
-

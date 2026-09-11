@@ -1,0 +1,318 @@
+{
+  "lang": "fr",
+
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "references": "Références",
+    "company": "Entreprise",
+    "about": "À Propos",
+    "blog": "Blog & Actualités",
+    "solidarity": "Engagement Solidaire",
+    "contact": "Contactez-nous",
+    "partner": "Devenir Partenaire",
+    "getQuote": "Demander un devis",
+    "allServices": "Tous nos services",
+    "discoverServices": "Découvrir nos services",
+    "allArticles": "Tous les articles",
+    "discoverSolidarity": "Découvrir nos actions solidaires",
+    "getStudy": "Obtenir une étude de votre projet",
+    "exploreAllServices": "Explorer tous les services"
+  },
+
+  "topbar": {
+    "since": "Depuis 2010 · Yaoundé, Cameroun"
+  },
+
+  "footer": {
+    "tagline": "Bâtir l'avenir. Préserver le patrimoine. Servir durablement.",
+    "navigation": "Navigation",
+    "ourServices": "Nos Services",
+    "contact": "Contact",
+    "copyright": "Tous droits réservés.",
+    "location": "Yaoundé · Cameroun",
+    "services": {
+      "construction": "Construction",
+      "rehabilitation": "Réhabilitation & Rénovation",
+      "maintenance": "Entretien & Maintenance",
+      "cleaning": "Nettoyage & Hygiène",
+      "disinfection": "Désinfection 3D",
+      "landscaping": "Aménagement Paysager",
+      "finishing": "Finition & Embellissement",
+      "heritage": "Gestion du Patrimoine"
+    }
+  },
+
+  "hero": {
+    "badge": "BTP · Maintenance · Patrimoine",
+    "headline": "Bâtir avec rigueur, équiper avec exigence, entretenir avec passion, <gold>rénover avec excellence</gold> et s'engager avec le cœur.",
+    "subtitle": "Nous sommes l'une des pièces maîtresse de vos projets, l'alliance parfaite de l'expertise BTP, du matos de pointe et de l'engagement humain au service de vos investissements.",
+    "since": "Depuis 2010",
+    "stats": {
+      "experience": "Années d'expérience",
+      "projects": "Projets livrés",
+      "staff": "Collaborateurs",
+      "quality": "Engagement qualité"
+    }
+  },
+
+  "ceo": {
+    "eyebrow": "Message de la Direction",
+    "headline": "Une vision. Un héritage. Un engagement.",
+    "jobTitle": "Directrice Générale",
+    "quote": "Chez 2HNOUR SARL, nous sommes profondément convaincus que chaque infrastructure représente bien plus qu'un simple assemblage de matériaux : ELLE INCARNE UNE VISION, PORTE UNE AMBITION ET OUVRE LA VOIE AU DÉVELOPPEMENT DURABLE. Construire est une responsabilité. Préserver et transmettre en est notre engagement. C'est ainsi que nous bâtissons, aujourd'hui, l'héritage de demain."
+  },
+
+  "services_section": {
+    "eyebrow": "Nos Expertises",
+    "headline": "Cinq piliers, un savoir-faire intégré.",
+    "learnMore": "En savoir plus"
+  },
+
+  "references_section": {
+    "eyebrow": "Références Institutionnelles",
+    "headline": "Des institutions de premier plan nous accordent leur confiance.",
+    "keyFigures": "Chiffres Clés",
+    "keyFiguresHeadline": "Un engagement mesurable au service de l'excellence.",
+    "stats": {
+      "experience": "Années d'expérience",
+      "projects": "Projets livrés",
+      "staff": "Collaborateurs dédiés"
+    }
+  },
+
+  "news_section": {
+    "eyebrow": "Actualités",
+    "headline": "Dernières publications."
+  },
+
+  "partners_section": {
+    "eyebrow": "Nos Partenaires",
+    "headline": "Ils nous font confiance"
+  },
+
+  "cta_section": {
+    "eyebrow": "Parlons de votre projet",
+    "headline": "Un projet de construction, réhabilitation ou maintenance ?",
+    "subtitle": "Nos équipes vous accompagnent, de l'étude initiale à la livraison, avec exigence et transparence."
+  },
+
+  "about": {
+    "meta_title": "À Propos — 2HNOUR SARL",
+    "meta_desc": "Notre histoire, notre vision et nos valeurs — Excellence, Intégrité, Responsabilité, Sécurité, Durabilité.",
+    "hero_eyebrow": "Qui sommes-nous",
+    "hero_title": "Une signature d'excellence pour le BTP camerounais.",
+    "hero_subtitle": "Depuis notre création, 2HNOUR SARL accompagne institutions publiques et acteurs privés dans la construction, la réhabilitation et la préservation de leur patrimoine bâti.",
+
+    "history_eyebrow": "Notre Histoire",
+    "history_headline": "Bâtir avec conviction. Servir avec constance.",
+    "history_p1": "Fondée à Yaoundé, 2HNOUR SARL s'est imposée comme un partenaire de référence pour les administrations publiques, les institutions et les acteurs privés en quête d'un savoir-faire intégré en BTP.",
+    "history_p2": "Sous l'impulsion de sa Directrice Générale, Mme Virginie Hanna FADIMATOU, notre entreprise réunit ingénieurs, techniciens et artisans autour d'une même exigence : livrer des ouvrages durables, esthétiques et parfaitement entretenus.",
+    "history_p3": "Nous croyons qu'une infrastructure bien conçue et bien entretenue est un levier de développement — pour ses usagers, pour la nation et pour l'environnement.",
+
+    "vision_eyebrow": "Vision & Ambition",
+    "vision_headline": "Construire l'avenir avec clarté et détermination.",
+    "vision_lead": "Notre vision et notre mission guident chacune de nos décisions et chacun de nos chantiers pour ériger des infrastructures modernes, durables et à fort impact pour le Cameroun.",
+    "vision_badge": "Notre Vision",
+    "vision_title": "Devenir la référence du BTP intégré en Afrique centrale.",
+    "vision_text": "Nous ambitionnons de porter les standards les plus élevés de construction, de maintenance et de gestion patrimoniale, en cultivant la fierté d'un travail bien fait et transmis.",
+    "mission_badge": "Notre Mission",
+    "mission_title": "Offrir un service complet, cohérent et responsable.",
+    "mission_text": "De la conception à la maintenance, nous accompagnons chaque projet avec un engagement sans faille en matière de qualité, sécurité, éthique et respect de l'environnement.",
+
+    "values_eyebrow": "Nos Valeurs",
+    "values_headline": "Les principes qui forgent notre identité",
+    "values": {
+      "excellence": { "name": "Excellence", "desc": "Une exigence de qualité à chaque étape de nos interventions." },
+      "integrity": { "name": "Intégrité", "desc": "Transparence et éthique dans toutes nos relations." },
+      "responsibility": { "name": "Responsabilité", "desc": "Engagement social et respect des communautés." },
+      "safety": { "name": "Sécurité", "desc": "Protection stricte des personnes et des biens." },
+      "sustainability": { "name": "Durabilité", "desc": "Solutions pensées pour les générations futures." },
+      "innovation": { "name": "Innovation", "desc": "Matériaux, méthodes et technologies d'avant-garde." }
+    },
+
+    "solidarity_eyebrow": "Engagement Solidaire",
+    "solidarity_headline": "Bâtir des édifices, soutenir des vies.",
+    "solidarity_text": "Au-delà de la construction et de l'ingénierie, 2HNOUR SARL s'investit concrètement auprès des populations locales : réhabilitation d'écoles, accès à l'eau potable, électrification d'orphelinats et insertion des jeunes talents camerounais.",
+    "solidarity_badge": "Impact Social & Communautaire"
+  },
+
+  "services_page": {
+    "meta_title": "Nos Services & Expertises — 2HNOUR SARL",
+    "meta_desc": "Bâtir, Équiper, Entretenir, Rénover, S'engager — Découvrez les 5 piliers d'expertise de 2HNOUR SARL.",
+    "hero_eyebrow": "Nos 5 Piliers d'Expertise",
+    "hero_title": "Un savoir-faire global, des solutions sur mesure.",
+    "hero_subtitle": "De la construction neuve à la maintenance préventive, en passant par la réhabilitation et l'aménagement, 2HNOUR SARL couvre l'intégralité du cycle de vie de vos infrastructures.",
+
+    "b2b_eyebrow": "B2B & Grands Comptes",
+    "b2b_headline": "Synergies BTP, Co-traitance & Partenariats Stratégiques",
+    "b2b_text": "2HNOUR SARL s'impose comme un partenaire de confiance pour les majors du BTP, les institutions publiques et les grands comptes. Nous intervenons en sous-traitance spécialisée ou en co-traitance en apportant nos compétences expertes.",
+
+    "cta_eyebrow": "Passons à l'action",
+    "cta_headline": "Votre projet mérite le meilleur. Parlons-en.",
+    "cta_text": "Notre direction technique vous recontacte sous 48h ouvrées pour analyser vos besoins, proposer une approche adaptée et établir un devis personnalisé.",
+    "cta_button": "Demander un devis gratuit"
+  },
+
+  "references_page": {
+    "meta_title": "Références — 2HNOUR SARL",
+    "meta_desc": "Portfolio de nos chantiers et clients institutionnels au Cameroun.",
+    "hero_eyebrow": "Références",
+    "hero_title": "Ils nous font confiance.",
+    "hero_subtitle": "Un aperçu des institutions et projets qui portent notre signature.",
+    "recent_headline": "Réalisations récentes"
+  },
+
+  "blog_page": {
+    "meta_title": "Blog & Actualités — 2HNOUR SARL",
+    "meta_desc": "Articles sur le BTP, les tendances de construction en Afrique centrale et l'actualité de 2HNOUR SARL.",
+    "hero_eyebrow": "Blog & Actualités",
+    "hero_title": "Insights, tendances et actualité BTP.",
+    "hero_subtitle": "Regards d'experts sur la construction et la maintenance en Afrique centrale."
+  },
+
+  "contact_page": {
+    "meta_title": "Contact — 2HNOUR SARL",
+    "meta_desc": "Contactez 2HNOUR SARL à Yaoundé. Demandez votre devis.",
+    "hero_eyebrow": "Contact",
+    "hero_title": "Parlons de votre projet.",
+    "hero_subtitle": "Nos équipes vous répondent sous 48 heures ouvrées.",
+
+    "form_headline": "Demander une étude",
+    "form_subtitle": "Décrivez votre projet, nous revenons vers vous rapidement.",
+    "field_name": "Nom complet",
+    "field_email": "Email",
+    "field_phone": "Téléphone",
+    "field_service": "Catégorie de service",
+    "field_service_placeholder": "Choisir un service",
+    "field_description": "Description du projet",
+    "field_description_placeholder": "Contexte, périmètre, échéances…",
+    "submit": "Envoyer ma demande",
+
+    "coords_headline": "Coordonnées",
+    "address_label": "Adresse",
+    "email_label": "Email",
+    "phone_label": "Téléphone",
+    "hours_label": "Horaires",
+    "hours_value": "Lun – Ven · 08h – 18h",
+
+    "partner_eyebrow": "Synergie & Croissance",
+    "partner_headline": "Devenir Partenaire 2HNOUR",
+    "partner_subtitle": "Développez des opportunités stratégiques et durables en rejoignant notre réseau d'excellence dans le BTP, la rénovation et la gestion de patrimoine.",
+
+    "advantages_title": "Avantages du Partenariat",
+    "advantages_subtitle": "Ce que nous apportons à nos partenaires et clients stratégiques :",
+    "adv_1": "<b>Accès privilégié aux grands projets</b> : Synergies sur les appels d'offres institutionnels et privés d'envergure.",
+    "adv_2": "<b>Partage d'expertise & Innovation</b> : Collaboration technique pour des standards d'exécution haut de gamme.",
+    "adv_3": "<b>Sécurité administrative & financière</b> : Garanties contractuelles rigoureuses et transparence budgétaire.",
+    "adv_4": "<b>Visibilité accrue</b> : Mise en valeur conjointe auprès de nos clients grands comptes et réseaux institutionnels.",
+
+    "requirements_title": "Engagements & Exigences",
+    "requirements_subtitle": "Les normes strictes et critères de déontologie auxquels 2HNOUR est soumise :",
+    "req_1": "<b>Conformité réglementaire stricte</b> : Respect rigoureux des normes BTP, environnementales et de sécurité au travail.",
+    "req_2": "<b>Charte Qualité & Délais</b> : Obligation de résultat et respect impératif des échéanciers validés.",
+    "req_3": "<b>Éthique & Transparence</b> : Politique de tolérance zéro en matière de corruption et gouvernance irréprochable.",
+    "req_4": "<b>Confidentialité</b> : Protection intégrale des données stratégiques et secrets industriels de nos projets communs.",
+
+    "partner_form_headline": "Soumettre une demande de partenariat",
+    "partner_form_subtitle": "Remplissez ce formulaire pour initier un échange avec notre direction du développement stratégique.",
+    "partner_field_company": "Nom de la structure / Entreprise",
+    "partner_field_contact": "Nom & Prénom du Contact",
+    "partner_field_email": "Email professionnel",
+    "partner_field_phone": "Téléphone / WhatsApp",
+    "partner_field_type": "Type de partenariat envisagé",
+    "partner_type_1": "Co-traitance / Sub-contracting BTP",
+    "partner_type_2": "Fournisseur de matériaux & équipements",
+    "partner_type_3": "Partenariat institutionnel ou financier",
+    "partner_type_4": "Prestataire de service spécialisé",
+    "partner_type_5": "Autre synergie stratégique",
+    "partner_field_proposal": "Présentation de la proposition",
+    "partner_field_proposal_placeholder": "Présentez brièvement vos compétences, vos objectifs et l'opportunité de partenariat...",
+    "partner_submit": "Envoyer la proposition de partenariat"
+  },
+
+  "solidarity_page": {
+    "meta_title": "Engagement Solidaire & Impact Humanitaire — 2HNOUR SARL",
+    "meta_desc": "Découvrez l'engagement citoyen de 2HNOUR SARL : chantiers solidaires, soutien à l'éducation, 3D hygiène et aide d'urgence au Cameroun.",
+    "hero_eyebrow": "Engagement Solidaire",
+    "hero_title": "Bâtir pour tous. Servir sans frontières.",
+    "hero_subtitle": "Au-delà de nos chantiers, 2HNOUR SARL est une entreprise de cœur — engagée pour les communautés vulnérables, l'éducation des jeunes et le développement durable du Cameroun.",
+    "stats_eyebrow": "Impact Mesurable",
+    "stats_headline": "Des chiffres qui témoignent de notre engagement.",
+    "stats": {
+      "buildings": "Édifices & Écoles Rénovés",
+      "children": "Enfants Équipés en Kits",
+      "water": "Familles avec Accès à l'Eau",
+      "relief": "Bénéficiaires d'Aide d'Urgence"
+    },
+    "projects_eyebrow": "Actions sur le Terrain",
+    "projects_headline": "Projets Solidaires en Cours d'Accompagnement",
+    "projects_subtitle": "Participez à nos côtés pour amplifier l'impact. 2HNOUR finance le pilotage, les équipes techniques et la logistique.",
+    "donate_eyebrow": "Rejoindre le Mouvement",
+    "donate_headline": "Faites partie de l'histoire.",
+    "donate_subtitle": "Chaque don, chaque partenariat et chaque bénévole amplifie notre impact auprès des communautés les plus vulnérables du Cameroun.",
+    "donate_button": "Faire un Don",
+    "volunteer_button": "Devenir Bénévole",
+    "partner_button": "Proposer un Partenariat"
+  },
+
+  "data": {
+    "services": {
+      "batir": {
+        "title": "Bâtir",
+        "short": "Construction de bâtiments administratifs, résidentiels, scolaires, de santé, industriels & logistiques aux plus hauts standards.",
+        "desc": "Réalisation d'ouvrages neufs avec rigueur, sécurité et performance — du gros-œuvre à la livraison clé-en-main."
+      },
+      "equiper": {
+        "title": "Équiper",
+        "short": "Travaux de finition, décoration sur-mesure, aménagements intérieurs & extérieurs pour des espaces fonctionnels et esthétiques.",
+        "desc": "Nous transformons les espaces bruts en environnements de prestige : finitions soignées, équipements techniques et aménagements paysagers."
+      },
+      "entretenir": {
+        "title": "Entretenir",
+        "short": "Gestion des installations intégrée : maintenance, nettoyage professionnel, 3D et entretien des espaces verts.",
+        "desc": "Pérennisation et continuité opérationnelle de vos actifs grâce à un service complet de maintenance, d'hygiène et de salubrité."
+      },
+      "renover": {
+        "title": "Rénover",
+        "short": "Réhabilitation complète, réfection de façades, renforcement de structures et modernisation des installations existantes.",
+        "desc": "Redonner vie aux ouvrages existants et optimiser leur valeur patrimoniale en améliorant leur fonctionnalité et leur durabilité."
+      },
+      "sengager": {
+        "title": "S'engager",
+        "short": "Conseil stratégique, gestion durable du patrimoine, RSE et partenariats B2B pour un développement responsable.",
+        "desc": "Au-delà des chantiers, nous nous engageons à vos côtés : diagnostic, optimisation des actifs, éthique RSE et co-traitance."
+      }
+    },
+    "references": {
+      "pm": { "name": "Premier Ministère de la République du Cameroun", "mission": "Entretien et nettoyage des bâtiments administratifs." },
+      "minrex": { "name": "Ministère des Relations Extérieures (MINREX)", "mission": "Maintenance et entretien des espaces institutionnels." },
+      "sic": { "name": "Société Immobilière du Cameroun (SIC)", "mission": "Préservation et valorisation du patrimoine bâti." }
+    },
+    "posts": {
+      "materiaux-durables": {
+        "title": "Matériaux durables : bâtir pour le siècle à venir",
+        "excerpt": "Comment les matériaux locaux et innovants transforment la construction en Afrique centrale.",
+        "date": "12 Mars 2025"
+      },
+      "maintenance-preventive": {
+        "title": "Maintenance préventive : le levier caché de la performance",
+        "excerpt": "Une stratégie planifiée qui préserve la valeur des infrastructures publiques.",
+        "date": "28 Février 2025"
+      },
+      "espaces-verts-institutionnels": {
+        "title": "Espaces verts institutionnels : un patrimoine à cultiver",
+        "excerpt": "L'aménagement paysager comme signature d'excellence pour les bâtiments d'État.",
+        "date": "10 Février 2025"
+      }
+    },
+    "projects_refs": {
+      "admin": { "title": "Rénovation d'un bâtiment administratif", "client": "Premier Ministère" },
+      "espaces": { "title": "Entretien technique des espaces", "client": "MINREX" },
+      "patrimoine": { "title": "Préservation du patrimoine bâti", "client": "SIC" },
+      "paysager": { "title": "Aménagement paysager institutionnel", "client": "Institution publique" },
+      "finitions": { "title": "Finitions haut de gamme", "client": "Résidence privée" },
+      "maintenance": { "title": "Maintenance multi-sites", "client": "Administration" }
+    }
+  }
+}

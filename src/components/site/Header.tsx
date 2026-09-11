@@ -10,19 +10,21 @@ import {
   Heart,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { LOGO_IMAGE } from "@/components/site/data";
 
-const links = [
-  { to: "/", label: "Accueil" },
-  { to: "/services", label: "Services" },
-  { to: "/references", label: "Références" },
-] as const;
-
 export function Header() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const links = [
+    { to: "/" as const, label: t("nav.home") },
+    { to: "/services" as const, label: t("nav.services") },
+    { to: "/references" as const, label: t("nav.references") },
+  ];
 
   const companyDropdownRef = useRef<HTMLDivElement>(null);
   const contactDropdownRef = useRef<HTMLDivElement>(null);
@@ -132,7 +134,7 @@ export function Header() {
                   : "text-white hover:text-gold"
               }`}
             >
-              <span>L'Entreprise</span>
+              <span>{t("nav.company")}</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${
                   companyDropdownOpen
@@ -156,9 +158,9 @@ export function Header() {
                     <Info className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold">À Propos</div>
+                    <div className="text-sm font-semibold">{t("nav.about")}</div>
                     <p className="text-xs text-muted-foreground">
-                      Notre histoire, vision et valeurs
+                      {t("about.hero_subtitle").slice(0, 45)}…
                     </p>
                   </div>
                 </Link>
@@ -174,10 +176,10 @@ export function Header() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold">
-                      Blog & Actualités
+                      {t("nav.blog")}
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Dernières actus et publications
+                      {t("news_section.headline")}
                     </p>
                   </div>
                 </Link>
@@ -205,7 +207,7 @@ export function Header() {
                   : "text-gold"
               }`}
             />
-            <span>Engagement Solidaire</span>
+            <span>{t("nav.solidarity")}</span>
           </Link>
 
           {/* MENU DÉROULANT CONTACT */}
@@ -223,7 +225,7 @@ export function Header() {
                   : "text-white hover:text-gold"
               }`}
             >
-              <span>Contact</span>
+              <span>{t("nav.contact")}</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${
                   contactDropdownOpen
@@ -248,9 +250,9 @@ export function Header() {
                     <Mail className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold">Contactez-nous</div>
+                    <div className="text-sm font-semibold">{t("nav.contact")}</div>
                     <p className="text-xs text-muted-foreground">
-                      Posez vos questions & devis
+                      {t("contact_page.hero_subtitle")}
                     </p>
                   </div>
                 </Link>
@@ -266,10 +268,10 @@ export function Header() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold">
-                      Devenir partenaire
+                      {t("nav.partner")}
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Synergies & opportunités BTP
+                      {t("contact_page.partner_eyebrow")}
                     </p>
                   </div>
                 </Link>
@@ -284,7 +286,7 @@ export function Header() {
             hash="contact-form"
             className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-obsidian shadow-[0_10px_30px_-10px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.7)] whitespace-nowrap md:inline-flex"
           >
-            Demander un Devis
+            {t("nav.getQuote")}
           </Link>
           <button
             className="lg:hidden"
@@ -315,7 +317,7 @@ export function Header() {
             {/* Mobile L'Entreprise Links */}
             <div className="my-1 border-t border-border/60 pt-2">
               <p className="px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                L'Entreprise
+                {t("nav.company")}
               </p>
               <Link
                 to="/a-propos"
@@ -324,7 +326,7 @@ export function Header() {
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Info className="h-4 w-4 text-gold" />
-                <span>À Propos</span>
+                <span>{t("nav.about")}</span>
               </Link>
               <Link
                 to="/blog"
@@ -333,7 +335,7 @@ export function Header() {
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Newspaper className="h-4 w-4 text-gold" />
-                <span>Blog & Actualités</span>
+                <span>{t("nav.blog")}</span>
               </Link>
             </div>
 
@@ -351,13 +353,13 @@ export function Header() {
                     : "text-gold"
                 }`}
               />
-              <span>Engagement Solidaire</span>
+              <span>{t("nav.solidarity")}</span>
             </Link>
 
             {/* Mobile Contact & Partenaire Links */}
             <div className="my-1 border-t border-border/60 pt-2">
               <p className="px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Contact & Partenariat
+                {t("nav.contact")} & {t("nav.partner")}
               </p>
               <Link
                 to="/contact"
@@ -367,7 +369,7 @@ export function Header() {
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Mail className="h-4 w-4 text-gold" />
-                <span>Contactez-nous</span>
+                <span>{t("nav.contact")}</span>
               </Link>
               <Link
                 to="/contact"
@@ -376,7 +378,7 @@ export function Header() {
                 className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
               >
                 <Handshake className="h-4 w-4 text-gold" />
-                <span>Devenir partenaire</span>
+                <span>{t("nav.partner")}</span>
               </Link>
             </div>
 
@@ -386,7 +388,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-gold px-5 py-2.5 text-center text-sm font-semibold text-obsidian"
             >
-              Demander un Devis
+              {t("nav.getQuote")}
             </Link>
           </div>
         </div>

@@ -14,7 +14,7 @@ La page se déploie en 5 grandes sections :
 1. **Hero Section** (Bannière d'impact & Positionnement de marque)
 2. **Barre de Navigation Interne (Sticky Anchor Bar)** (Accès rapide aux 8 expertises)
 3. **Pôle 1 : Construction, Rénovation & Aménagement** (Services 1, 2, 7)
-4. **Pôle 2 : Facility Management, Hygiène & Espaces Verts** (Services 3, 4, 5, 6, 8)
+4. **Pôle 2 : gestion des installations, Hygiène & Espaces Verts** (Services 3, 4, 5, 6, 8)
 5. **Section Transversale : Partenariats & Co-traitance** (Synergies BTP & Grands Comptes)
 6. **Call to Action (CTA) & Prise de Contact**
 
@@ -24,7 +24,7 @@ La page se déploie en 5 grandes sections :
 
 ### A. Hero Section (En-tête de page)
 * **Titre principal (H1) :** "Bâtir, Sublimer et Pérenniser Vos Infrastructures d'Exception"
-* **Sous-titre / Slogan :** "L'alliance du savoir-faire BTP, du Facility Management rigoureux et de l'aménagement de prestige."
+* **Sous-titre / Slogan :** "L'alliance du savoir-faire BTP, de la gestion des installations rigoureuse et de l'aménagement de prestige."
 * **Arrière-plan :** Image de fond panoramique haute définition (salle de conférence ou hall exécutif en marbre/laiton) avec un overlay sombre et une micro-animation de zoom lent (*Ken Burns effect*).
 
 ### B. Sticky Anchor Bar (Navigation Rapide)

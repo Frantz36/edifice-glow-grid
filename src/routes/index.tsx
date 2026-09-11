@@ -9,6 +9,7 @@ import {
   Award,
   Users,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { SiteLayout } from "@/components/site/Layout";
 import {
   SERVICES,
@@ -66,25 +67,22 @@ const CountUp = ({ value }: { value: string }) => {
   );
 };
 
-const stats = [
-  {
-    number: "16+",
-    label: "Années d'expérience",
-    icon: Award,
-  },
-  {
-    number: "120+",
-    label: "Projets livrés",
-    icon: Briefcase,
-  },
-  {
-    number: "80+",
-    label: "Collaborateurs dédiés",
-    icon: Users,
-  },
-];
-
 function Index() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { number: "16+", label: t("references_section.stats.experience"), icon: Award },
+    { number: "120+", label: t("references_section.stats.projects"), icon: Briefcase },
+    { number: "80+", label: t("references_section.stats.staff"), icon: Users },
+  ];
+
+  const heroStats: [string, string][] = [
+    ["15+", t("hero.stats.experience")],
+    ["120+", t("hero.stats.projects")],
+    ["80+", t("hero.stats.staff")],
+    ["100%", t("hero.stats.quality")],
+  ];
+
   const ceoRef = useRef<HTMLElement>(null);
   const [ceoParallax, setCeoParallax] = useState(0);
 
@@ -132,35 +130,32 @@ function Index() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-32 pb-24 md:pt-44 md:pb-36 lg:grid-cols-[1.3fr_1fr] lg:items-center">
           <div>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.25em] text-gold backdrop-blur-sm">
-              BTP · Maintenance · Patrimoine
+              {t("hero.badge")}
             </p>
             <h1 className="font-display text-3xl font-bold leading-[1.18] text-white sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] drop-shadow-lg">
-              Bâtir avec rigueur, équiper avec exigence, entretenir avec passion, <span className="text-gradient-gold">rénover avec excellence</span> et s'engager avec le cœur.
+              {t("hero.headline", { interpolation: { escapeValue: false } }).split("<gold>")[0]}
+              <span className="text-gradient-gold">{t("hero.headline").split("<gold>")[1]?.split("</gold>")[0]}</span>
+              {t("hero.headline").split("</gold>")[1]}
             </h1>
             <p className="mt-8 max-w-xl text-lg text-white/95 leading-relaxed drop-shadow">
-              Nous sommes l'une des pièces maîtresse de vos projets, l'alliance parfaite de l'expertise BTP, du matos de pointe et de l'engagement humain au service de vos investissements.
+              {t("hero.subtitle")}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sl font-semibold text-obsidian shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5"
               >
-                Découvrir nos services <ArrowRight className="h-4 w-4" />
+                {t("nav.discoverServices")} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
           <div className="hidden lg:flex lg:items-center lg:justify-center">
             <div className="relative w-full max-w-lg rounded-3xl border border-gold/25 bg-white/5 p-8 backdrop-blur-xl md:p-10">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 text-xs font-bold uppercase tracking-widest text-obsidian shadow-md">
-                Depuis 2010
+                {t("hero.since")}
               </div>
               <div className="grid grid-cols-2 gap-8 pt-4">
-                {[
-                  ["15+", "Années d'expérience"],
-                  ["120+", "Projets livrés"],
-                  ["80+", "Collaborateurs"],
-                  ["100%", "Engagement qualité"],
-                ].map(([n, l]) => (
+                {heroStats.map(([n, l]) => (
                   <div key={l} className="text-center">
                     <div className="font-display text-4xl font-bold text-gold md:text-5xl lg:text-6xl">
                       {n}
@@ -180,10 +175,11 @@ function Index() {
       <section ref={ceoRef} className="relative overflow-hidden py-24 bg-background text-obsidian">
         {/* PARALLAX BACKGROUND */}
         <div
-          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          className="absolute -top-[20%] -bottom-[20%] left-0 right-0 pointer-events-none will-change-transform"
           style={{
-            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
-            backgroundSize: "100% auto",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('/pics/marbre-clair-or.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             transform: `translate3d(0, ${ceoParallax}px, 0)`,
           }}
         />
@@ -199,7 +195,7 @@ function Index() {
               />
               <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-obsidian/85 backdrop-blur-md p-4 border border-gold/30 shadow-xl">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian">
-                  Directrice Générale
+                  {t("ceo.jobTitle")}
                 </div>
                 <p className="mt-1 font-display text-lg font-bold text-white">
                   Mme Virginie Hanna FADIMATOU
@@ -209,10 +205,10 @@ function Index() {
           </div>
           <div>
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Message de la Direction
+              {t("ceo.eyebrow")}
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">
-              Une vision. Un héritage. Un engagement.
+              {t("ceo.headline")}
             </h2>
             <div className="relative mt-8 overflow-hidden rounded-2xl bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-8 text-obsidian shadow-2xl md:p-10">
               {/* Reflet ambré chaud */}
@@ -221,17 +217,7 @@ function Index() {
               <div className="relative">
                 <Quote className="h-10 w-10 text-obsidian/80" />
                 <p className="mt-4 text-lg font-medium leading-relaxed text-obsidian">
-                  Chez 2HNOUR SARL, nous sommes
-                  profondément convaincus que chaque infrastructure
-                  représente bien plus qu'un simple assemblage
-                  de matériaux:
-                  ELLE INCARNE UNE VISION,
-                  PORTE UNE AMBITION ET OUVRE LA VOIE
-                  AU DÉVELOPPEMENT DURABLE.
-                  Construire est une responsabilité.
-                  Préserver et transmettre en est notre engagement.
-                  C'est ainsi que nous bâtissons, aujourd'hui,
-                  l'héritage de demain.
+                  {t("ceo.quote")}
                 </p>
                 <div className="mt-6 flex items-center gap-3 border-t border-obsidian/20 pt-6">
                   <div className="h-px flex-1 bg-gradient-to-r from-obsidian/60 to-transparent" />
@@ -254,17 +240,17 @@ function Index() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
               <span className="inline-flex items-center rounded-full border border-gold/30 bg-obsidian px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-md">
-                Nos Expertises
+                {t("services_section.eyebrow")}
               </span>
               <h2 className="mt-4 font-display text-3xl font-extrabold text-obsidian md:text-5xl">
-                Cinq piliers, un savoir-faire intégré.
+                {t("services_section.headline")}
               </h2>
             </div>
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-sm font-bold text-obsidian transition-colors hover:text-obsidian/80"
             >
-              Explorer tous les services <ArrowUpRight className="h-4 w-4" />
+              {t("nav.exploreAllServices")} <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
@@ -273,6 +259,7 @@ function Index() {
               <Link
                 key={s.slug}
                 to="/services"
+                hash={s.slug}
                 className="group relative block overflow-hidden rounded-2xl border border-gold/30 bg-obsidian p-6 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
               >
                 <div className="mb-6 grid h-12 w-12 place-items-center rounded-xl border border-gold/40 bg-gold/10 text-gold transition-all duration-300 group-hover:border-transparent group-hover:bg-obsidian group-hover:text-gold group-hover:shadow-md">
@@ -293,9 +280,9 @@ function Index() {
         </div>
       </section>
 
-      {/* REFERENCES */}
-      <section className="bg-background py-24">
-        <div className="mx-auto max-w-7xl px-6 pb-12">
+      {/* REFERENCES & CHIFFRES CLÉS */}
+      <section className="bg-background pt-24 pb-0">
+        <div className="mx-auto max-w-7xl px-6 pb-16">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Références Institutionnelles
@@ -332,17 +319,17 @@ function Index() {
           </div>
         </div>
 
-        <div className="relative mt-16 w-full overflow-hidden bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] py-16 text-obsidian shadow-2xl md:py-20">
+        <div className="relative w-full overflow-hidden bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] py-16 text-obsidian shadow-2xl md:py-20">
           {/* Reflet ambré chaud équilibré au centre */}
           <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/3 bg-gradient-to-r from-transparent via-[#ffe89c]/40 to-transparent" />
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <span className="inline-flex items-center rounded-full border border-gold/30 bg-obsidian px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-md">
-                Chiffres Clés
+                {t("references_section.keyFigures")}
               </span>
               <h3 className="mt-3 font-display text-2xl font-extrabold text-obsidian md:text-4xl">
-                Un engagement mesurable au service de l'excellence.
+                {t("references_section.keyFiguresHeadline")}
               </h3>
             </div>
 
@@ -377,10 +364,11 @@ function Index() {
       <section ref={newsRef} className="relative overflow-hidden bg-background text-obsidian">
         {/* PARALLAX BACKGROUND */}
         <div
-          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          className="absolute -top-[20%] -bottom-[20%] left-0 right-0 pointer-events-none will-change-transform"
           style={{
-            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
-            backgroundSize: "100% auto",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('/pics/marbre-clair-or.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             transform: `translate3d(0, ${newsParallax}px, 0)`,
           }}
         />
@@ -391,17 +379,17 @@ function Index() {
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-                  Actualités
+                  {t("news_section.eyebrow")}
                 </span>
                 <h2 className="mt-4 font-display text-3xl font-bold md:text-5xl">
-                  Dernières publications.
+                  {t("news_section.headline")}
                 </h2>
               </div>
               <Link
                 to="/blog"
                 className="inline-flex items-center gap-2 text-sm font-semibold hover:text-gold"
               >
-                Tous les articles <ArrowUpRight className="h-4 w-4" />
+                {t("nav.allArticles")} <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
 
@@ -439,19 +427,19 @@ function Index() {
         </div>
 
         {/* PARTNERS */}
-        <div className="relative bg-background py-20 pb-30 overflow-hidden">
+        <div className="relative bg-[#faf6ec] py-20 pb-30 overflow-hidden border-y border-gold/20 shadow-inner">
           <div className="mx-auto max-w-7xl px-6 text-center">
-            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Nos Partenaires
+            <span className="inline-flex items-center rounded-full border border-gold/40 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
+              {t("partners_section.eyebrow")}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold md:text-5xl">
-              Ils nous font confiance
+            <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">
+              {t("partners_section.headline")}
             </h2>
           </div>
 
           <div className="relative mt-14 w-full overflow-hidden">
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-r from-[#faf6ec] to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 bg-gradient-to-l from-[#faf6ec] to-transparent" />
 
             <div className="animate-marquee flex items-center gap-28">
               {[...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, idx) => (
@@ -482,20 +470,19 @@ function Index() {
 
               <div className="relative max-w-2xl">
                 <span className="inline-flex items-center rounded-full border border-gold/30 bg-obsidian px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-md">
-                  Parlons de votre projet
+                  {t("cta_section.eyebrow")}
                 </span>
                 <h2 className="mt-4 font-display text-3xl font-extrabold text-obsidian md:text-5xl">
-                  Un projet de construction, réhabilitation ou maintenance ?
+                  {t("cta_section.headline")}
                 </h2>
                 <p className="mt-4 text-lg font-medium text-obsidian/90">
-                  Nos équipes vous accompagnent, de l'étude initiale à la
-                  livraison, avec exigence et transparence.
+                  {t("cta_section.subtitle")}
                 </p>
                 <Link
                   to="/contact"
                   className="mt-8 inline-flex items-center gap-2 rounded-full bg-obsidian px-6 py-3.5 text-sm font-bold text-gold shadow-xl transition-all hover:-translate-y-0.5 hover:bg-gold hover:text-obsidian"
                 >
-                  Obtenir une étude de votre projet <ArrowRight className="h-4 w-4" />
+                  {t("nav.getStudy")} <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>

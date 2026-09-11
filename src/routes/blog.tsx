@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
 import { POSTS } from "@/components/site/data";
 
@@ -19,12 +20,13 @@ export const Route = createFileRoute("/blog")({
 });
 
 function BlogPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Blog & Actualités"
-        title="Insights, tendances et actualité BTP."
-        subtitle="Regards d'experts sur la construction et la maintenance en Afrique centrale."
+        eyebrow={t("blog_page.hero_eyebrow")}
+        title={t("blog_page.hero_title")}
+        subtitle={t("blog_page.hero_subtitle")}
         image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="bg-background py-24">
