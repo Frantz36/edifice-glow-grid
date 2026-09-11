@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
 import { REFERENCES } from "@/components/site/data";
 
@@ -22,17 +23,17 @@ const PROJECTS = [
   {
     title: "Rénovation d'un bâtiment administratif",
     client: "Premier Ministère",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/pm.webp",
   },
   {
     title: "Entretien technique des espaces",
     client: "MINREX",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/minrex.jpeg",
   },
   {
     title: "Préservation du patrimoine bâti",
     client: "SIC",
-    image: "https://images.unsplash.com/photo-1464082354059-27db6ce50048?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/sic.jpeg",
   },
   {
     title: "Aménagement paysager institutionnel",
@@ -47,17 +48,18 @@ const PROJECTS = [
   {
     title: "Maintenance multi-sites",
     client: "Administration",
-    image: "https://images.unsplash.com/photo-1581092918484-8313ea4e1c7d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 function ReferencesPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Références"
-        title="Ils nous font confiance."
-        subtitle="Un aperçu des institutions et projets qui portent notre signature."
+        eyebrow={t("references_page.hero_eyebrow")}
+        title={t("references_page.hero_title")}
+        subtitle={t("references_page.hero_subtitle")}
         image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
       />
 

@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
   {
     slug: "entretenir",
     title: "Entretenir",
-    short: "Facility Management intégré : maintenance, nettoyage professionnel, 3D et entretien des espaces verts.",
+    short: "Gestion des installations intégrée : maintenance, nettoyage professionnel, 3D et entretien des espaces verts.",
     desc: "Pérennisation et continuité opérationnelle de vos actifs grâce à un service complet de maintenance, d'hygiène et de salubrité.",
     icon: Wrench,
     image:
@@ -68,20 +68,17 @@ export const REFERENCES = [
   {
     name: "Premier Ministère de la République du Cameroun",
     mission: "Entretien et nettoyage des bâtiments administratifs.",
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/pm.webp",
   },
   {
     name: "Ministère des Relations Extérieures (MINREX)",
     mission: "Maintenance et entretien des espaces institutionnels.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/minrex.jpeg",
   },
   {
     name: "Société Immobilière du Cameroun (SIC)",
     mission: "Préservation et valorisation du patrimoine bâti.",
-    image:
-      "https://images.unsplash.com/photo-1464082354059-27db6ce50048?auto=format&fit=crop&w=1200&q=80",
+    image: "/pics/sic.jpeg",
   },
 ];
 
@@ -127,9 +124,20 @@ export const LOGO_IMAGE = "/pics/logo 2HNOUR.png";
 export const PARTNERS = [
   { name: "Hôtel Hilton", image: "/partners/hilton.png" },
   { name: "CAMI TOYOTA", image: "/partners/cami.png" },
-  { name: "Hôtel Mont-Febe", image: "/partners/hotel-mont-febe.jpeg" },
-  { name: "MINREX", image: "/partners/minrex.jpg" },
-  { name: "SIC", image: "/partners/sic.jpg" },
-  { name: "SNH", image: "/partners/snh.jpg" },
-  { name: "CNPS", image: "/partners/cnps.jpeg" },
+  { name: "Hôtel Mont-Febe", image: "/partners/hotel-mont-febe.png" },
+  { name: "MINREX", image: "/partners/minrex.png" },
+  { name: "SIC", image: "/partners/sic.png" },
+  { name: "SNH", image: "/partners/snh.png" },
+  { name: "CNPS", image: "/partners/cnps.png" },
 ];
+
+export const COMPANY_INFO = {
+  email: "2hnourets@gmail.com",
+  phones: [
+    { display: "+237 6 86 76 89 69", raw: "+237686768969" },
+    { display: "+237 6 70 57 91 39", raw: "+237670579139" },
+    { display: "+237 6 57 87 44 48", raw: "+237657874448" },
+  ],
+  address: "Rue Ceper, Yaoundé, Cameroun",
+  plusCode: "VGFC+VMW",
+};

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 import {
   Heart,
@@ -173,6 +174,7 @@ const PROJETS_SOLIDAIRES = [
 ];
 
 function HumanitarianPage() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<"don" | "materiel" | "demande">("don");
   const [selectedProject, setSelectedProject] = useState<string>("Tous les projets solidaires");
 
@@ -296,10 +298,11 @@ function HumanitarianPage() {
       <section ref={terrainRef} className="relative overflow-hidden bg-background py-24 text-obsidian" id="projets-solidaires">
         {/* PARALLAX BACKGROUND MARBRÉ */}
         <div
-          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          className="absolute -top-[20%] -bottom-[20%] left-0 right-0 pointer-events-none will-change-transform"
           style={{
-            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
-            backgroundSize: "100% auto",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('/pics/marbre-clair-or.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             transform: `translate3d(0, ${terrainParallax}px, 0)`,
           }}
         />

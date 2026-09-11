@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
-import { SERVICES } from "@/components/site/data";
+import { SERVICES, COMPANY_INFO } from "@/components/site/data";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contactez 2HNOUR SARL à Yaoundé : Rue Ceper, contact@2hnour.cm. Demandez votre devis.",
+          `Contactez 2HNOUR SARL à Yaoundé : ${COMPANY_INFO.address}, ${COMPANY_INFO.email}. Demandez votre devis.`,
       },
       { property: "og:title", content: "Contact — 2HNOUR SARL" },
       { property: "og:description", content: "Nous contacter à Yaoundé, Cameroun." },
@@ -20,12 +21,13 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contact"
-        title="Parlons de votre projet."
-        subtitle="Nos équipes vous répondent sous 48 heures ouvrées."
+        eyebrow={t("contact_page.hero_eyebrow")}
+        title={t("contact_page.hero_title")}
+        subtitle={t("contact_page.hero_subtitle")}
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
       />
 
@@ -36,23 +38,20 @@ function ContactPage() {
             onSubmit={(e) => e.preventDefault()}
             className="rounded-3xl border border-border bg-white p-8 md:p-10"
           >
-            <h2 className="font-display text-2xl font-bold md:text-3xl">
-              Demander une étude
+            <h2 className="font-display text-2xl font-bold md:text-3xl">{t("contact_page.form_headline")}
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Décrivez votre projet, nous revenons vers vous rapidement.
+            <p className="mt-2 text-sm text-muted-foreground">{t("contact_page.form_subtitle")}
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              <Field label="Nom complet" name="name" />
-              <Field label="Email" name="email" type="email" />
-              <Field label="Téléphone" name="phone" />
+              <Field label={t("contact_page.field_name")} name="name" />
+              <Field label={t("contact_page.field_email")} name="email" type="email" />
+              <Field label={t("contact_page.field_phone")} name="phone" />
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Catégorie de service
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">{t("contact_page.field_service")}
                 </label>
                 <select className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm focus:border-gold focus:outline-none">
-                  <option>Choisir un service</option>
+                  <option>{t("contact_page.field_service_placeholder")}</option>
                   {SERVICES.map((s) => (
                     <option key={s.slug}>{s.title}</option>
                   ))}
@@ -67,52 +66,66 @@ function ContactPage() {
               <textarea
                 rows={5}
                 className="w-full rounded-lg border border-border bg-white px-3 py-2 text-sm focus:border-gold focus:outline-none"
-                placeholder="Contexte, périmètre, échéances…"
+                placeholder={t("contact_page.field_description_placeholder")}
               />
             </div>
 
             <button
               type="submit"
               className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-obsidian shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 sm:w-auto"
-            >
-              Envoyer ma demande
+            >{t("contact_page.submit")}
             </button>
           </form>
 
           <div className="space-y-6">
             <div className="rounded-3xl bg-obsidian-marble p-8 text-white">
-              <h3 className="font-display text-xl font-bold">Coordonnées</h3>
+              <h3 className="font-display text-xl font-bold">{t("contact_page.coords_headline")}</h3>
               <ul className="mt-6 space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <div>
-                    <p className="font-semibold text-white">Adresse</p>
+                    <p className="font-semibold text-white">{t("contact_page.address_label")}</p>
                     <p className="text-white/70">
-                      Rue Ceper, Yaoundé, Cameroun
+                      {COMPANY_INFO.address}
                       <br />
-                      Plus Code : VGFC+VMW
+                      Plus Code : {COMPANY_INFO.plusCode}
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <div>
-                    <p className="font-semibold text-white">Email</p>
-                    <p className="text-white/70">contact@2hnour.cm</p>
+                    <p className="font-semibold text-white">{t("contact_page.email_label")}</p>
+                    <a
+                      href={`mailto:${COMPANY_INFO.email}`}
+                      className="text-white/70 hover:text-gold transition-colors"
+                    >
+                      {COMPANY_INFO.email}
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <div>
-                    <p className="font-semibold text-white">Téléphone</p>
-                    <p className="text-white/70">+237 6 00 00 00 00</p>
+                    <p className="font-semibold text-white">{t("contact_page.phone_label")}</p>
+                    <div className="flex flex-col gap-1 text-white/70">
+                      {COMPANY_INFO.phones.map((phone) => (
+                        <a
+                          key={phone.raw}
+                          href={`tel:${phone.raw}`}
+                          className="hover:text-gold transition-colors"
+                        >
+                          {phone.display}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                   <div>
-                    <p className="font-semibold text-white">Horaires</p>
-                    <p className="text-white/70">Lun – Ven · 08h – 18h</p>
+                    <p className="font-semibold text-white">{t("contact_page.hours_label")}</p>
+                    <p className="text-white/70">{t("contact_page.hours_value")}</p>
                   </div>
                 </li>
               </ul>
@@ -137,11 +150,9 @@ function ContactPage() {
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
               Synergie & Croissance
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
-              Devenir Partenaire 2HNOUR
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">{t("contact_page.partner_headline")}
             </h2>
-            <p className="mt-4 text-base text-muted-foreground">
-              Développez des opportunités stratégiques et durables en rejoignant notre réseau d'excellence dans le BTP, la rénovation et la gestion de patrimoine.
+            <p className="mt-4 text-base text-muted-foreground">{t("contact_page.partner_subtitle")}
             </p>
           </div>
 
@@ -233,11 +244,9 @@ function ContactPage() {
           {/* FORMULAIRE DE DEMANDE DE PARTENARIAT (BLANC CASSÉ) */}
           <div className="mt-12 rounded-3xl border border-border bg-white p-8 md:p-12 shadow-sm">
             <div className="max-w-2xl">
-              <h3 className="font-display text-2xl font-bold text-slate-ink md:text-3xl">
-                Soumettre une demande de partenariat
+              <h3 className="font-display text-2xl font-bold text-slate-ink md:text-3xl">{t("contact_page.partner_form_headline")}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Remplissez ce formulaire pour initier un échange avec notre direction du développement stratégique.
+              <p className="mt-2 text-sm text-muted-foreground">{t("contact_page.partner_form_subtitle")}
               </p>
             </div>
 
@@ -308,8 +317,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:bg-gold/90 hover:-translate-y-0.5 sm:w-auto"
-                >
-                  Envoyer la proposition de partenariat
+                >{t("contact_page.partner_submit")}
                 </button>
               </div>
             </form>

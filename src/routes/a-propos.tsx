@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Award, Shield, Leaf, HandHeart, Sparkles, Scale, Quote, ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/Layout";
@@ -33,6 +34,7 @@ const VALUES = [
 ];
 
 function About() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const [parallax, setParallax] = useState(0);
 
@@ -69,9 +71,9 @@ function About() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Qui sommes-nous"
-        title="Une signature d'excellence pour le BTP camerounais."
-        subtitle="Depuis notre création, 2HNOUR SARL accompagne institutions publiques et acteurs privés dans la construction, la réhabilitation et la préservation de leur patrimoine bâti."
+        eyebrow={t("about.hero_eyebrow")}
+        title={t("about.hero_title")}
+        subtitle={t("about.hero_subtitle")}
         image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
       />
 
@@ -79,21 +81,20 @@ function About() {
       <section ref={sectionRef} className="relative overflow-hidden py-24 bg-background text-obsidian">
         {/* PARALLAX BACKGROUND MARBRÉ */}
         <div
-          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          className="absolute -top-[20%] -bottom-[20%] left-0 right-0 pointer-events-none will-change-transform"
           style={{
-            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
-            backgroundSize: "100% auto",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('/pics/marbre-clair-or.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             transform: `translate3d(0, ${parallax}px, 0)`,
           }}
         />
 
         <div className="relative mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Notre Histoire
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">{t("about.history_eyebrow")}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">
-              Bâtir avec conviction. Servir avec constance.
+            <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">{t("about.history_headline")}
             </h2>
             
             <div className="relative mt-8 overflow-hidden rounded-2xl bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-8 text-obsidian shadow-2xl md:p-10">
@@ -139,7 +140,7 @@ function About() {
               />
               <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-obsidian/85 backdrop-blur-md p-4 border border-gold/30 shadow-xl">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian">
-                  Directrice Générale
+                  {t("ceo.jobTitle")}
                 </div>
                 <p className="mt-1 font-display text-lg font-bold text-white">
                   Mme Virginie Hanna FADIMATOU
@@ -158,42 +159,29 @@ function About() {
         <div className="relative mx-auto max-w-7xl px-6">
           {/* HEADER DE LA SECTION */}
           <div className="mb-12 max-w-3xl">
-            <span className="inline-flex items-center rounded-full border border-gold/30 bg-obsidian px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-md">
-              Vision & Ambition
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-obsidian px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold shadow-md">{t("about.vision_eyebrow")}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold text-obsidian md:text-5xl">
-              Construire l'avenir avec clarté et détermination.
+            <h2 className="mt-4 font-display text-3xl font-extrabold text-obsidian md:text-5xl">{t("about.vision_headline")}
             </h2>
-            <p className="mt-4 text-base font-medium text-obsidian/90 leading-relaxed max-w-2xl">
-              Notre vision et notre mission guident chacune de nos décisions et chacun de nos chantiers pour ériger des infrastructures modernes, durables et à fort impact pour le Cameroun.
+            <p className="mt-4 text-base font-medium text-obsidian/90 leading-relaxed max-w-2xl">{t("about.vision_lead")}
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-3xl border border-gold/30 bg-obsidian p-10 shadow-2xl">
-              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md">
-                Notre Vision
+              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md">{t("about.vision_badge")}
               </span>
-              <h3 className="mt-4 font-display text-3xl font-bold text-gold">
-                Devenir la référence du BTP intégré en Afrique centrale.
+              <h3 className="mt-4 font-display text-3xl font-bold text-gold">{t("about.vision_title")}
               </h3>
-              <p className="mt-6 text-gold/85 leading-relaxed font-normal">
-                Nous ambitionnons de porter les standards les plus élevés de
-                construction, de maintenance et de gestion patrimoniale, en
-                cultivant la fierté d'un travail bien fait et transmis.
+              <p className="mt-6 text-gold/85 leading-relaxed font-normal">{t("about.vision_text")}
               </p>
             </div>
             <div className="rounded-3xl border border-gold/30 bg-obsidian p-10 shadow-2xl">
-              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md">
-                Notre Mission
+              <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md">{t("about.mission_badge")}
               </span>
-              <h3 className="mt-4 font-display text-3xl font-bold text-gold">
-                Offrir un service complet, cohérent et responsable.
+              <h3 className="mt-4 font-display text-3xl font-bold text-gold">{t("about.mission_title")}
               </h3>
-              <p className="mt-6 text-gold/85 leading-relaxed font-normal">
-                De la conception à la maintenance, nous accompagnons chaque
-                projet avec un engagement sans faille en matière de qualité,
-                sécurité, éthique et respect de l'environnement.
+              <p className="mt-6 text-gold/85 leading-relaxed font-normal">{t("about.mission_text")}
               </p>
             </div>
           </div>
@@ -204,11 +192,9 @@ function About() {
       <section className="bg-background py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Nos Valeurs
+            <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">{t("about.values_eyebrow")}
             </span>
-            <h3 className="mt-4 font-display text-2xl font-bold md:text-4xl text-obsidian">
-              Les principes qui forgent notre identité
+            <h3 className="mt-4 font-display text-2xl font-bold md:text-4xl text-obsidian">{t("about.values_headline")}
             </h3>
           </div>
 
@@ -241,10 +227,11 @@ function About() {
       <section ref={engagementRef} className="relative overflow-hidden py-24 bg-background text-obsidian">
         {/* PARALLAX BACKGROUND MARBRÉ */}
         <div
-          className="absolute -top-24 -bottom-24 left-0 right-0 pointer-events-none will-change-transform bg-no-repeat bg-center"
+          className="absolute -top-[20%] -bottom-[20%] left-0 right-0 pointer-events-none will-change-transform"
           style={{
-            backgroundImage: `url('/pics/marbre-or-2.jpg')`,
-            backgroundSize: "100% auto",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.65)), url('/pics/marbre-clair-or.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             transform: `translate3d(0, ${engagementParallax}px, 0)`,
           }}
         />
@@ -252,23 +239,17 @@ function About() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              <HandHeart className="h-3.5 w-3.5 text-obsidian" />
-              Engagement Solidaire
+              <HandHeart className="h-3.5 w-3.5 text-obsidian" />{t("about.solidarity_eyebrow")}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">
-              Bâtir des édifices, soutenir des vies.
+            <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-5xl">{t("about.solidarity_headline")}
             </h2>
-            <p className="mt-6 text-base text-slate-700 leading-relaxed font-normal">
-              Au-delà de la construction et de l'ingénierie, 2HNOUR SARL s'investit
-              concrètement auprès des populations locales : réhabilitation d'écoles,
-              accès à l'eau potable, électrification d'orphelinats et insertion des jeunes talents camerounais.
+            <p className="mt-6 text-base text-slate-700 leading-relaxed font-normal">{t("about.solidarity_text")}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/engagement-solidaire"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-obsidian shadow-[0_20px_40px_-12px_oklch(0.86_0.16_95/0.6)] transition-all hover:-translate-y-0.5 hover:bg-gold/90"
-              >
-                Découvrir nos actions solidaires <ArrowRight className="h-4 w-4" />
+              >{t("nav.discoverSolidarity")} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -281,8 +262,7 @@ function About() {
                 alt="Engagement solidaire 2HNOUR"
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute top-4 left-4 rounded-full bg-obsidian/85 px-4 py-1.5 text-xs font-bold text-gold backdrop-blur-md border border-gold/30 shadow-md">
-                Impact Social & Communautaire
+              <div className="absolute top-4 left-4 rounded-full bg-obsidian/85 px-4 py-1.5 text-xs font-bold text-gold backdrop-blur-md border border-gold/30 shadow-md">{t("about.solidarity_badge")}
               </div>
             </div>
           </div>

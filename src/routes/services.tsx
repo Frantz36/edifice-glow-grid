@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import {
   ArrowRight,
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/services")({
       {
         property: "og:description",
         content:
-          "Cinq piliers stratégiques : construction, aménagement, facility management, réhabilitation et engagement durable.",
+          "Cinq piliers stratégiques : construction, aménagement, gestion des installations, réhabilitation et engagement durable.",
       },
     ],
   }),
@@ -121,7 +122,7 @@ const DETAILED_SERVICES = [
   {
     id: "entretenir",
     kicker: "03 / ENTRETENIR",
-    title: "Entretenir — Facility Management & Hygiène",
+    title: "Entretenir — Gestion des installations & Hygiène",
     description:
       "Nous assurons la pérennité et la continuité opérationnelle de vos bâtiments grâce à un service intégré de maintenance, d'hygiène et de salubrité. Maintenance préventive, nettoyage professionnel et lutte anti-nuisibles : un interlocuteur unique pour tous vos besoins.",
     features: [
@@ -244,33 +245,53 @@ const DETAILED_SERVICES = [
 ];
 
 function ServicesPage() {
-  const [activeAnchor, setActiveAnchor] = useState<string>("");
+  const { t } = useTranslation();
+  const [activeAnchor, setActiveAnchor] = useState<string>(DETAILED_SERVICES[0]?.id || "batir");
 
+  // Scrollspy automatique et gestion du hash d'URL
   useEffect(() => {
+    // Si un hash est présent dans l'URL (ex: #equiper ou #renover), scroller automatiquement
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      const match = DETAILED_SERVICES.find((s) => s.id === hash);
+      if (match) {
+        setActiveAnchor(match.id);
+        setTimeout(() => {
+          scrollToSection(match.id);
+        }, 150);
+      }
+    }
+
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 200;
+      // Déterminer la position actuelle de la fenêtre
+      const scrollPos = window.scrollY + 220;
+
+      // Trouver la section active
+      let currentId = DETAILED_SERVICES[0]?.id || "";
       for (const service of DETAILED_SERVICES) {
         const el = document.getElementById(service.id);
         if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveAnchor(service.id);
-            break;
+          const top = el.getBoundingClientRect().top + window.pageYOffset;
+          if (scrollPos >= top) {
+            currentId = service.id;
           }
         }
       }
+      setActiveAnchor(currentId);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll(); // Exécution initiale dès le montage pour indiquer le service courant
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -120;
+      const yOffset = -140;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+      setActiveAnchor(id);
     }
   };
 
@@ -466,17 +487,15 @@ function ServiceCardBlock({
   return (
     <article
       id={service.id}
-      className={`scroll-mt-36 group relative rounded-3xl border overflow-hidden bg-white shadow-sm transition-all duration-700 ease-in-out ${
-        expanded
-          ? "border-gold/50 shadow-2xl"
-          : "border-border hover:border-gold/50 hover:shadow-xl"
-      }`}
+      className={`scroll-mt-36 group relative rounded-3xl border overflow-hidden bg-white shadow-sm transition-all duration-700 ease-in-out ${expanded
+        ? "border-gold/50 shadow-2xl"
+        : "border-border hover:border-gold/50 hover:shadow-xl"
+        }`}
     >
       {/* ── FOND DORÉ EN CROSS-FADE ULTRA-FLUIDE (Évite tout saut brusque de couleur) ── */}
       <div
-        className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] transition-opacity duration-700 ease-in-out ${
-          expanded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] transition-opacity duration-700 ease-in-out ${expanded ? "opacity-100" : "opacity-0"
+          }`}
       >
         {/* Reflet ambré chaud sur toute la carte lorsqu'elle est étendue */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/40 to-transparent" />
@@ -552,9 +571,8 @@ function ServiceCardBlock({
             <img
               src={service.image}
               alt={service.title}
-              className={`h-full w-full object-cover transition-transform duration-700 ${
-                expanded ? "scale-100" : "group-hover:scale-105"
-              }`}
+              className={`h-full w-full object-cover transition-transform duration-700 ${expanded ? "scale-100" : "group-hover:scale-105"
+                }`}
             />
             <div className={`absolute top-4 left-4 grid h-12 w-12 place-items-center rounded-2xl backdrop-blur-md transition-all duration-700 ease-in-out ${iconBubble}`}>
               <Icon className="h-6 w-6" />
@@ -570,11 +588,10 @@ function ServiceCardBlock({
       >
         <div className="overflow-hidden min-h-0">
           <div
-            className={`transition-all duration-700 ease-in-out ${
-              expanded
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 -translate-y-3 pointer-events-none"
-            }`}
+            className={`transition-all duration-700 ease-in-out ${expanded
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-3 pointer-events-none"
+              }`}
           >
             {/* Ligne séparatrice */}
             <div className="px-6 md:px-10">
