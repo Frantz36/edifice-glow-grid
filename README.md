@@ -21,6 +21,21 @@ npm i
 npm run dev
 ```
 
+## Prévisualisation Docker (flux de production)
+
+L'image exécute le même build que Vercel (`npm run build`), puis lance la
+prévisualisation recommandée par Nitro/Vite sur le port 3000.
+
+```sh
+docker build -t 2hnour-local .
+docker run --rm -p 3000:3000 2hnour-local
+```
+
+Ouvrez ensuite `http://localhost:3000`. Les variables `VITE_*` sont intégrées
+au moment du build : si l'application en utilise, déclarez-les explicitement
+avec `ARG` et `ENV` dans le `Dockerfile`, puis renseignez-les également dans les
+variables d'environnement du projet Vercel.
+
 ## Built with
 
 - TanStack Start

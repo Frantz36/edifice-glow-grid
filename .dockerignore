@@ -1,0 +1,12 @@
+# Keep the Docker build context small and ensure dependencies are installed
+# inside the Linux image from the committed lockfile.
+node_modules
+.output
+.git
+.vercel
+.wrangler
+.env
+.env.*
+!.env.example
+npm-debug.log*
+*.log

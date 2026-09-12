@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 import fr from "./fr.json";
 import en from "./en.json";
@@ -7,17 +8,11 @@ import en from "./en.json";
 // Détecter si on est dans un environnement navigateur
 const isBrowser = typeof window !== "undefined";
 
-const instance = i18n.createInstance();
-
-// On n'utilise le LanguageDetector que côté client
 if (isBrowser) {
-  const LanguageDetector =
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require("i18next-browser-languagedetector").default;
-  instance.use(LanguageDetector);
+  i18n.use(LanguageDetector);
 }
 
-instance.use(initReactI18next).init({
+i18n.use(initReactI18next).init({
   resources: {
     fr: { translation: fr },
     en: { translation: en },
@@ -40,5 +35,4 @@ instance.use(initReactI18next).init({
   },
 });
 
-// Réexporter l'instance comme i18n global pour react-i18next
-export default instance;
+export default i18n;
