@@ -25,14 +25,15 @@ i18n.use(initReactI18next).init({
   initImmediate: false,
   detection: isBrowser
     ? {
-        order: ["localStorage", "navigator"],
-        caches: ["localStorage"],
-        lookupLocalStorage: "2hnour-lang",
-      }
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+      lookupLocalStorage: "2hnour-lang",
+    }
     : undefined,
   interpolation: {
     escapeValue: false,
   },
 });
+
 
 export default i18n;
