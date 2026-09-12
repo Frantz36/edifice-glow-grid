@@ -7,6 +7,33 @@ import en from "./en.json";
 // Détecter si on est dans un environnement navigateur
 const isBrowser = typeof window !== "undefined";
 
+if (isBrowser) {
+  i18n.use(LanguageDetector);
+}
+
+i18n.use(initReactI18next).init({
+  resources: {
+    fr: { translation: fr },
+    en: { translation: en },
+  },
+  // Langue par défaut — utilisée côté serveur (SSR)
+  lng: isBrowser ? undefined : "fr",
+  fallbackLng: "fr",
+  supportedLngs: ["fr", "en"],
+  // CRITIQUE : init synchrone pour que les clés soient dispo avant le 1er render
+  initImmediate: false,
+  detection: isBrowser
+    ? {
+        order: ["localStorage", "navigator"],
+        caches: ["localStorage"],
+        lookupLocalStorage: "2hnour-lang",
+      }
+    : undefined,
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
 const instance = i18n.createInstance();
 
 // On n'utilise le LanguageDetector que côté client
