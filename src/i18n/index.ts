@@ -24,48 +24,15 @@ i18n.use(initReactI18next).init({
   initImmediate: false,
   detection: isBrowser
     ? {
-        order: ["localStorage", "navigator"],
-        caches: ["localStorage"],
-        lookupLocalStorage: "2hnour-lang",
-      }
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+      lookupLocalStorage: "2hnour-lang",
+    }
     : undefined,
   interpolation: {
     escapeValue: false,
   },
 });
 
-const instance = i18n.createInstance();
 
-// On n'utilise le LanguageDetector que côté client
-if (isBrowser) {
-  const LanguageDetector =
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require("i18next-browser-languagedetector").default;
-  instance.use(LanguageDetector);
-}
-
-instance.use(initReactI18next).init({
-  resources: {
-    fr: { translation: fr },
-    en: { translation: en },
-  },
-  // Langue par défaut — utilisée côté serveur (SSR)
-  lng: isBrowser ? undefined : "fr",
-  fallbackLng: "fr",
-  supportedLngs: ["fr", "en"],
-  // CRITIQUE : init synchrone pour que les clés soient dispo avant le 1er render
-  initImmediate: false,
-  detection: isBrowser
-    ? {
-        order: ["localStorage", "navigator"],
-        caches: ["localStorage"],
-        lookupLocalStorage: "2hnour-lang",
-      }
-    : undefined,
-  interpolation: {
-    escapeValue: false,
-  },
-});
-
-// Réexporter l'instance comme i18n global pour react-i18next
-export default instance;
+export default i18n;
