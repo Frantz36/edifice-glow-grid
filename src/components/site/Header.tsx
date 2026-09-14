@@ -8,13 +8,14 @@ import {
   Info,
   Newspaper,
   Heart,
+  Globe,
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { LOGO_IMAGE } from "@/components/site/data";
 
 export function Header() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
@@ -280,7 +281,46 @@ export function Header() {
           </div>
         </nav>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 md:gap-3 shrink-0">
+          {/* FR / EN Switcher on Mobile Header Bar */}
+          <div
+            className={`flex items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold transition-all lg:hidden ${
+              isScrolled
+                ? "border border-gold/40 bg-slate-100/90 text-obsidian shadow-sm"
+                : "border border-gold/40 bg-black/40 text-white backdrop-blur-md"
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => i18n.changeLanguage("fr")}
+              className={`rounded-full px-2 py-0.5 text-xs transition-all ${
+                i18n.language === "fr"
+                  ? "bg-gold text-obsidian font-bold shadow-sm"
+                  : isScrolled
+                  ? "text-obsidian/70 hover:text-gold"
+                  : "text-white/80 hover:text-gold"
+              }`}
+              aria-label="Passer en français"
+            >
+              FR
+            </button>
+            <span className={isScrolled ? "text-obsidian/30" : "text-white/30"}>|</span>
+            <button
+              type="button"
+              onClick={() => i18n.changeLanguage("en")}
+              className={`rounded-full px-2 py-0.5 text-xs transition-all ${
+                i18n.language === "en"
+                  ? "bg-gold text-obsidian font-bold shadow-sm"
+                  : isScrolled
+                  ? "text-obsidian/70 hover:text-gold"
+                  : "text-white/80 hover:text-gold"
+              }`}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+          </div>
+
           <Link
             to="/contact"
             hash="contact-form"
@@ -289,7 +329,7 @@ export function Header() {
             {t("nav.getQuote")}
           </Link>
           <button
-            className="lg:hidden"
+            className="lg:hidden p-2 text-current focus:outline-none"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
           >
@@ -298,17 +338,18 @@ export function Header() {
         </div>
       </div>
       {open && (
-        <div className="border-t border-border bg-white lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
+        <div className="mx-auto mt-2 max-w-7xl px-4 lg:hidden pointer-events-auto">
+          <div className="rounded-2xl border border-gold/30 bg-white/95 p-5 shadow-2xl shadow-obsidian/20 backdrop-blur-2xl text-obsidian flex flex-col gap-1">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="rounded-full px-4 py-2 text-sm font-medium hover:bg-secondary"
+                className="rounded-xl px-4 py-2.5 text-sm font-medium text-slate-ink transition-colors hover:bg-slate-100 hover:text-gold"
                 activeProps={{
-                  className: "rounded-full bg-gold px-4 py-2 font-semibold text-obsidian",
+                  className: "rounded-xl bg-gold px-4 py-2.5 font-semibold text-obsidian shadow-sm",
                 }}
+                activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
               </Link>
@@ -322,7 +363,7 @@ export function Header() {
               <Link
                 to="/a-propos"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
+                className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-ink hover:bg-slate-100 hover:text-gold"
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Info className="h-4 w-4 text-gold" />
@@ -331,7 +372,7 @@ export function Header() {
               <Link
                 to="/blog"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
+                className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-ink hover:bg-slate-100 hover:text-gold"
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Newspaper className="h-4 w-4 text-gold" />
@@ -343,7 +384,7 @@ export function Header() {
             <Link
               to="/engagement-solidaire"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
+              className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-ink hover:bg-slate-100 hover:text-gold"
               activeProps={{ className: "bg-gold font-semibold text-obsidian" }}
             >
               <Heart
@@ -365,7 +406,7 @@ export function Header() {
                 to="/contact"
                 hash="contact-form"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
+                className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-ink hover:bg-slate-100 hover:text-gold"
                 activeProps={{ className: "bg-gold/20 font-semibold text-obsidian" }}
               >
                 <Mail className="h-4 w-4 text-gold" />
@@ -375,18 +416,48 @@ export function Header() {
                 to="/contact"
                 hash="partenaire"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-ink hover:bg-secondary"
+                className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-ink hover:bg-slate-100 hover:text-gold"
               >
                 <Handshake className="h-4 w-4 text-gold" />
                 <span>{t("nav.partner")}</span>
               </Link>
             </div>
 
+            {/* Mobile Language Section */}
+            <div className="mt-2 flex items-center justify-between border-t border-border/60 pt-3 px-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
+                <Globe className="h-4 w-4 text-gold" />
+                <span>Langue / Language</span>
+              </div>
+              <div className="flex items-center gap-1 rounded-xl bg-slate-100 p-1 text-xs font-bold tracking-widest text-slate-ink">
+                <button
+                  type="button"
+                  onClick={() => i18n.changeLanguage("fr")}
+                  className={`rounded-lg px-3 py-1 transition-all ${
+                    i18n.language === "fr" ? "bg-gold text-obsidian shadow-sm" : "hover:text-gold"
+                  }`}
+                  aria-label="Français"
+                >
+                  FR
+                </button>
+                <button
+                  type="button"
+                  onClick={() => i18n.changeLanguage("en")}
+                  className={`rounded-lg px-3 py-1 transition-all ${
+                    i18n.language === "en" ? "bg-gold text-obsidian shadow-sm" : "hover:text-gold"
+                  }`}
+                  aria-label="English"
+                >
+                  EN
+                </button>
+              </div>
+            </div>
+
             <Link
               to="/contact"
               hash="contact-form"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-gold px-5 py-2.5 text-center text-sm font-semibold text-obsidian"
+              className="mt-2 rounded-full bg-gold px-5 py-2.5 text-center text-sm font-semibold text-obsidian shadow-md hover:bg-gold/90 transition-colors"
             >
               {t("nav.getQuote")}
             </Link>
