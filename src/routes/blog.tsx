@@ -40,22 +40,22 @@ function BlogPage() {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={p.image}
-                    alt={p.title}
+                    alt={t(`data.posts.${p.slug}.title`, { defaultValue: p.title })}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian">
-                    {p.category}
+                    {t(`data.posts.${p.slug}.category`, { defaultValue: p.category })}
                   </div>
                 </div>
                 <div className="p-6">
                   <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                    {p.date}
+                    {t(`data.posts.${p.slug}.date`, { defaultValue: p.date })}
                   </p>
                   <h3 className="mt-2 font-display text-lg font-bold leading-snug group-hover:text-gold">
-                    {p.title}
+                    {t(`data.posts.${p.slug}.title`, { defaultValue: p.title })}
                   </h3>
                   <p className="mt-3 text-sm text-muted-foreground">
-                    {p.excerpt}
+                    {t(`data.posts.${p.slug}.excerpt`, { defaultValue: p.excerpt })}
                   </p>
                 </div>
               </article>

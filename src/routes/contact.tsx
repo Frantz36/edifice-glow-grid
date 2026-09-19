@@ -53,7 +53,7 @@ function ContactPage() {
                 <select className="h-11 w-full rounded-lg border border-border bg-white px-3 text-sm focus:border-gold focus:outline-none">
                   <option>{t("contact_page.field_service_placeholder")}</option>
                   {SERVICES.map((s) => (
-                    <option key={s.slug}>{s.title}</option>
+                    <option key={s.slug}>{t(`data.services.${s.slug}.title`, { defaultValue: s.title })}</option>
                   ))}
                 </select>
               </div>
@@ -61,7 +61,7 @@ function ContactPage() {
 
             <div className="mt-5">
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                Description du projet
+                {t("contact_page.field_description", { defaultValue: "Description du projet" })}
               </label>
               <textarea
                 rows={5}
@@ -148,11 +148,13 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Synergie & Croissance
+              {t("contact_page.partner_eyebrow", { defaultValue: "Synergie & Croissance" })}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">{t("contact_page.partner_headline")}
+            <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
+              {t("contact_page.partner_headline")}
             </h2>
-            <p className="mt-4 text-base text-muted-foreground">{t("contact_page.partner_subtitle")}
+            <p className="mt-4 text-base text-muted-foreground">
+              {t("contact_page.partner_subtitle")}
             </p>
           </div>
 
@@ -167,35 +169,35 @@ function ContactPage() {
                   ✓
                 </div>
                 <h3 className="mt-5 font-display text-xl font-extrabold text-obsidian leading-snug">
-                  Avantages du Partenariat
+                  {t("contact_page.advantages_title", { defaultValue: "Avantages du Partenariat" })}
                 </h3>
                 <p className="mt-2 text-sm font-medium text-obsidian/90">
-                  Ce que nous apportons à nos partenaires et clients stratégiques :
+                  {t("contact_page.advantages_subtitle", { defaultValue: "Ce que nous apportons à nos partenaires et clients stratégiques :" })}
                 </p>
                 <ul className="mt-6 space-y-4 text-sm font-medium text-obsidian">
                   <li className="flex items-start gap-3">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
                       1
                     </span>
-                    <span><strong>Accès privilégié aux grands projets</strong> : Synergies sur les appels d'offres institutionnels et privés d'envergure.</span>
+                    <span dangerouslySetInnerHTML={{ __html: t("contact_page.adv_1") }} />
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
                       2
                     </span>
-                    <span><strong>Partage d'expertise & Innovation</strong> : Collaboration technique pour des standards d'exécution haut de gamme.</span>
+                    <span dangerouslySetInnerHTML={{ __html: t("contact_page.adv_2") }} />
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
                       3
                     </span>
-                    <span><strong>Sécurité administrative & financière</strong> : Garanties contractuelles rigoureuses et transparence budgétaire.</span>
+                    <span dangerouslySetInnerHTML={{ __html: t("contact_page.adv_3") }} />
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-obsidian text-xs font-bold text-gold shadow-sm">
                       4
                     </span>
-                    <span><strong>Visibilité accrue</strong> : Mise en valeur conjointe auprès de nos clients grands comptes et réseaux institutionnels.</span>
+                    <span dangerouslySetInnerHTML={{ __html: t("contact_page.adv_4") }} />
                   </li>
                 </ul>
               </div>
@@ -207,35 +209,35 @@ function ContactPage() {
                 !
               </div>
               <h3 className="mt-5 font-display text-xl font-bold text-gold">
-                Engagements & Exigences
+                {t("contact_page.requirements_title", { defaultValue: "Engagements & Exigences" })}
               </h3>
               <p className="mt-2 text-sm text-white/80">
-                Les normes strictes et critères de déontologie auxquels 2HNOUR est soumise :
+                {t("contact_page.requirements_subtitle", { defaultValue: "Les normes strictes et critères de déontologie auxquels 2HNOUR est soumise :" })}
               </p>
               <ul className="mt-6 space-y-4 text-sm text-white/90">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     1
                   </span>
-                  <span><strong className="text-white">Conformité réglementaire stricte</strong> : Respect rigoureux des normes BTP, environnementales et de sécurité au travail.</span>
+                  <span dangerouslySetInnerHTML={{ __html: t("contact_page.req_1") }} />
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     2
                   </span>
-                  <span><strong className="text-white">Charte Qualité & Délais</strong> : Obligation de résultat et respect impératif des échéanciers validés.</span>
+                  <span dangerouslySetInnerHTML={{ __html: t("contact_page.req_2") }} />
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     3
                   </span>
-                  <span><strong className="text-white">Éthique & Transparence</strong> : Politique de tolérance zéro en matière de corruption et gouvernance irréprochable.</span>
+                  <span dangerouslySetInnerHTML={{ __html: t("contact_page.req_3") }} />
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold border border-gold/30">
                     4
                   </span>
-                  <span><strong className="text-white">Confidentialité</strong> : Protection intégrale des données stratégiques et secrets industriels de nos projets communs.</span>
+                  <span dangerouslySetInnerHTML={{ __html: t("contact_page.req_4") }} />
                 </li>
               </ul>
             </div>
@@ -244,16 +246,18 @@ function ContactPage() {
           {/* FORMULAIRE DE DEMANDE DE PARTENARIAT (BLANC CASSÉ) */}
           <div className="mt-12 rounded-3xl border border-border bg-white p-8 md:p-12 shadow-sm">
             <div className="max-w-2xl">
-              <h3 className="font-display text-2xl font-bold text-slate-ink md:text-3xl">{t("contact_page.partner_form_headline")}
+              <h3 className="font-display text-2xl font-bold text-slate-ink md:text-3xl">
+                {t("contact_page.partner_form_headline")}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{t("contact_page.partner_form_subtitle")}
+              <p className="mt-2 text-sm text-muted-foreground">
+                {t("contact_page.partner_form_subtitle")}
               </p>
             </div>
 
             <form onSubmit={(e) => e.preventDefault()} className="mt-8 grid gap-5 sm:grid-cols-2">
               <div>
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Nom de la structure / Entreprise
+                  {t("contact_page.partner_field_company", { defaultValue: "Nom de la structure / Entreprise" })}
                 </label>
                 <input
                   type="text"
@@ -263,7 +267,7 @@ function ContactPage() {
               </div>
               <div>
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Nom & Prénom du Contact
+                  {t("contact_page.partner_field_contact", { defaultValue: "Nom & Prénom du Contact" })}
                 </label>
                 <input
                   type="text"
@@ -273,7 +277,7 @@ function ContactPage() {
               </div>
               <div>
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Email professionnel
+                  {t("contact_page.partner_field_email", { defaultValue: "Email professionnel" })}
                 </label>
                 <input
                   type="email"
@@ -283,7 +287,7 @@ function ContactPage() {
               </div>
               <div>
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Téléphone / WhatsApp
+                  {t("contact_page.partner_field_phone", { defaultValue: "Téléphone / WhatsApp" })}
                 </label>
                 <input
                   type="tel"
@@ -293,31 +297,32 @@ function ContactPage() {
               </div>
               <div className="sm:col-span-2">
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Type de partenariat envisagé
+                  {t("contact_page.partner_field_type", { defaultValue: "Type de partenariat envisagé" })}
                 </label>
                 <select className="h-11 w-full rounded-lg border border-border bg-slate-50/60 px-3 text-sm text-slate-ink focus:border-gold focus:bg-white focus:outline-none transition-colors">
-                  <option>Co-traitance / Sub-contracting BTP</option>
-                  <option>Fournisseur de matériaux & équipements</option>
-                  <option>Partenariat institutionnel ou financier</option>
-                  <option>Prestataire de service spécialisé</option>
-                  <option>Autre synergie stratégique</option>
+                  <option>{t("contact_page.partner_type_1", { defaultValue: "Co-traitance / Sub-contracting BTP" })}</option>
+                  <option>{t("contact_page.partner_type_2", { defaultValue: "Fournisseur de matériaux & équipements" })}</option>
+                  <option>{t("contact_page.partner_type_3", { defaultValue: "Partenariat institutionnel ou financier" })}</option>
+                  <option>{t("contact_page.partner_type_4", { defaultValue: "Prestataire de service spécialisé" })}</option>
+                  <option>{t("contact_page.partner_type_5", { defaultValue: "Autre synergie stratégique" })}</option>
                 </select>
               </div>
               <div className="sm:col-span-2">
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-ink">
-                  Présentation de la proposition
+                  {t("contact_page.partner_field_proposal", { defaultValue: "Présentation de la proposition" })}
                 </label>
                 <textarea
                   rows={4}
                   className="w-full rounded-lg border border-border bg-slate-50/60 px-3 py-2 text-sm text-slate-ink placeholder:text-muted-foreground focus:border-gold focus:bg-white focus:outline-none transition-colors"
-                  placeholder="Présentez brièvement vos compétences, vos objectifs et l'opportunité de partenariat..."
+                  placeholder={t("contact_page.partner_field_proposal_placeholder", { defaultValue: "Présentez brièvement vos compétences, vos objectifs et l'opportunité de partenariat..." })}
                 />
               </div>
               <div className="sm:col-span-2">
                 <button
                   type="submit"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:bg-gold/90 hover:-translate-y-0.5 sm:w-auto"
-                >{t("contact_page.partner_submit")}
+                >
+                  {t("contact_page.partner_submit")}
                 </button>
               </div>
             </form>

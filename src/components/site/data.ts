@@ -66,16 +66,19 @@ export const SERVICES: Service[] = [
 
 export const REFERENCES = [
   {
+    id: "pm",
     name: "Premier Ministère de la République du Cameroun",
     mission: "Entretien et nettoyage des bâtiments administratifs.",
     image: "/pics/pm.webp",
   },
   {
+    id: "minrex",
     name: "Ministère des Relations Extérieures (MINREX)",
     mission: "Maintenance et entretien des espaces institutionnels.",
     image: "/pics/minrex.jpeg",
   },
   {
+    id: "sic",
     name: "Société Immobilière du Cameroun (SIC)",
     mission: "Préservation et valorisation du patrimoine bâti.",
     image: "/pics/sic.jpeg",

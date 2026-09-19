@@ -140,18 +140,200 @@
   "services_page": {
     "meta_title": "Our Services & Expertise — 2HNOUR SARL",
     "meta_desc": "Build, Equip, Maintain, Renovate, Commit — Discover 2HNOUR SARL's 5 pillars of expertise for your infrastructure.",
-    "hero_eyebrow": "Our 5 Pillars of Expertise",
-    "hero_title": "Global expertise, tailor-made solutions.",
-    "hero_subtitle": "From new construction to preventive maintenance, rehabilitation and landscaping, 2HNOUR SARL covers the entire lifecycle of your infrastructure.",
+    "hero_eyebrow": "Five Integrated Pillars of Expertise",
+    "hero_title": "Build, Equip, Maintain, Renovate & Commit",
+    "hero_subtitle": "Five commitments, one vision: building, equipping and sustaining your infrastructure with rigor, passion and responsibility.",
+
+    "scope_title": "Scope of Intervention & Application Domains:",
+    "request_quote": "Request a quote",
+    "reduce_expertise": "Collapse expertise",
+    "discover_expertise": "Discover full expertise",
+    "engineering_title": "Engineering Details & Operational Rigor",
 
     "b2b_eyebrow": "B2B & Key Accounts",
     "b2b_headline": "BTP Synergies, Joint Ventures & Strategic Partnerships",
     "b2b_text": "2HNOUR SARL stands as a trusted partner for major BTP companies, public institutions and key accounts. We operate as specialized subcontractors or joint-venture partners, bringing expert capabilities.",
+    "b2b_item1_title": "1. Compliance & Transparency",
+    "b2b_item1_text": "Strict compliance with public and private procurement regulations, transparent governance and exemplary management.",
+    "b2b_item2_title": "2. Operational Rigor",
+    "b2b_item2_text": "Strict alignment with the most demanding specifications and firm commitment to delivery milestones.",
+    "b2b_item3_title": "3. Ethics & CSR",
+    "b2b_item3_text": "Strong environmental commitment, occupational health preservation and absolute safety on all our sites.",
+    "b2b_card_title": "Join Our Partner Network",
+    "b2b_card_text": "Preparing a tender bid or seeking qualified joint venture in Cameroon?",
+    "b2b_card_button": "Submit a partnership opportunity",
 
-    "cta_eyebrow": "Let's get to work",
-    "cta_headline": "Your project deserves the best. Let's talk.",
-    "cta_text": "Our technical team will contact you within 48 business hours to analyze your needs, propose a tailored approach and provide a personalized quote.",
-    "cta_button": "Request a free quote"
+    "cta_headline": "A construction, fitting-out or maintenance project?",
+    "cta_text": "Our engineers and technical experts review your specifications and support you from design to completion.",
+    "cta_button": "Request a study / Quote",
+
+    "items": {
+      "batir": {
+        "kicker": "01 / BUILD",
+        "anchorLabel": "Build",
+        "title": "Build — Construction & New Structures",
+        "description": "We design and build structures to the highest standards of quality, safety and performance. From structural work to turnkey delivery, we ensure strict compliance with technical standards, contract deadlines and client requirements.",
+        "features": [
+          "Administrative & institutional buildings",
+          "Residential and commercial buildings",
+          "Educational and university facilities",
+          "Healthcare centers and hospital structures",
+          "Industrial structures, warehouses & logistics platforms",
+          "Various infrastructure and annex structures"
+        ],
+        "tags": ["Administrative Buildings", "Residential & Commercial", "Education & Healthcare", "Industrial & Logistics", "Turnkey"],
+        "panels": [
+          {
+            "label": "Methodology & Process",
+            "text": "Soil testing and structural modeling, rigorous selection of certified materials, site organization complying with HSE standards, weekly milestone tracking and joint acceptance at each key stage."
+          },
+          {
+            "label": "Standards & Compliance",
+            "text": "Adherence to DTU standards, local seismic regulations, the most demanding institutional specifications and firm commitment to contractual schedules."
+          },
+          {
+            "label": "Target Projects",
+            "text": "Ministry headquarters, embassies and consulates, universities and technical colleges, clinics and district hospitals, logistics warehouses and industrial zones."
+          },
+          {
+            "label": "Equipment Fleet",
+            "text": "Heavy earthmoving machinery, tower cranes and mobile cranes, industrial concrete mixers, metal formwork systems and state-of-the-art compaction equipment."
+          }
+        ]
+      },
+      "equiper": {
+        "kicker": "02 / EQUIP",
+        "anchorLabel": "Equip",
+        "title": "Equip — Fitting-out, Finishes & Equipment",
+        "description": "We transform bare spaces into functional and aesthetic environments of prestige. Meticulous finishes, integrated technical equipment and outdoor landscaping: every detail is designed to enhance your infrastructure.",
+        "features": [
+          "Premium interior and exterior painting",
+          "Wall and floor coverings (tiles, hardwood, carpet)",
+          "Suspended ceilings, joinery, bespoke metalwork",
+          "Building plumbing & electrical systems",
+          "Creation of landscaped areas & garden design",
+          "Custom decoration and embellishment works"
+        ],
+        "tags": ["Painting & Coverings", "Custom Joinery", "Plumbing & Electricity", "Green Spaces", "Prestige Decor"],
+        "panels": [
+          {
+            "label": "Methodology & Process",
+            "text": "Aesthetic kickoff meeting with the client, presentation of material palettes and color charts, coordination of trade contractors in optimized sequence to minimize delays and avoid interference."
+          },
+          {
+            "label": "Standards & Quality",
+            "text": "Materials certified to ISO and local Cameroonian standards, finishes compliant with DTU guidelines, ten-year warranty on secondary works and post-completion service included."
+          },
+          {
+            "label": "Target Projects",
+            "text": "Interior renovation of official palaces, fitting-out of conference rooms and reception halls, creation of institutional gardens and landscaped parks, decoration of hotel complexes and state residences."
+          },
+          {
+            "label": "Green Spaces & Landscape",
+            "text": "Selection of plants suited to local microclimates, automated irrigation networks, eco-responsible water management and zero toxic phytosanitary products in public areas."
+          }
+        ]
+      },
+      "entretenir": {
+        "kicker": "03 / MAINTAIN",
+        "anchorLabel": "Maintain",
+        "title": "Maintain — Facility Management & Hygiene",
+        "description": "We ensure the longevity and operational continuity of your buildings through an integrated maintenance, hygiene and sanitation service. Preventive maintenance, professional cleaning and pest control: a single point of contact for all your needs.",
+        "features": [
+          "Preventive, corrective and remedial maintenance",
+          "Daily, industrial & post-construction cleaning",
+          "Disinfection, Pest Control & Deratization (3D)",
+          "Glass, facade and delicate surface washing",
+          "Green space & common area maintenance",
+          "Waste management & premises disinfection"
+        ],
+        "tags": ["Preventive/Curative Maintenance", "Professional Cleaning", "3D Services", "Common Areas", "Operational Continuity"],
+        "panels": [
+          {
+            "label": "Methodology & Process",
+            "text": "Initial audit of facility conditions, development of a predictive maintenance schedule, operations scheduled outside business hours and intervention reports delivered within 24 hours."
+          },
+          {
+            "label": "Hygiene & Safety Standards",
+            "text": "Protocols aligned with WHO guidelines and Cameroonian hygiene regulations, approved non-toxic products, certified personal protective equipment and full 3D traceability."
+          },
+          {
+            "label": "Target Projects",
+            "text": "Ministry buildings and corporate headquarters, hotels and hospital complexes, university campuses, logistics hubs and industrial sites, official and diplomatic residences."
+          },
+          {
+            "label": "Contracts & Monitoring",
+            "text": "Turnkey annual maintenance contracts, on-call emergency response, client dashboard for real-time tracking and quarterly review meetings."
+          }
+        ]
+      },
+      "renover": {
+        "kicker": "04 / RENOVATE",
+        "anchorLabel": "Renovate",
+        "title": "Renovate — Rehabilitation & Asset Valorization",
+        "description": "We intervene on existing structures to enhance their functionality, aesthetics and durability. Comprehensive rehabilitation or targeted renovation: we reduce aging costs and optimize the asset value of your properties.",
+        "features": [
+          "Complete building rehabilitation",
+          "Facade refurbishment & space redesign",
+          "Structural reinforcement and pathology treatment",
+          "Modernization of technical installations",
+          "Interior and exterior renovation works",
+          "Compliance upgrades and energy efficiency improvements"
+        ],
+        "tags": ["Global Rehabilitation", "Facade Refurbishment", "Structural Reinforcement", "Technical Upgrades", "Code Compliance"],
+        "panels": [
+          {
+            "label": "Diagnosis & Audit",
+            "text": "Visual and instrumented inspections, structural pathology diagnosis (cracks, moisture, material degradation), technical audit report provided within 5 business days with costed recommendations."
+          },
+          {
+            "label": "Standards & Compliance",
+            "text": "Application of seismic codes, accessibility and fire safety compliance, architectural preservation adherence and certified structural engineer oversight."
+          },
+          {
+            "label": "Target Projects",
+            "text": "Rehabilitation of aging public buildings, degraded facade refurbishment, reinforcement of compromised structures, conversion of office spaces into modern layouts, residential building upgrades."
+          },
+          {
+            "label": "Efficiency & Performance",
+            "text": "Installation of thermal and acoustic insulation adapted to the Cameroonian climate, replacement of joinery with high-efficiency glazing and optimization of lighting and HVAC systems."
+          }
+        ]
+      },
+      "sengager": {
+        "kicker": "05 / COMMIT",
+        "anchorLabel": "Commit",
+        "title": "Commit — Asset Management & Sustainable Development",
+        "description": "Beyond job sites, we stand by your side over the long term: strategic advice for asset valuation, heritage audits, active CSR policies and joint-venture partnerships to build tomorrow's legacy together.",
+        "features": [
+          "Comprehensive infrastructure diagnostics",
+          "Preventive maintenance and upkeep planning",
+          "Operational cost optimization",
+          "Heritage asset valorization & performance enhancement",
+          "CSR commitment & sustainable development",
+          "Strategic partnerships & B2B joint ventures"
+        ],
+        "tags": ["Asset Diagnostics", "Cost Optimization", "Heritage Valorization", "CSR & Sustainability", "B2B Joint Ventures"],
+        "panels": [
+          {
+            "label": "Consulting & Heritage Strategy",
+            "text": "Built asset condition audit, life-cycle cost modeling (LCC), prioritized recommendations and support with multi-year capital investment planning."
+          },
+          {
+            "label": "CSR & Sustainable Development",
+            "text": "Strong environmental commitment: construction waste reduction, low-carbon materials, continuous staff training on HSE best practices and annual CSR reporting."
+          },
+          {
+            "label": "Partnerships & Joint Ventures",
+            "text": "2HNOUR SARL establishes itself as a reliable partner for BTP majors, public institutions and key accounts. We operate in specialized subcontracting or joint ventures bringing certified capabilities."
+          },
+          {
+            "label": "Compliance & Governance",
+            "text": "Strict adherence to public and private procurement regulations, transparent governance, full alignment with top-tier requirements and guaranteed on-time delivery."
+          }
+        ]
+      }
+    }
   },
 
   "references_page": {
@@ -234,26 +416,108 @@
   "solidarity_page": {
     "meta_title": "Social Commitment & Humanitarian Impact — 2HNOUR SARL",
     "meta_desc": "Discover 2HNOUR SARL's civic commitment: solidarity projects, education support, hygiene 3D and emergency aid in Cameroon.",
-    "hero_eyebrow": "Social Commitment",
-    "hero_title": "Building for all. Serving without borders.",
-    "hero_subtitle": "Beyond our projects, 2HNOUR SARL is a company with heart — committed to vulnerable communities, youth education and the sustainable development of Cameroon.",
-    "stats_eyebrow": "Measurable Impact",
-    "stats_headline": "Numbers that testify to our commitment.",
+    "hero_eyebrow": "Social Commitment & Civic Impact",
+    "hero_title": "Building a More Human Future: Our Solidarity Commitment",
+    "hero_subtitle": "Beyond stones and infrastructure, 2HNOUR SARL puts its BTP expertise and resources at the service of vulnerable communities and social progress.",
+
     "stats": {
-      "buildings": "Buildings & Schools Renovated",
-      "children": "Children Equipped with Kits",
-      "water": "Families with Access to Water",
-      "relief": "Emergency Aid Beneficiaries"
+      "renovated": "Renovated Buildings & Schools",
+      "kits": "Children Equipped with Kits",
+      "treatments": "Free 3D Disinfection Treatments",
+      "transparency": "Transparency & Fully Funded Logistics"
     },
+
+    "pillars_eyebrow": "Our Corporate Social Responsibility",
+    "pillars_title": "The 4 Pillars of 2HNOUR Humanitarian Action",
+    "pillars_subtitle": "A structured approach to turn our technical expertise into a lever of dignity and fulfillment for local populations.",
+    "pillars": {
+      "p1_title": "Solidarity Projects & Skills Sponsorship",
+      "p1_desc": "Free provision of our BTP know-how to rehabilitate orphanages, rural schools, healthcare centers and dilapidated community spaces.",
+      "p1_badge": "Construction & Renovation",
+      "p2_title": "Material Donations & Educational Support",
+      "p2_desc": "Regular distribution of school kits, IT equipment and ergonomic furniture to provide children with better learning conditions.",
+      "p2_badge": "Education & Youth",
+      "p3_title": "Hygiene, Sanitation & Clean Water Access (3D Action)",
+      "p3_desc": "Free disinfection and pest control campaigns in schools and local markets, paired with the installation of safe drinking water points.",
+      "p3_badge": "Sanitation & Water",
+      "p4_title": "Emergency Relief & Social Assistance",
+      "p4_desc": "Distribution of food supplies, hygiene kits and emergency material relief during critical periods or to communities in extreme vulnerability.",
+      "p4_badge": "Emergency Relief"
+    },
+
     "projects_eyebrow": "Field Actions",
     "projects_headline": "Ongoing Solidarity Projects",
-    "projects_subtitle": "Join us to amplify the impact. 2HNOUR funds coordination, technical teams and logistics.",
-    "donate_eyebrow": "Join the Movement",
-    "donate_headline": "Be part of the story.",
-    "donate_subtitle": "Every donation, partnership and volunteer amplifies our impact in the most vulnerable communities of Cameroon.",
-    "donate_button": "Make a Donation",
-    "volunteer_button": "Become a Volunteer",
-    "partner_button": "Propose a Partnership"
+    "projects_subtitle": "Join us to amplify the impact. 2HNOUR funds supervision, technical teams and logistics.",
+    "projects_all_label": "All solidarity projects",
+    "projects_commitment_label": "2HNOUR Commitment:",
+    "projects_progress_label": "Project progress",
+    "projects_funded_suffix": "funded",
+    "projects_goal_label": "Target:",
+    "projects_raised_label": "Mobilized:",
+    "projects_support_button": "Support this project",
+
+    "projects": {
+      "p1_title": "Complete Rehabilitation of the Refectory and Sanitary Facilities at Yaoundé Orphanage",
+      "p1_location": "Yaoundé · Centre",
+      "p1_objective": "Full overhaul of roof, tiling, plumbing and painting for a dormitory sheltering 45 children.",
+      "p1_support": "100% coverage of skilled labor and 50% of building materials.",
+      "p2_title": "3D Campaign & Installation of a Drinking Water Borehole at Mbankomo Public School",
+      "p2_location": "Mbankomo · Semi-urban",
+      "p2_objective": "Full vector disinfection and connection of a clean water borehole for 320 pupils.",
+      "p2_support": "Full coverage of 3D treatment teams and hydrogeological surveys.",
+      "p3_title": "Distribution of 500 School Kits & Ergonomic Class Furniture",
+      "p3_location": "Rural Areas · South",
+      "p3_objective": "Provision of student desks, benches, school bags and textbooks for 3 primary schools lacking equipment.",
+      "p3_support": "Direct funding of supplies and transportation logistics."
+    },
+
+    "transparency_title": "100% Transparency Guarantee & Logistical Support",
+    "transparency_desc": "All external contributions collected (financial or in-kind) are fully allocated to field actions. 2HNOUR SARL absorbs all administrative, management and transport costs as well as the compensation of deployed technical crews.",
+
+    "act_eyebrow": "Take Action Together",
+    "act_title": "How to Contribute or Request Assistance?",
+    "act_subtitle": "Select the mode of action that matches your resources or organizational needs.",
+
+    "tab_don": "Financial Donation",
+    "tab_materiel": "Material Donation",
+    "tab_demande": "Request Assistance",
+
+    "form_don_title": "Direct Financial Support to 2HNOUR Solidarity Fund",
+    "form_don_subtitle": "Your contributions help purchase supplementary building materials (cement, roofing, plumbing, school supplies) required for community projects.",
+    "mobile_money_title": "Mobile Money (Cameroon)",
+    "mobile_money_account": "2HNOUR Solidarity Fund Account",
+    "bank_transfer_title": "Dedicated Bank Wire Transfer",
+    "bank_name": "CCA Bank / BICEC Yaoundé",
+    "bank_account_title_label": "Account Title:",
+    "bank_account_title": "2HNOUR SARL - Humanitarian & CSR Account",
+
+    "field_target_project": "Target Project",
+    "field_fullname_company": "Full Name / Organization",
+    "placeholder_fullname_company": "E.g. ACME Foundation",
+    "field_email_phone": "Email or Phone Number",
+    "submit_don": "Confirm Donation Pledge",
+
+    "form_mat_title": "In-Kind Donation & Building Materials / Equipment",
+    "form_mat_subtitle": "Are you a BTP supplier, company or individual? Donate cement, paint, electrical equipment, tiles or school kits.",
+    "field_donor_name": "Donor Name / Organization",
+    "placeholder_donor_name": "E.g. Central Hardware Supplies",
+    "field_donor_phone": "Phone / WhatsApp",
+    "field_mat_desc": "Description of donated materials & quantity",
+    "placeholder_mat_desc": "E.g. 50 bags of 42.5 cement, 10 buckets of 15L white paint...",
+    "submit_mat": "Submit Material Donation",
+
+    "form_help_title": "Submit an Assistance Request or Community Project",
+    "form_help_subtitle": "Do you operate an orphanage, a dilapidated public school or a local charity in Cameroon? Submit your application for renovation or sanitation support.",
+    "field_org_name": "Name of Facility / Association / School",
+    "placeholder_org_name": "E.g. Public School of...",
+    "field_org_location": "Location (City / Region)",
+    "placeholder_org_location": "E.g. Mbalmayo, Centre Region",
+    "field_org_contact_name": "Contact Person Name",
+    "placeholder_org_contact_name": "E.g. Headmaster / President",
+    "field_org_contact_phone": "Contact Phone Number",
+    "field_org_needs": "Description of needs & required work",
+    "placeholder_org_needs": "Describe the current state of the facility, number of beneficiaries and rehabilitation priorities...",
+    "submit_help": "Submit Assistance Application"
   },
 
   "data": {
@@ -293,17 +557,20 @@
       "materiaux-durables": {
         "title": "Sustainable materials: building for the next century",
         "excerpt": "How local and innovative materials are transforming construction in Central Africa.",
-        "date": "March 12, 2025"
+        "date": "March 12, 2025",
+        "category": "Construction"
       },
       "maintenance-preventive": {
         "title": "Preventive maintenance: the hidden lever of performance",
         "excerpt": "A planned strategy that preserves the value of public infrastructure.",
-        "date": "February 28, 2025"
+        "date": "February 28, 2025",
+        "category": "Maintenance"
       },
       "espaces-verts-institutionnels": {
         "title": "Institutional green spaces: a heritage to cultivate",
         "excerpt": "Landscaping as a signature of excellence for government buildings.",
-        "date": "February 10, 2025"
+        "date": "February 10, 2025",
+        "category": "Landscaping"
       }
     },
     "projects_refs": {

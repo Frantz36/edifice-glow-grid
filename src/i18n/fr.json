@@ -139,19 +139,201 @@
 
   "services_page": {
     "meta_title": "Nos Services & Expertises — 2HNOUR SARL",
-    "meta_desc": "Bâtir, Équiper, Entretenir, Rénover, S'engager — Découvrez les 5 piliers d'expertise de 2HNOUR SARL.",
-    "hero_eyebrow": "Nos 5 Piliers d'Expertise",
-    "hero_title": "Un savoir-faire global, des solutions sur mesure.",
-    "hero_subtitle": "De la construction neuve à la maintenance préventive, en passant par la réhabilitation et l'aménagement, 2HNOUR SARL couvre l'intégralité du cycle de vie de vos infrastructures.",
+    "meta_desc": "Bâtir, Équiper, Entretenir, Rénover, S'engager — Découvrez les 5 piliers d'expertise de 2HNOUR SARL au service de vos infrastructures.",
+    "hero_eyebrow": "Cinq Piliers d'Expertise Intégrée",
+    "hero_title": "Bâtir, Équiper, Entretenir, Rénover & S'engager",
+    "hero_subtitle": "Cinq engagements, une vision : construire, équiper et pérenniser vos infrastructures avec rigueur, passion et responsabilité.",
+
+    "scope_title": "Périmètre d'intervention & Domaines d'application :",
+    "request_quote": "Demander un devis",
+    "reduce_expertise": "Réduire l'expertise",
+    "discover_expertise": "Découvrir l'expertise complète",
+    "engineering_title": "Détails de l'Ingénierie & Rigueur Opérationnelle",
 
     "b2b_eyebrow": "B2B & Grands Comptes",
     "b2b_headline": "Synergies BTP, Co-traitance & Partenariats Stratégiques",
     "b2b_text": "2HNOUR SARL s'impose comme un partenaire de confiance pour les majors du BTP, les institutions publiques et les grands comptes. Nous intervenons en sous-traitance spécialisée ou en co-traitance en apportant nos compétences expertes.",
+    "b2b_item1_title": "1. Conformité & Transparence",
+    "b2b_item1_text": "Respect strict de la réglementation des marchés publics et privés, gouvernance claire et gestion irréprochable.",
+    "b2b_item2_title": "2. Rigueur Opérationnelle",
+    "b2b_item2_text": "Alignement strict sur les cahiers des charges les plus exigeants et engagement ferme sur les jalons de livraison.",
+    "b2b_item3_title": "3. Éthique & RSE",
+    "b2b_item3_text": "Engagement environnemental fort, préservation de la santé au travail et sécurité absolue sur tous nos chantiers.",
+    "b2b_card_title": "Rejoignez Notre Réseau Partenaire",
+    "b2b_card_text": "Vous préparez une réponse à un appel d'offres ou recherchez une co-traitance qualifiée au Cameroun ?",
+    "b2b_card_button": "Soumettre une opportunité de partenariat",
 
-    "cta_eyebrow": "Passons à l'action",
-    "cta_headline": "Votre projet mérite le meilleur. Parlons-en.",
-    "cta_text": "Notre direction technique vous recontacte sous 48h ouvrées pour analyser vos besoins, proposer une approche adaptée et établir un devis personnalisé.",
-    "cta_button": "Demander un devis gratuit"
+    "cta_headline": "Un projet de construction, d'aménagement ou de maintenance ?",
+    "cta_text": "Nos ingénieurs et experts techniques étudient vos cahiers des charges et vous accompagnent de la conception à la réalisation.",
+    "cta_button": "Demander une étude / Un Devis",
+
+    "items": {
+      "batir": {
+        "kicker": "01 / BÂTIR",
+        "anchorLabel": "Bâtir",
+        "title": "Bâtir — Construction & Ouvrages Neufs",
+        "description": "Nous concevons et réalisons des ouvrages aux plus hauts standards de qualité, sécurité et performance. Du gros-œuvre à la livraison clé-en-main, nous assurons le respect strict des normes techniques, des délais contractuels et des exigences de nos maîtres d'ouvrage.",
+        "features": [
+          "Bâtiments administratifs & institutionnels",
+          "Immeubles résidentiels et commerciaux",
+          "Établissements scolaires et universitaires",
+          "Centres de santé et structures hospitalières",
+          "Ouvrages industriels, entrepôts & plateformes logistiques",
+          "Infrastructures diverses et ouvrages annexes"
+        ],
+        "tags": ["Bâtiments Administratifs", "Résidentiel & Commercial", "Scolaire & Santé", "Industriel & Logistique", "Clé-en-main"],
+        "panels": [
+          {
+            "label": "Méthodologie & Processus",
+            "text": "Étude de sol et modélisation structurale, sélection rigoureuse des matériaux certifiés, organisation de chantier respectant les normes HSE, suivi hebdomadaire des jalons d'avancement et réception contradictoire à chaque phase clé."
+          },
+          {
+            "label": "Normes & Conformité",
+            "text": "Respect des normes DTU, des réglementations parasismiques locales, des cahiers des charges institutionnels les plus exigeants et engagement ferme sur les délais contractuels."
+          },
+          {
+            "label": "Projets Cibles",
+            "text": "Sièges ministériels, ambassades et consulats, universités et lycées techniques, cliniques et hôpitaux de district, entrepôts logistiques et zones industrielles."
+          },
+          {
+            "label": "Parc Matériel",
+            "text": "Engins de terrassement lourds, grues à tour et grues mobiles, bétonnières industrielles, équipements de coffrage métallique et matériel de compactage de dernière génération."
+          }
+        ]
+      },
+      "equiper": {
+        "kicker": "02 / ÉQUIPER",
+        "anchorLabel": "Équiper",
+        "title": "Équiper — Aménagement, Finitions & Équipements",
+        "description": "Nous transformons les espaces bruts en environnements fonctionnels et esthétiques de prestige. Finitions soignées, équipements techniques intégrés et aménagements paysagers extérieurs : chaque détail est pensé pour sublimer vos infrastructures.",
+        "features": [
+          "Peinture intérieure et extérieure haut de gamme",
+          "Revêtements muraux et sols (carrelage, parquet, moquette)",
+          "Faux plafonds, menuiserie, serrurerie sur-mesure",
+          "Plomberie & électricité bâtiment",
+          "Création d'espaces paysagers & aménagement jardins",
+          "Travaux de décoration et d'embellissement sur-mesure"
+        ],
+        "tags": ["Peinture & Revêtements", "Menuiserie Sur-Mesure", "Plomberie & Électricité", "Espaces Verts", "Décoration Prestige"],
+        "panels": [
+          {
+            "label": "Méthodologie & Processus",
+            "text": "Réunion de lancement esthétique avec le maître d'ouvrage, proposition de gammes matériaux et nuanciers, coordination des corps de métier (peintre, plombier, électricien) en séquence optimisée pour réduire les délais et éviter les interférences."
+          },
+          {
+            "label": "Normes & Qualité",
+            "text": "Matériaux certifiés aux normes ISO et locales camerounaises, finitions conformes aux guides de référence DTU, garantie décennale sur les ouvrages de second œuvre et service après-travaux inclus."
+          },
+          {
+            "label": "Projets Cibles",
+            "text": "Rénovation intérieure de palais officiels, aménagement de salles de conférence et espaces d'accueil, création de jardins institutionnels et parcs paysagers, décoration de complexes hôteliers et résidences d'État."
+          },
+          {
+            "label": "Espaces Verts & Paysage",
+            "text": "Sélection de végétaux adaptés au microclimat local, réseaux d'irrigation automatisés, gestion écoresponsable de l'eau et politique zéro produit phytosanitaire toxique sur les espaces fréquentés."
+          }
+        ]
+      },
+      "entretenir": {
+        "kicker": "03 / ENTRETENIR",
+        "anchorLabel": "Entretenir",
+        "title": "Entretenir — Gestion des installations & Hygiène",
+        "description": "Nous assurons la pérennité et la continuité opérationnelle de vos bâtiments grâce à un service intégré de maintenance, d'hygiène et de salubrité. Maintenance préventive, nettoyage professionnel et lutte anti-nuisibles : un interlocuteur unique pour tous vos besoins.",
+        "features": [
+          "Maintenance préventive, corrective et curative",
+          "Nettoyage quotidien, industriel & de fin de chantier",
+          "Désinfection, Désinsectisation & Dératisation (3D)",
+          "Lavage des vitres, façades et surfaces sensibles",
+          "Entretien des espaces verts & parties communes",
+          "Gestion des déchets & désinfection des locaux"
+        ],
+        "tags": ["Maintenance Préventive/Curative", "Nettoyage Professionnel", "Prestations 3D", "Espaces Communs", "Continuité Opérationnelle"],
+        "panels": [
+          {
+            "label": "Méthodologie & Processus",
+            "text": "Audit initial de l'état des installations, élaboration d'un plan de maintenance prédictive, interventions planifiées en dehors des heures d'activité et rapports d'intervention transmis sous 24 h."
+          },
+          {
+            "label": "Normes Hygiène & Sécurité",
+            "text": "Protocoles conformes aux normes OMS et réglementations camerounaises en matière d'hygiène, produits homologués non toxiques, équipements de protection individuelle certifiés et traçabilité des interventions 3D."
+          },
+          {
+            "label": "Projets Cibles",
+            "text": "Bâtiments ministériels et sièges d'entreprise, hôtels et complexes hospitaliers, campuses universitaires, entrepôts logistiques et sites industriels, résidences officielles et diplomatiques."
+          },
+          {
+            "label": "Contrats & Suivi",
+            "text": "Contrats annuels de maintenance clé-en-main, interventions ponctuelles sur appel, tableau de bord de suivi partagé avec le client et réunions de bilan trimestrielles."
+          }
+        ]
+      },
+      "renover": {
+        "kicker": "04 / RÉNOVER",
+        "anchorLabel": "Rénover",
+        "title": "Rénover — Réhabilitation & Valorisation du Bâti",
+        "description": "Nous intervenons sur le bâti existant pour améliorer sa fonctionnalité, son esthétique et sa durabilité. Réhabilitation lourde ou rénovation ciblée, nous réduisons les coûts liés au vieillissement et optimisons la valeur patrimoniale de vos ouvrages.",
+        "features": [
+          "Réhabilitation complète de bâtiments",
+          "Réfection des façades & réaménagement des espaces",
+          "Renforcement des structures et traitement des pathologies",
+          "Modernisation des installations techniques",
+          "Travaux de rénovation intérieure et extérieure",
+          "Mise aux normes et amélioration des performances énergétiques"
+        ],
+        "tags": ["Réhabilitation Globale", "Réfection Façades", "Renforcement Structure", "Modernisation Technique", "Mise aux Normes"],
+        "panels": [
+          {
+            "label": "Diagnostic & Audit",
+            "text": "Inspection visuelle et instrumentée des ouvrages, analyse des pathologies du bâti (fissures, humidité, dégradations structurelles), rapport d'expertise remis sous 5 jours ouvrables avec préconisations chiffrées."
+          },
+          {
+            "label": "Normes & Conformité",
+            "text": "Application des règles parasismiques, conformité aux normes d'accessibilité et de sécurité incendie, respect des prescriptions architecturales du maître d'ouvrage et suivi par un ingénieur structure certifié."
+          },
+          {
+            "label": "Projets Cibles",
+            "text": "Réhabilitation de bâtiments publics vieillissants, rénovation de façades dégradées, renforcement de structures fragilisées, transformation de plateaux bureaux en espaces modernes, remise aux normes d'immeubles résidentiels."
+          },
+          {
+            "label": "Efficacité & Performance",
+            "text": "Intégration d'isolants thermiques et acoustiques adaptés au climat camerounais, remplacement des menuiseries par des solutions à haute performance thermique et optimisation des systèmes d'éclairage et de climatisation."
+          }
+        ]
+      },
+      "sengager": {
+        "kicker": "05 / S'ENGAGER",
+        "anchorLabel": "S'engager",
+        "title": "S'engager — Gestion Patrimoniale & Développement Durable",
+        "description": "Au-delà des chantiers, nous nous engageons durablement à vos côtés : conseil stratégique pour la valorisation de vos actifs, diagnostic patrimonial, politique RSE active et partenariats de co-traitance pour construire ensemble l'héritage de demain.",
+        "features": [
+          "Diagnostic complet des infrastructures",
+          "Planification des opérations d'entretien & maintenance préventive",
+          "Optimisation des charges d'exploitation",
+          "Valorisation du patrimoine bâti & amélioration des performances",
+          "Engagement RSE & développement durable",
+          "Partenariats stratégiques & co-traitance B2B"
+        ],
+        "tags": ["Diagnostic Patrimonial", "Optimisation Coûts", "Valorisation Bâti", "RSE & Durabilité", "Co-traitance B2B"],
+        "panels": [
+          {
+            "label": "Conseil & Stratégie Patrimoniale",
+            "text": "Audit de l'état du patrimoine bâti, modélisation des coûts sur cycle de vie (LCC), recommandations hiérarchisées par niveau de priorité et accompagnement dans la planification pluriannuelle des investissements."
+          },
+          {
+            "label": "RSE & Développement Durable",
+            "text": "Engagement environnemental fort : réduction des déchets de chantier, utilisation de matériaux à faible impact carbone, formation continue des équipes aux bonnes pratiques HSE et publication d'un rapport RSE annuel."
+          },
+          {
+            "label": "Partenariats & Co-traitance",
+            "text": "2HNOUR SARL s'impose comme partenaire de confiance pour les majors du BTP, institutions publiques et grands comptes. Nous intervenons en sous-traitance spécialisée ou en co-traitance avec apport de nos compétences techniques certifiées."
+          },
+          {
+            "label": "Conformité & Gouvernance",
+            "text": "Respect strict de la réglementation des marchés publics et privés, gouvernance claire et irréprochable, alignement sur les cahiers des charges les plus exigeants et garantie de livraison dans les délais contractuels."
+          }
+        ]
+      }
+    }
   },
 
   "references_page": {
@@ -234,26 +416,108 @@
   "solidarity_page": {
     "meta_title": "Engagement Solidaire & Impact Humanitaire — 2HNOUR SARL",
     "meta_desc": "Découvrez l'engagement citoyen de 2HNOUR SARL : chantiers solidaires, soutien à l'éducation, 3D hygiène et aide d'urgence au Cameroun.",
-    "hero_eyebrow": "Engagement Solidaire",
-    "hero_title": "Bâtir pour tous. Servir sans frontières.",
-    "hero_subtitle": "Au-delà de nos chantiers, 2HNOUR SARL est une entreprise de cœur — engagée pour les communautés vulnérables, l'éducation des jeunes et le développement durable du Cameroun.",
-    "stats_eyebrow": "Impact Mesurable",
-    "stats_headline": "Des chiffres qui témoignent de notre engagement.",
+    "hero_eyebrow": "Engagement Solidaire & Impact Citoyen",
+    "hero_title": "Bâtir un Avenir Plus Humain : Notre Engagement Solidarité",
+    "hero_subtitle": "Au-delà des pierres et des infrastructures, 2HNOUR SARL met son expertise BTP et ses ressources au service des communautés vulnérables et du progrès social.",
+
     "stats": {
-      "buildings": "Édifices & Écoles Rénovés",
-      "children": "Enfants Équipés en Kits",
-      "water": "Familles avec Accès à l'Eau",
-      "relief": "Bénéficiaires d'Aide d'Urgence"
+      "renovated": "Édifices & Écoles Rénovés",
+      "kits": "Enfants Équipés en Kits",
+      "treatments": "Traitements 3D Gratuits",
+      "transparency": "Transparence & Logistique Prise en Charge"
     },
+
+    "pillars_eyebrow": "Notre Responsabilité Sociétale",
+    "pillars_title": "Les 4 Piliers de l'Action Humanitaire 2HNOUR",
+    "pillars_subtitle": "Une démarche structurée pour transformer le savoir-faire technique de notre entreprise en levier de dignité et d'épanouissement pour les populations.",
+    "pillars": {
+      "p1_title": "Chantiers Solidaires & Mécénat de Compétences",
+      "p1_desc": "Mise à disposition gratuite de notre savoir-faire BTP pour réhabiliter des orphelinats, écoles rurales, centres de santé et espaces communautaires vétustes.",
+      "p1_badge": "BTP & Rénovation",
+      "p2_title": "Dons Matériels & Soutien à l'Éducation",
+      "p2_desc": "Distribution régulière de kits scolaires, équipements informatiques et mobilier ergonomique pour offrir de meilleures conditions d'apprentissage aux enfants.",
+      "p2_badge": "Éducation & Jeunesse",
+      "p3_title": "Hygiène, Salubrité & Accès à l'Eau (3D Solidaires)",
+      "p3_desc": "Campagnes gratuites de désinfection et dératisation dans les écoles et marchés, associées à la réalisation de points d'eau potable sécurisés.",
+      "p3_badge": "Salubrité & Eau",
+      "p4_title": "Urgence & Assistance Sociale",
+      "p4_desc": "Distribution de vivre, kits d'hygiène et secours matériel d'urgence lors de périodes critiques ou auprès de communautés en situation de précarité extrême.",
+      "p4_badge": "Aide d'Urgence"
+    },
+
     "projects_eyebrow": "Actions sur le Terrain",
     "projects_headline": "Projets Solidaires en Cours d'Accompagnement",
     "projects_subtitle": "Participez à nos côtés pour amplifier l'impact. 2HNOUR finance le pilotage, les équipes techniques et la logistique.",
-    "donate_eyebrow": "Rejoindre le Mouvement",
-    "donate_headline": "Faites partie de l'histoire.",
-    "donate_subtitle": "Chaque don, chaque partenariat et chaque bénévole amplifie notre impact auprès des communautés les plus vulnérables du Cameroun.",
-    "donate_button": "Faire un Don",
-    "volunteer_button": "Devenir Bénévole",
-    "partner_button": "Proposer un Partenariat"
+    "projects_all_label": "Tous les projets solidaires",
+    "projects_commitment_label": "Engagement 2HNOUR :",
+    "projects_progress_label": "Avancement du projet",
+    "projects_funded_suffix": "financé",
+    "projects_goal_label": "Objectif :",
+    "projects_raised_label": "Mobilisé :",
+    "projects_support_button": "Soutenir ce projet",
+
+    "projects": {
+      "p1_title": "Réhabilitation globale du réfectoire et sanitaires de l'Orphelinat de Yaoundé",
+      "p1_location": "Yaoundé · Centre",
+      "p1_objective": "Rénovation complète du toit, carrelage, plomberie et peinture d'un dortoir accueillant 45 enfants.",
+      "p1_support": "Couverture à 100% de la main-d'œuvre qualifiée et 50% des matériaux.",
+      "p2_title": "Campagne 3D & Installation d'un forage d'eau potable dans l'École Publique de Mbankomo",
+      "p2_location": "Mbankomo · Peri-urbain",
+      "p2_objective": "Désinfection intégrale contre les vecteurs et raccordement d'un forage d'eau saine pour 320 élèves.",
+      "p2_support": "Prise en charge intégrale des équipes de traitement 3D et études hydrogéologiques.",
+      "p3_title": "Distribution de 500 Kits Scolaires & Mobilier Ergonomique",
+      "p3_location": "Zones Rurales · Sud",
+      "p3_objective": "Fourniture de bancs, tables, cartables et manuels pour 3 écoles primaires dépourvues d'équipements.",
+      "p3_support": "Financement direct des fournitures et logistique d'acheminement."
+    },
+
+    "transparency_title": "Garantie 100% Transparence & Prise en Charge Logistique",
+    "transparency_desc": "Tous les dons extérieurs collectés (financiers ou matériels) sont intégralement alloués sur le terrain. 2HNOUR SARL prend à sa charge l'ensemble des frais de gestion, de transport et le salaire des équipes techniques mobilisées.",
+
+    "act_eyebrow": "Agir Ensemble",
+    "act_title": "Comment Contribuer ou Demander de l'Aide ?",
+    "act_subtitle": "Sélectionnez le mode d'action qui correspond à vos possibilités ou à vos besoins.",
+
+    "tab_don": "Don Financier",
+    "tab_materiel": "Don en Matériaux",
+    "tab_demande": "Demander un Accompagnement",
+
+    "form_don_title": "Soutien Financier Direct au Fonds Solidaire 2HNOUR",
+    "form_don_subtitle": "Vos contributions permettent d'acheter les matériaux complémentaires (ciment, tôle, sanitaires, fournitures) nécessaires aux chantiers communautaires.",
+    "mobile_money_title": "Mobile Money (Cameroun)",
+    "mobile_money_account": "Compte Fonds Solidaire 2HNOUR",
+    "bank_transfer_title": "Virement Bancaire Dédié",
+    "bank_name": "CCA Bank / BICEC Yaoundé",
+    "bank_account_title_label": "Intitulé :",
+    "bank_account_title": "2HNOUR SARL - Compte Humanitaire & RSE",
+
+    "field_target_project": "Projet Cible",
+    "field_fullname_company": "Nom complet / Entreprise",
+    "placeholder_fullname_company": "Ex: Fondateur ACME",
+    "field_email_phone": "Email ou Téléphone",
+    "submit_don": "Confirmer l'intention de don",
+
+    "form_mat_title": "Don en Nature & Matériaux de Construction / Équipements",
+    "form_mat_subtitle": "Vous êtes un fournisseur BTP, une entreprise ou un particulier ? Offrez du ciment, de la peinture, du matériel électrique, du carrelage ou des kits scolaires.",
+    "field_donor_name": "Nom / Structure Donatrice",
+    "placeholder_donor_name": "Ex: Quincaillerie Centrale",
+    "field_donor_phone": "Téléphone / WhatsApp",
+    "field_mat_desc": "Description du matériel offert & quantité",
+    "placeholder_mat_desc": "Ex: 50 sacs de ciment 42.5, 10 pots de peinture blanche 15L...",
+    "submit_mat": "Proposer un don de matériel",
+
+    "form_help_title": "Soumettre un Dossier d'Aide ou un Projet Communautaire",
+    "form_help_subtitle": "Vous gérez un orphelinat, une école publique dégradée ou une association locale au Cameroun ? Déposez votre demande de réhabilitation ou de campagne d'hygiène.",
+    "field_org_name": "Nom de la Structure / Association / École",
+    "placeholder_org_name": "Ex: École Publique de...",
+    "field_org_location": "Localisation (Ville / Région)",
+    "placeholder_org_location": "Ex: Mbalmayo, Région du Centre",
+    "field_org_contact_name": "Nom du responsable",
+    "placeholder_org_contact_name": "Ex: M. le Directeur / Mme la Présidente",
+    "field_org_contact_phone": "Téléphone de contact",
+    "field_org_needs": "Exposé du besoin & travaux nécessaires",
+    "placeholder_org_needs": "Décrivez l'état actuel de l'édifice, le nombre de bénéficiaires et les priorités de réhabilitation...",
+    "submit_help": "Soumettre le dossier d'accompagnement"
   },
 
   "data": {
@@ -293,17 +557,20 @@
       "materiaux-durables": {
         "title": "Matériaux durables : bâtir pour le siècle à venir",
         "excerpt": "Comment les matériaux locaux et innovants transforment la construction en Afrique centrale.",
-        "date": "12 Mars 2025"
+        "date": "12 Mars 2025",
+        "category": "BTP"
       },
       "maintenance-preventive": {
         "title": "Maintenance préventive : le levier caché de la performance",
         "excerpt": "Une stratégie planifiée qui préserve la valeur des infrastructures publiques.",
-        "date": "28 Février 2025"
+        "date": "28 Février 2025",
+        "category": "Maintenance"
       },
       "espaces-verts-institutionnels": {
         "title": "Espaces verts institutionnels : un patrimoine à cultiver",
         "excerpt": "L'aménagement paysager comme signature d'excellence pour les bâtiments d'État.",
-        "date": "10 Février 2025"
+        "date": "10 Février 2025",
+        "category": "Aménagement"
       }
     },
     "projects_refs": {
