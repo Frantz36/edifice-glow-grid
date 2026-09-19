@@ -266,13 +266,13 @@ function Index() {
                   <s.icon className="h-6 w-6 transition-all duration-300 group-hover:fill-gold group-hover:text-gold" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-gold transition-colors duration-300 group-hover:text-obsidian">
-                  {s.title}
+                  {t(`data.services.${s.slug}.title`, { defaultValue: s.title })}
                 </h3>
                 <p className="mt-3 text-sm font-normal leading-relaxed text-gold/80 transition-colors duration-300 group-hover:text-obsidian/90">
-                  {s.short}
+                  {t(`data.services.${s.slug}.short`, { defaultValue: s.short })}
                 </p>
                 <div className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-gold opacity-90 transition-all duration-300 group-hover:text-obsidian group-hover:opacity-100 group-hover:translate-x-1">
-                  En savoir plus <ArrowRight className="h-3.5 w-3.5" />
+                  {t("services_section.learnMore")} <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
             ))}
@@ -285,33 +285,33 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 pb-16">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Références Institutionnelles
+              {t("references_section.eyebrow")}
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold md:text-5xl">
-              Des institutions de premier plan nous accordent leur confiance.
+              {t("references_section.headline")}
             </h2>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {REFERENCES.map((r) => (
               <article
-                key={r.name}
+                key={r.id || r.name}
                 className="group overflow-hidden rounded-2xl border border-border bg-white"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={r.image}
-                    alt={r.name}
+                    alt={r.id ? t(`data.references.${r.id}.name`, { defaultValue: r.name }) : r.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-lg font-bold leading-snug">
-                    {r.name}
+                    {r.id ? t(`data.references.${r.id}.name`, { defaultValue: r.name }) : r.name}
                   </h3>
                   <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                    {r.mission}
+                    {r.id ? t(`data.references.${r.id}.mission`, { defaultValue: r.mission }) : r.mission}
                   </p>
                 </div>
               </article>
@@ -402,22 +402,22 @@ function Index() {
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
                       src={p.image}
-                      alt={p.title}
+                      alt={t(`data.posts.${p.slug}.title`, { defaultValue: p.title })}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian">
-                      {p.category}
+                      {t(`data.posts.${p.slug}.category`, { defaultValue: p.category })}
                     </div>
                   </div>
                   <div className="p-6">
                     <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                      {p.date}
+                      {t(`data.posts.${p.slug}.date`, { defaultValue: p.date })}
                     </p>
                     <h3 className="mt-2 font-display text-lg font-bold leading-snug group-hover:text-gold">
-                      {p.title}
+                      {t(`data.posts.${p.slug}.title`, { defaultValue: p.title })}
                     </h3>
                     <p className="mt-3 text-sm text-muted-foreground">
-                      {p.excerpt}
+                      {t(`data.posts.${p.slug}.excerpt`, { defaultValue: p.excerpt })}
                     </p>
                   </div>
                 </article>

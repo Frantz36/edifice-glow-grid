@@ -89,86 +89,97 @@ export const Route = createFileRoute("/engagement-solidaire")({
 
 const STATS_SOLIDAIRES = [
   {
+    key: "renovated",
     number: "+18",
-    label: "Édifices & Écoles Rénovés",
+    fallbackLabel: "Édifices & Écoles Rénovés",
     icon: Building2,
   },
   {
+    key: "kits",
     number: "+1 500",
-    label: "Enfants Équipés en Kits",
+    fallbackLabel: "Enfants Équipés en Kits",
     icon: School,
   },
   {
+    key: "treatments",
     number: "35+",
-    label: "Traitements 3D Gratuits",
+    fallbackLabel: "Traitements 3D Gratuits",
     icon: Droplets,
   },
   {
+    key: "transparency",
     number: "100%",
-    label: "Transparence & Logistique Prise en Charge",
+    fallbackLabel: "Transparence & Logistique Prise en Charge",
     icon: ShieldCheck,
   },
 ];
 
 const PILIERS = [
   {
+    key: "p1",
     icon: Building2,
-    title: "Chantiers Solidaires & Mécénat de Compétences",
-    desc: "Mise à disposition gratuite de notre savoir-faire BTP pour réhabiliter des orphelinats, écoles rurales, centres de santé et espaces communautaires vétustes.",
-    badge: "BTP & Rénovation",
+    fallbackTitle: "Chantiers Solidaires & Mécénat de Compétences",
+    fallbackDesc: "Mise à disposition gratuite de notre savoir-faire BTP pour réhabiliter des orphelinats, écoles rurales, centres de santé et espaces communautaires vétustes.",
+    fallbackBadge: "BTP & Rénovation",
   },
   {
+    key: "p2",
     icon: School,
-    title: "Dons Matériels & Soutien à l'Éducation",
-    desc: "Distribution régulière de kits scolaires, équipements informatiques et mobilier ergonomique pour offrir de meilleures conditions d'apprentissage aux enfants.",
-    badge: "Éducation & Jeunesse",
+    fallbackTitle: "Dons Matériels & Soutien à l'Éducation",
+    fallbackDesc: "Distribution régulière de kits scolaires, équipements informatiques et mobilier ergonomique pour offrir de meilleures conditions d'apprentissage aux enfants.",
+    fallbackBadge: "Éducation & Jeunesse",
   },
   {
+    key: "p3",
     icon: Droplets,
-    title: "Hygiène, Salubrité & Accès à l'Eau (3D Solidaires)",
-    desc: "Campagnes gratuites de désinfection et dératisation dans les écoles et marchés, associées à la réalisation de points d'eau potable sécurisés.",
-    badge: "Salubrité & Eau",
+    fallbackTitle: "Hygiène, Salubrité & Accès à l'Eau (3D Solidaires)",
+    fallbackDesc: "Campagnes gratuites de désinfection et dératisation dans les écoles et marchés, associées à la réalisation de points d'eau potable sécurisés.",
+    fallbackBadge: "Salubrité & Eau",
   },
   {
+    key: "p4",
     icon: PackageCheck,
-    title: "Urgence & Assistance Sociale",
-    desc: "Distribution de vivre, kits d'hygiène et secours matériel d'urgence lors de périodes critiques ou auprès de communautés en situation de précarité extrême.",
-    badge: "Aide d'Urgence",
+    fallbackTitle: "Urgence & Assistance Sociale",
+    fallbackDesc: "Distribution de vivre, kits d'hygiène et secours matériel d'urgence lors de périodes critiques ou auprès de communautés en situation de précarité extrême.",
+    fallbackBadge: "Aide d'Urgence",
   },
 ];
 
 const PROJETS_SOLIDAIRES = [
   {
     id: 1,
-    title: "Réhabilitation globale du réfectoire et sanitaires de l'Orphelinat de Yaoundé",
-    location: "Yaoundé · Centre",
-    objective: "Rénovation complète du toit, carrelage, plomberie et peinture d'un dortoir accueillant 45 enfants.",
+    key: "p1",
+    fallbackTitle: "Réhabilitation globale du réfectoire et sanitaires de l'Orphelinat de Yaoundé",
+    fallbackLocation: "Yaoundé · Centre",
+    fallbackObjective: "Rénovation complète du toit, carrelage, plomberie et peinture d'un dortoir accueillant 45 enfants.",
     progress: 75,
     budgetTotal: "6 500 000 FCFA",
     budgetCollected: "4 875 000 FCFA",
-    support2hnour: "Couverture à 100% de la main-d'œuvre qualifiée et 50% des matériaux.",
+    fallbackSupport2hnour: "Couverture à 100% de la main-d'œuvre qualifiée et 50% des matériaux.",
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 2,
-    title: "Campagne 3D & Installation d'un forage d'eau potable dans l'École Publique de Mbankomo",
-    location: "Mbankomo · Peri-urbain",
-    objective: "Désinfection intégrale contre les vecteurs et raccordement d'un forage d'eau saine pour 320 élèves.",
+    key: "p2",
+    fallbackTitle: "Campagne 3D & Installation d'un forage d'eau potable dans l'École Publique de Mbankomo",
+    fallbackLocation: "Mbankomo · Peri-urbain",
+    fallbackObjective: "Désinfection intégrale contre les vecteurs et raccordement d'un forage d'eau saine pour 320 élèves.",
     progress: 60,
     budgetTotal: "4 200 000 FCFA",
     budgetCollected: "2 520 000 FCFA",
-    support2hnour: "Prise en charge intégrale des équipes de traitement 3D et études hydrogéologiques.",
+    fallbackSupport2hnour: "Prise en charge intégrale des équipes de traitement 3D et études hydrogéologiques.",
     image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 3,
-    title: "Distribution de 500 Kits Scolaires & Mobilier Ergonomique",
-    location: "Zones Rurales · Sud",
-    objective: "Fourniture de bancs, tables, cartables et manuels pour 3 écoles primaires dépourvues d'équipements.",
+    key: "p3",
+    fallbackTitle: "Distribution de 500 Kits Scolaires & Mobilier Ergonomique",
+    fallbackLocation: "Zones Rurales · Sud",
+    fallbackObjective: "Fourniture de bancs, tables, cartables et manuels pour 3 écoles primaires dépourvues d'équipements.",
     progress: 90,
     budgetTotal: "3 000 000 FCFA",
     budgetCollected: "2 700 000 FCFA",
-    support2hnour: "Financement direct des fournitures et logistique d'acheminement.",
+    fallbackSupport2hnour: "Financement direct des fournitures et logistique d'acheminement.",
     image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
   },
 ];
@@ -176,7 +187,7 @@ const PROJETS_SOLIDAIRES = [
 function HumanitarianPage() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<"don" | "materiel" | "demande">("don");
-  const [selectedProject, setSelectedProject] = useState<string>("Tous les projets solidaires");
+  const [selectedProject, setSelectedProject] = useState<string>("");
 
   const terrainRef = useRef<HTMLElement>(null);
   const [terrainParallax, setTerrainParallax] = useState(0);
@@ -198,13 +209,16 @@ function HumanitarianPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const defaultAllProjects = t("solidarity_page.projects_all_label", { defaultValue: "Tous les projets solidaires" });
+  const displayTargetProject = selectedProject || defaultAllProjects;
+
   return (
     <SiteLayout>
       {/* 1. HERO SECTION */}
       <PageHero
-        eyebrow="Engagement Solidaire & Impact Citoyen"
-        title="Bâtir un Avenir Plus Humain : Notre Engagement Solidarité"
-        subtitle="Au-delà des pierres et des infrastructures, 2HNOUR SARL met son expertise BTP et ses ressources au service des communautés vulnérables et du progrès social."
+        eyebrow={t("solidarity_page.hero_eyebrow")}
+        title={t("solidarity_page.hero_title")}
+        subtitle={t("solidarity_page.hero_subtitle")}
         image="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80"
       />
 
@@ -217,6 +231,7 @@ function HumanitarianPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STATS_SOLIDAIRES.map((stat, idx) => {
               const Icon = stat.icon;
+              const label = t(`solidarity_page.stats.${stat.key}`, { defaultValue: stat.fallbackLabel });
               return (
                 <div
                   key={idx}
@@ -234,7 +249,7 @@ function HumanitarianPage() {
 
                   {/* Libellé en or clair / doré */}
                   <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-gold/90 transition-colors duration-300 group-hover:text-obsidian/90">
-                    {stat.label}
+                    {label}
                   </div>
                 </div>
               );
@@ -248,19 +263,22 @@ function HumanitarianPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Notre Responsabilité Sociétale
+              {t("solidarity_page.pillars_eyebrow")}
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
-              Les 4 Piliers de l'Action Humanitaire 2HNOUR
+              {t("solidarity_page.pillars_title")}
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Une démarche structurée pour transformer le savoir-faire technique de notre entreprise en levier de dignité et d'épanouissement pour les populations.
+              {t("solidarity_page.pillars_subtitle")}
             </p>
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2">
             {PILIERS.map((pilier, idx) => {
               const IconComponent = pilier.icon;
+              const title = t(`solidarity_page.pillars.${pilier.key}_title`, { defaultValue: pilier.fallbackTitle });
+              const desc = t(`solidarity_page.pillars.${pilier.key}_desc`, { defaultValue: pilier.fallbackDesc });
+              const badge = t(`solidarity_page.pillars.${pilier.key}_badge`, { defaultValue: pilier.fallbackBadge });
               return (
                 <div
                   key={idx}
@@ -276,14 +294,14 @@ function HumanitarianPage() {
                           <IconComponent className="h-6 w-6" />
                         </div>
                         <span className="rounded-full bg-obsidian/90 px-3.5 py-1 text-xs font-bold text-gold backdrop-blur-sm border border-gold/30 shadow-sm">
-                          {pilier.badge}
+                          {badge}
                         </span>
                       </div>
                       <h3 className="mt-6 font-display text-xl font-extrabold text-obsidian leading-snug">
-                        {pilier.title}
+                        {title}
                       </h3>
                       <p className="mt-3 text-sm font-medium text-obsidian/90 leading-relaxed">
-                        {pilier.desc}
+                        {desc}
                       </p>
                     </div>
                   </div>
@@ -311,78 +329,85 @@ function HumanitarianPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-                Actions sur le Terrain
+                {t("solidarity_page.projects_eyebrow")}
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold text-obsidian md:text-4xl">
-                Projets Solidaires en Cours d'Accompagnement
+                {t("solidarity_page.projects_headline")}
               </h2>
             </div>
             <p className="max-w-md text-sm text-obsidian/85">
-              Participez à nos côtés pour amplifier l'impact. 2HNOUR finance le pilotage, les équipes techniques et la logistique.
+              {t("solidarity_page.projects_subtitle")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {PROJETS_SOLIDAIRES.map((projet) => (
-              <div
-                key={projet.id}
-                className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img
-                      src={projet.image}
-                      alt={projet.title}
-                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <span className="absolute top-4 left-4 rounded-full bg-obsidian/90 px-3 py-1 text-xs font-semibold text-gold backdrop-blur-md">
-                      {projet.location}
-                    </span>
+            {PROJETS_SOLIDAIRES.map((projet) => {
+              const title = t(`solidarity_page.projects.${projet.key}_title`, { defaultValue: projet.fallbackTitle });
+              const location = t(`solidarity_page.projects.${projet.key}_location`, { defaultValue: projet.fallbackLocation });
+              const objective = t(`solidarity_page.projects.${projet.key}_objective`, { defaultValue: projet.fallbackObjective });
+              const support = t(`solidarity_page.projects.${projet.key}_support`, { defaultValue: projet.fallbackSupport2hnour });
+
+              return (
+                <div
+                  key={projet.id}
+                  className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <img
+                        src={projet.image}
+                        alt={title}
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                      <span className="absolute top-4 left-4 rounded-full bg-obsidian/90 px-3 py-1 text-xs font-semibold text-gold backdrop-blur-md">
+                        {location}
+                      </span>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-display text-lg font-bold text-slate-ink line-clamp-2">
+                        {title}
+                      </h3>
+                      <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                        {objective}
+                      </p>
+
+                      <div className="mt-5 rounded-xl bg-gold/10 p-3 text-xs border border-gold/20">
+                        <span className="font-semibold text-obsidian">{t("solidarity_page.projects_commitment_label")} </span>
+                        <span className="text-slate-700">{support}</span>
+                      </div>
+
+                      {/* JAUGE VISUELLE */}
+                      <div className="mt-6">
+                        <div className="flex justify-between text-xs font-semibold mb-1.5">
+                          <span className="text-slate-ink">{t("solidarity_page.projects_progress_label")}</span>
+                          <span className="text-gold">{projet.progress}% {t("solidarity_page.projects_funded_suffix")}</span>
+                        </div>
+                        <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
+                          <div
+                            className="h-full bg-gold transition-all duration-1000"
+                            style={{ width: `${projet.progress}%` }}
+                          />
+                        </div>
+                        <div className="mt-2 flex justify-between text-[11px] text-muted-foreground">
+                          <span>{t("solidarity_page.projects_goal_label")} {projet.budgetTotal}</span>
+                          <span>{t("solidarity_page.projects_raised_label")} {projet.budgetCollected}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-lg font-bold text-slate-ink line-clamp-2">
-                      {projet.title}
-                    </h3>
-                    <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
-                      {projet.objective}
-                    </p>
 
-                    <div className="mt-5 rounded-xl bg-gold/10 p-3 text-xs border border-gold/20">
-                      <span className="font-semibold text-obsidian">Engagement 2HNOUR : </span>
-                      <span className="text-slate-700">{projet.support2hnour}</span>
-                    </div>
-
-                    {/* JAUGE VISUELLE */}
-                    <div className="mt-6">
-                      <div className="flex justify-between text-xs font-semibold mb-1.5">
-                        <span className="text-slate-ink">Avancement du projet</span>
-                        <span className="text-gold">{projet.progress}% financé</span>
-                      </div>
-                      <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
-                        <div
-                          className="h-full bg-gold transition-all duration-1000"
-                          style={{ width: `${projet.progress}%` }}
-                        />
-                      </div>
-                      <div className="mt-2 flex justify-between text-[11px] text-muted-foreground">
-                        <span>Objectif : {projet.budgetTotal}</span>
-                        <span>Mobilisé : {projet.budgetCollected}</span>
-                      </div>
-                    </div>
+                  <div className="p-6 pt-0">
+                    <a
+                      href="#agir"
+                      onClick={() => setSelectedProject(title)}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-obsidian px-5 py-3 text-xs font-semibold text-gold transition-all hover:bg-gold hover:text-obsidian"
+                    >
+                      {t("solidarity_page.projects_support_button")} <Heart className="h-3.5 w-3.5" />
+                    </a>
                   </div>
                 </div>
-
-                <div className="p-6 pt-0">
-                  <a
-                    href="#agir"
-                    onClick={() => setSelectedProject(projet.title)}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-obsidian px-5 py-3 text-xs font-semibold text-gold transition-all hover:bg-gold hover:text-obsidian"
-                  >
-                    Soutenir ce projet <Heart className="h-3.5 w-3.5" />
-                  </a>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* RASSURANCE TRANSPARENCE */}
@@ -393,10 +418,10 @@ function HumanitarianPage() {
               </div>
               <div>
                 <h4 className="font-display text-xl font-bold text-gold">
-                  Garantie 100% Transparence & Prise en Charge Logistique
+                  {t("solidarity_page.transparency_title")}
                 </h4>
                 <p className="mt-1 text-sm text-white/80 leading-relaxed">
-                  Tous les dons extérieurs collectés (financiers ou matériels) sont intégralement alloués sur le terrain. 2HNOUR SARL prend à sa charge l'ensemble des frais de gestion, de transport et le salaire des équipes techniques mobilisées.
+                  {t("solidarity_page.transparency_desc")}
                 </p>
               </div>
             </div>
@@ -409,13 +434,13 @@ function HumanitarianPage() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center">
             <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-obsidian shadow-md shadow-gold/20">
-              Agir Ensemble
+              {t("solidarity_page.act_eyebrow")}
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold text-slate-ink md:text-5xl">
-              Comment Contribuer ou Demander de l'Aide ?
+              {t("solidarity_page.act_title")}
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Sélectionnez le mode d'action qui correspond à vos possibilités ou à vos besoins.
+              {t("solidarity_page.act_subtitle")}
             </p>
           </div>
 
@@ -430,7 +455,7 @@ function HumanitarianPage() {
                     : "text-slate-600 hover:text-obsidian"
                 }`}
               >
-                <Heart className="h-4 w-4" /> Don Financier
+                <Heart className="h-4 w-4" /> {t("solidarity_page.tab_don")}
               </button>
               <button
                 onClick={() => setActiveTab("materiel")}
@@ -440,7 +465,7 @@ function HumanitarianPage() {
                     : "text-slate-600 hover:text-obsidian"
                 }`}
               >
-                <Gift className="h-4 w-4" /> Don en Matériaux
+                <Gift className="h-4 w-4" /> {t("solidarity_page.tab_materiel")}
               </button>
               <button
                 onClick={() => setActiveTab("demande")}
@@ -450,7 +475,7 @@ function HumanitarianPage() {
                     : "text-slate-600 hover:text-obsidian"
                 }`}
               >
-                <HelpCircle className="h-4 w-4" /> Demander un Accompagnement
+                <HelpCircle className="h-4 w-4" /> {t("solidarity_page.tab_demande")}
               </button>
             </div>
           </div>
@@ -460,19 +485,19 @@ function HumanitarianPage() {
             {activeTab === "don" && (
               <div>
                 <h3 className="font-display text-2xl font-bold text-slate-ink">
-                  Soutien Financier Direct au Fonds Solidaire 2HNOUR
+                  {t("solidarity_page.form_don_title")}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Vos contributions permettent d'acheter les matériaux complémentaires (ciment, tôle, sanitaires, fournitures) nécessaires aux chantiers communautaires.
+                  {t("solidarity_page.form_don_subtitle")}
                 </p>
 
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
                   <div className="rounded-2xl border border-gold/30 bg-gold/5 p-6">
                     <h4 className="font-semibold text-obsidian flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 text-gold" /> Mobile Money (Cameroun)
+                      <Sparkles className="h-4 w-4 text-gold" /> {t("solidarity_page.mobile_money_title")}
                     </h4>
                     <p className="mt-3 text-xs text-slate-600">
-                      <strong>MTN Mobile Money :</strong> +237 6XX XX XX XX (Compte Fonds Solidaire 2HNOUR)
+                      <strong>MTN Mobile Money :</strong> +237 6XX XX XX XX ({t("solidarity_page.mobile_money_account")})
                       <br />
                       <strong>Orange Money :</strong> +237 6XX XX XX XX
                     </p>
@@ -480,12 +505,12 @@ function HumanitarianPage() {
 
                   <div className="rounded-2xl border border-border bg-slate-50 p-6">
                     <h4 className="font-semibold text-obsidian flex items-center gap-2">
-                      <Building2 className="h-4 w-4 text-slate-700" /> Virement Bancaire Dédié
+                      <Building2 className="h-4 w-4 text-slate-700" /> {t("solidarity_page.bank_transfer_title")}
                     </h4>
                     <p className="mt-3 text-xs text-slate-600">
-                      <strong>Banque :</strong> CCA Bank / BICEC Yaoundé
+                      <strong>Banque :</strong> {t("solidarity_page.bank_name")}
                       <br />
-                      <strong>Intitulé :</strong> 2HNOUR SARL - Compte Humanitaire & RSE
+                      <strong>{t("solidarity_page.bank_account_title_label")}</strong> {t("solidarity_page.bank_account_title")}
                     </p>
                   </div>
                 </div>
@@ -493,28 +518,28 @@ function HumanitarianPage() {
                 <form onSubmit={(e) => e.preventDefault()} className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Projet Cible
+                      {t("solidarity_page.field_target_project")}
                     </label>
                     <input
                       type="text"
                       readOnly
-                      value={selectedProject}
+                      value={displayTargetProject}
                       className="h-11 w-full rounded-lg border border-border bg-slate-50 px-3 text-sm font-medium text-slate-700"
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Nom complet / Entreprise
+                      {t("solidarity_page.field_fullname_company")}
                     </label>
                     <input
                       type="text"
                       className="h-11 w-full rounded-lg border border-border px-3 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: Fondateur ACME"
+                      placeholder={t("solidarity_page.placeholder_fullname_company")}
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Email ou Téléphone
+                      {t("solidarity_page.field_email_phone")}
                     </label>
                     <input
                       type="text"
@@ -527,7 +552,7 @@ function HumanitarianPage() {
                       type="submit"
                       className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:-translate-y-0.5 sm:w-auto"
                     >
-                      Confirmer l'intention de don <HandHeart className="h-4 w-4" />
+                      {t("solidarity_page.submit_don")} <HandHeart className="h-4 w-4" />
                     </button>
                   </div>
                 </form>
@@ -537,26 +562,26 @@ function HumanitarianPage() {
             {activeTab === "materiel" && (
               <div>
                 <h3 className="font-display text-2xl font-bold text-slate-ink">
-                  Don en Nature & Matériaux de Construction / Équipements
+                  {t("solidarity_page.form_mat_title")}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Vous êtes un fournisseur BTP, une entreprise ou un particulier ? Offrez du ciment, de la peinture, du matériel électrique, du carrelage ou des kits scolaires.
+                  {t("solidarity_page.form_mat_subtitle")}
                 </p>
 
                 <form onSubmit={(e) => e.preventDefault()} className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Nom / Structure Donatrice
+                      {t("solidarity_page.field_donor_name")}
                     </label>
                     <input
                       type="text"
                       className="h-11 w-full rounded-lg border border-border px-3 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: Quincaillerie Centrale"
+                      placeholder={t("solidarity_page.placeholder_donor_name")}
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Téléphone / WhatsApp
+                      {t("solidarity_page.field_donor_phone")}
                     </label>
                     <input
                       type="tel"
@@ -566,12 +591,12 @@ function HumanitarianPage() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Description du matériel offert & quantité
+                      {t("solidarity_page.field_mat_desc")}
                     </label>
                     <textarea
                       rows={3}
                       className="w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: 50 sacs de ciment 42.5, 10 pots de peinture blanche 15L..."
+                      placeholder={t("solidarity_page.placeholder_mat_desc")}
                     />
                   </div>
                   <div className="sm:col-span-2">
@@ -579,7 +604,7 @@ function HumanitarianPage() {
                       type="submit"
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:-translate-y-0.5 sm:w-auto"
                     >
-                      Proposer un don de matériel <Gift className="h-4 w-4" />
+                      {t("solidarity_page.submit_mat")} <Gift className="h-4 w-4" />
                     </button>
                   </div>
                 </form>
@@ -589,46 +614,46 @@ function HumanitarianPage() {
             {activeTab === "demande" && (
               <div>
                 <h3 className="font-display text-2xl font-bold text-slate-ink">
-                  Soumettre un Dossier d'Aide ou un Projet Communautaire
+                  {t("solidarity_page.form_help_title")}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Vous gérez un orphelinat, une école publique dégradée ou une association locale au Cameroun ? Déposez votre demande de réhabilitation ou de campagne d'hygiène.
+                  {t("solidarity_page.form_help_subtitle")}
                 </p>
 
                 <form onSubmit={(e) => e.preventDefault()} className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Nom de la Structure / Association / École
+                      {t("solidarity_page.field_org_name")}
                     </label>
                     <input
                       type="text"
                       className="h-11 w-full rounded-lg border border-border px-3 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: École Publique de..."
+                      placeholder={t("solidarity_page.placeholder_org_name")}
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Localisation (Ville / Région)
+                      {t("solidarity_page.field_org_location")}
                     </label>
                     <input
                       type="text"
                       className="h-11 w-full rounded-lg border border-border px-3 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: Mbalmayo, Région du Centre"
+                      placeholder={t("solidarity_page.placeholder_org_location")}
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Nom du responsable
+                      {t("solidarity_page.field_org_contact_name")}
                     </label>
                     <input
                       type="text"
                       className="h-11 w-full rounded-lg border border-border px-3 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Ex: M. le Directeur / Mme la Présidente"
+                      placeholder={t("solidarity_page.placeholder_org_contact_name")}
                     />
                   </div>
                   <div>
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Téléphone de contact
+                      {t("solidarity_page.field_org_contact_phone")}
                     </label>
                     <input
                       type="tel"
@@ -638,12 +663,12 @@ function HumanitarianPage() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-ink">
-                      Exposé du besoin & travaux nécessaires
+                      {t("solidarity_page.field_org_needs")}
                     </label>
                     <textarea
                       rows={4}
                       className="w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-gold focus:outline-none"
-                      placeholder="Décrivez l'état actuel de l'édifice, le nombre de bénéficiaires et les priorités de réhabilitation..."
+                      placeholder={t("solidarity_page.placeholder_org_needs")}
                     />
                   </div>
                   <div className="sm:col-span-2">
@@ -651,7 +676,7 @@ function HumanitarianPage() {
                       type="submit"
                       className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-obsidian shadow-md transition-all hover:-translate-y-0.5 sm:w-auto"
                     >
-                      Soumettre le dossier d'accompagnement <ArrowRight className="h-4 w-4" />
+                      {t("solidarity_page.submit_help")} <ArrowRight className="h-4 w-4" />
                     </button>
                   </div>
                 </form>

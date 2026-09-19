@@ -25,12 +25,12 @@ export const Route = createFileRoute("/a-propos")({
 });
 
 const VALUES = [
-  { icon: Award, name: "Excellence", desc: "Une exigence de qualité à chaque étape de nos interventions." },
-  { icon: Scale, name: "Intégrité", desc: "Transparence et éthique dans toutes nos relations." },
-  { icon: HandHeart, name: "Responsabilité", desc: "Engagement social et respect des communautés." },
-  { icon: Shield, name: "Sécurité", desc: "Protection stricte des personnes et des biens." },
-  { icon: Leaf, name: "Durabilité", desc: "Solutions pensées pour les générations futures." },
-  { icon: Sparkles, name: "Innovation", desc: "Matériaux, méthodes et technologies d'avant-garde." },
+  { key: "excellence", icon: Award, fallbackName: "Excellence", fallbackDesc: "Une exigence de qualité à chaque étape de nos interventions." },
+  { key: "integrity", icon: Scale, fallbackName: "Intégrité", fallbackDesc: "Transparence et éthique dans toutes nos relations." },
+  { key: "responsibility", icon: HandHeart, fallbackName: "Responsabilité", fallbackDesc: "Engagement social et respect des communautés." },
+  { key: "safety", icon: Shield, fallbackName: "Sécurité", fallbackDesc: "Protection stricte des personnes et des biens." },
+  { key: "sustainability", icon: Leaf, fallbackName: "Durabilité", fallbackDesc: "Solutions pensées pour les générations futures." },
+  { key: "innovation", icon: Sparkles, fallbackName: "Innovation", fallbackDesc: "Matériaux, méthodes et technologies d'avant-garde." },
 ];
 
 function About() {
@@ -104,22 +104,9 @@ function About() {
               <div className="relative">
                 <Quote className="h-10 w-10 text-obsidian/80" />
                 <div className="mt-4 space-y-4 text-base font-medium leading-relaxed text-obsidian">
-                  <p>
-                    Fondée à Yaoundé, 2HNOUR SARL s'est imposée comme un partenaire
-                    de référence pour les administrations publiques, les institutions
-                    et les acteurs privés en quête d'un savoir-faire intégré en BTP.
-                  </p>
-                  <p>
-                    Sous l'impulsion de sa Directrice Générale, Mme Virginie Hanna
-                    FADIMATOU, notre entreprise réunit ingénieurs, techniciens et
-                    artisans autour d'une même exigence : livrer des ouvrages
-                    durables, esthétiques et parfaitement entretenus.
-                  </p>
-                  <p>
-                    Nous croyons qu'une infrastructure bien conçue et bien
-                    entretenue est un levier de développement — pour ses usagers,
-                    pour la nation et pour l'environnement.
-                  </p>
+                  <p>{t("about.history_p1")}</p>
+                  <p>{t("about.history_p2")}</p>
+                  <p>{t("about.history_p3")}</p>
                 </div>
                 <div className="mt-6 flex items-center gap-3 border-t border-obsidian/20 pt-6">
                   <div className="h-px flex-1 bg-gradient-to-r from-obsidian/60 to-transparent" />
@@ -199,26 +186,30 @@ function About() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {VALUES.map((v) => (
-              <div
-                key={v.name}
-                className="group relative overflow-hidden rounded-2xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-6 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
-              >
-                {/* Reflet ambré chaud */}
-                <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/30 to-transparent z-0" />
-                <div className="relative z-10">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-obsidian text-gold border border-obsidian/30 shadow-md">
-                    <v.icon className="h-6 w-6" />
+            {VALUES.map((v) => {
+              const name = t(`about.values.${v.key}.name`, { defaultValue: v.fallbackName });
+              const desc = t(`about.values.${v.key}.desc`, { defaultValue: v.fallbackDesc });
+              return (
+                <div
+                  key={v.key}
+                  className="group relative overflow-hidden rounded-2xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-6 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+                >
+                  {/* Reflet ambré chaud */}
+                  <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-1/2 bg-gradient-to-r from-transparent via-[#ffe89c]/30 to-transparent z-0" />
+                  <div className="relative z-10">
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-obsidian text-gold border border-obsidian/30 shadow-md">
+                      <v.icon className="h-6 w-6" />
+                    </div>
+                    <h4 className="mt-5 font-display text-lg font-extrabold text-obsidian leading-snug">
+                      {name}
+                    </h4>
+                    <p className="mt-2 text-sm font-medium text-obsidian/90 leading-relaxed">
+                      {desc}
+                    </p>
                   </div>
-                  <h4 className="mt-5 font-display text-lg font-extrabold text-obsidian leading-snug">
-                    {v.name}
-                  </h4>
-                  <p className="mt-2 text-sm font-medium text-obsidian/90 leading-relaxed">
-                    {v.desc}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

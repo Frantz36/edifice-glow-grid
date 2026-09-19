@@ -68,7 +68,7 @@ function ReferencesPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {REFERENCES.map((r) => (
               <article
-                key={r.name}
+                key={r.id || r.name}
                 className="group relative overflow-hidden rounded-2xl border border-gold/40 bg-gradient-to-r from-[#e5b539] via-[#b87a14] to-[#e5b539] p-6 text-obsidian shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-[#ffe89c] hover:via-[#e5b539] hover:to-[#b87a14] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
               >
                 {/* Reflet ambré chaud */}
@@ -78,40 +78,48 @@ function ReferencesPage() {
                     ★
                   </div>
                   <h3 className="mt-6 font-display text-xl font-extrabold leading-snug text-obsidian">
-                    {r.name}
+                    {r.id ? t(`data.references.${r.id}.name`, { defaultValue: r.name }) : r.name}
                   </h3>
-                  <p className="mt-3 text-sm font-medium text-obsidian/90 leading-relaxed">{r.mission}</p>
+                  <p className="mt-3 text-sm font-medium text-obsidian/90 leading-relaxed">
+                    {r.id ? t(`data.references.${r.id}.mission`, { defaultValue: r.mission }) : r.mission}
+                  </p>
                 </div>
               </article>
             ))}
           </div>
 
           <h2 className="mt-20 font-display text-3xl font-bold md:text-4xl">
-            Réalisations récentes
+            {t("references_page.recent_headline", { defaultValue: "Réalisations récentes" })}
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJECTS.map((p) => (
-              <article
-                key={p.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all hover:shadow-md"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian shadow-sm">
-                    {p.client}
+            {PROJECTS.map((p, idx) => {
+              const projectKeys = ["admin", "espaces", "patrimoine", "paysager", "finitions", "maintenance"];
+              const pKey = projectKeys[idx];
+              const title = pKey ? t(`data.projects_refs.${pKey}.title`, { defaultValue: p.title }) : p.title;
+              const client = pKey ? t(`data.projects_refs.${pKey}.client`, { defaultValue: p.client }) : p.client;
+              return (
+                <article
+                  key={p.title}
+                  className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all hover:shadow-md"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-obsidian shadow-sm">
+                      {client}
+                    </div>
                   </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-display text-base font-bold text-obsidian group-hover:text-gold transition-colors">
-                    {p.title}
-                  </h3>
-                </div>
-              </article>
-            ))}
+                  <div className="p-5">
+                    <h3 className="font-display text-base font-bold text-obsidian group-hover:text-gold transition-colors">
+                      {title}
+                    </h3>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
