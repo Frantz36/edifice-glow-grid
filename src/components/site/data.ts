@@ -118,8 +118,7 @@ export const POSTS = [
   },
 ];
 
-export const CEO_IMAGE =
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80";
+export const CEO_IMAGE = "/pics/dg-2hnour.jpg";
 
 export const HERO_IMAGE = "/pics/office-2hnour.jpeg";
 export const LOGO_IMAGE = "/pics/logo 2HNOUR.png";
